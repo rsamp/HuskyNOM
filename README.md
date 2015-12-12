@@ -6,15 +6,15 @@
 
 ## Minimum Viable Product
 
-FresherNote is a web application inspired by Evernote built using Ruby on Rails
-and React.js. FresherNote allows users to:
+HuskyNOM.com is a web application inspired by Yelp built using Ruby on Rails
+and React.js. HuskyNOM allows users to:
 
 <!-- This is a Markdown checklist. Use it to keep track of your progress! -->
 
 - [ ] Create an account
 - [ ] Log in / Log out
-- [ ] Create, read, edit, and delete notes
-- [ ] Organize notes within Notebooks
+- [ ] See nearby restaurants in list form and on a map
+- [ ] Create and read restaurant reviews
 - [ ] Tag notes with multiple tags and search notes by tag
 - [ ] Search through notes for blocks of text
 - [ ] Apply complex styling to notes while editing
