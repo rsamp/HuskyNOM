@@ -7,18 +7,17 @@
 ## Minimum Viable Product
 
 HuskyNOM.com is a web application inspired by Yelp built using Ruby on Rails
-and React.js. HuskyNOM allows users to:
+and React.js. HuskyNOM is focused on the area around the University of
+Washington and it allows users to:
 
 <!-- This is a Markdown checklist. Use it to keep track of your progress! -->
 
 - [ ] Create an account
 - [ ] Log in / Log out
-- [ ] See nearby restaurants in list form and on a map
+- [ ] Search businesses by name
+- [ ] See search results in a list and accompanying map
+- [ ] Visit business page to see information
 - [ ] Create and read restaurant reviews
-- [ ] Tag notes with multiple tags and search notes by tag
-- [ ] Search through notes for blocks of text
-- [ ] Apply complex styling to notes while editing
-- [ ] Set reminders on notes
 
 ## Design Docs
 * [View Wireframes][view]
@@ -29,26 +28,26 @@ and React.js. HuskyNOM allows users to:
 
 ## Implementation Timeline
 
-### Phase 1: User Authentication, Note Model and JSON API (1.5 days)
+### Phase 1: User Authentication, Business Model, Review Model, and JSON API (2 days)
 
 In Phase 1, I will begin by implementing user signup and authentication (using
-BCrypt). There will be a basic landing page after signup that will contain the
-container for the application's root React component. Before building out the
-front end, I will begin by setting up a full JSON API for Notes.
+BCrypt). There will be a landing page after signup that will have two main
+containers. One that includes top rated businesses (BusinessIndexItem React component)
+and one for most recent reviews (Review React component). Before building out the
+front end, I will begin by setting up a full JSON API for Restaurants and Reviews.
 
 [Details][phase-one]
 
-### Phase 2: Flux Architecture and Note CRUD (2.5 days)
+### Phase 2: Flux Architecture and Restaurant/Review CRUD (3 days)
 
 Phase 2 is focused on setting up Flux, the React Router, and the React view
 structure for the main application. After the basic Flux architecture has been
-set up, a Note store will be implemented and a set of actions corresponding to
-the needed CRUD functionality created. Once this is done, I will create React
-views for the Notes `Index`, `IndexItem` and `Form`. At the end of Phase 2,
-Notes can be created, read, edited and destroyed in the browser. Notes should
-save to the database when the form loses focus or is left idle after editing.
-Lastly, while constructing the views I will start using basic bootstrap for
-styling.
+set up, Restaurant and Review stores will be implemented and a set of actions
+corresponding to the needed CRUD functionality created. Once this is done, I
+will create React views for the Business `Index`, `IndexItem` and `Form` as
+well as the Review `Index`, `IndexItem` and `Form`. At the end of Phase 2,
+Businesses and Reviews can be created, read, edited and destroyed in the browser.
+Both should save to the database.
 
 [Details][phase-two]
 
@@ -86,11 +85,9 @@ Phase 6 I will add styling flourishes and make modals out of some elements (like
 the NotebookForm).
 
 ### Bonus Features (TBD)
-- [ ] Prettify transitions
-- [ ] Use javascript library for cleaner tag selection
-- [ ] Changelogs for Notes
-- [ ] Pagination / infinite scroll for Notes Index
-- [ ] Multiple sessions
+- [ ] Upvote/downvote reviews
+- [ ] Comment on reviews
+- [ ] Add restaurant menus
 
 [phase-one]: ./docs/phases/phase1.md
 [phase-two]: ./docs/phases/phase2.md

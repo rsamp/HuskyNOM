@@ -1,4 +1,4 @@
-# Phase 2: Flux Architecture and Note CRUD (2 days)
+# Phase 2: Flux Architecture and Note CRUD (3 days)
 
 ## Rails
 ### Models
@@ -9,30 +9,43 @@
 
 ## Flux
 ### Views (React Components)
-* NotesIndex
-  - NotesIndexItem
-* NoteForm
+* BusinessesIndex
+  - BusinessesIndexItem
+  - ReviewIndexItem
+  - ReviewForm
+* BusinessForm
+* ReviewIndex
+  - ReviewIndexItem
 
 ### Stores
-* Note
+* Business
+* Review
 
 ### Actions
-* ApiActions.receiveAllNotes -> triggered by ApiUtil
-* ApiActions.receiveSingleNote
-* ApiActions.deleteNote
-* NoteActions.fetchAllNotes -> triggers ApiUtil
-* NoteActions.fetchSingleNote 
-* NoteActions.createNote
-* NoteActions.editNote 
-* NoteActions.destroyNote
+* ApiActions.receiveAllBusinesses -> triggered by ApiUtil
+* ApiActions.receiveSingleBusiness
+* BusinessActions.fetchAllBusinesses -> triggers ApiUtil
+* BusinessActions.fetchSingleBusiness
+* BusinessActions.createBusiness
+* BusinessActions.editBusiness
+* ApiActions.receiveAllReviews -> triggered by ApiUtil
+* ApiActions.receiveSingleReview
+* ApiActions.deleteReview
+* ReviewActions.fetchAllReviews -> triggers ApiUtil
+* ReviewActions.fetchSingleReview
+* ReviewActions.createReview
+* ReviewActions.editReview
+* ReviewActions.destroyReview
 
 ### ApiUtil
-* ApiUtil.fetchAllNotes
-* ApiUtil.fetchSingleNote
-* ApiUtil.createNote
-* ApiUtil.editNote
-* ApiUtil.destroyNote
+* ApiUtil.fetchAllBusinesses
+* ApiUtil.fetchSingleBusiness
+* ApiUtil.createBusiness
+* ApiUtil.fetchAllReviews
+* ApiUtil.fetchSingleReview
+* ApiUtil.createReview
+* ApiUtil.editReview
+* ApiUtil.destroyReview
 
 ## Gems/Libraries
 * Flux Dispatcher (npm)
-* Twitter Bootstrap

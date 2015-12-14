@@ -1,20 +1,24 @@
-# Phase 1: User Authentication, Note Model and JSON API
+# Phase 1: User Authentication, Restaurant Model, Review Model, and JSON API (2 days)
 
 ## Rails
 ### Models
 * User
-* Note
+* Restaurants
+* Reviews
 
 ### Controllers
 * UsersController (create, new)
 * SessionsController (create, new, destroy)
-* Api::NotesController (create, destroy, index, show, update)
+* Api::BusinessController (create, index, show, update)
+* Api::ReviewsController (create, destroy, index, show, update)
 
 ### Views
 * users/new.html.erb
 * session/new.html.erb
-* notes/index.json.jbuilder
-* notes/show.json.jbuilder
+* business/index.json.jbuilder
+* business/show.json.jbuilder
+* business/:id/reviews/index.json.jbuilder
+* reviews/index.json.jbuilder
 
 ## Flux
 ### Views (React Components)
