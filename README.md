@@ -71,7 +71,7 @@ so that Users, Businesses, and Reviews can all have pictures associated with the
 
 [Details][phase-four]
 
-### Phase 5: Styling and Database Seeding (1.5 day)
+### Phase 5: Styling and Database Seeding (1.5 days)
 
 Throughout the project, very basic styling will have been used to organize the
 pages. In Phase 5, this styling will be completed with the help of Bootstrap.

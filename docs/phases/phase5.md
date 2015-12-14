@@ -1,4 +1,4 @@
-# Phase 5: Styling and Database Seeding (1.5 day)
+# Phase 5: Styling and Database Seeding (1.5 days)
 
 ## Rails
 ### Models
