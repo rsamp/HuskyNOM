@@ -17,7 +17,7 @@ Washington and it allows users to:
 - [ ] Search businesses by name
 - [ ] See search results in a list and accompanying map
 - [ ] Visit business page to see information
-- [ ] Create and read restaurant reviews
+- [ ] Create and read business reviews
 
 ## Design Docs
 * [View Wireframes][view]
@@ -28,61 +28,56 @@ Washington and it allows users to:
 
 ## Implementation Timeline
 
-### Phase 1: User Authentication, Business Model, Review Model, and JSON API (2 days)
+### Phase 1: User Authentication, Business Model, Review Model, and JSON API (1.5 days)
 
 In Phase 1, I will begin by implementing user signup and authentication (using
 BCrypt). There will be a landing page after signup that will have two main
 containers. One that includes top rated businesses (BusinessIndexItem React component)
 and one for most recent reviews (Review React component). Before building out the
-front end, I will begin by setting up a full JSON API for Restaurants and Reviews.
+front end, I will begin by setting up a full JSON API for Businesses and Reviews.
 
 [Details][phase-one]
 
-### Phase 2: Flux Architecture and Restaurant/Review CRUD (3 days)
+### Phase 2: Flux Architecture, Business CRUD, Search (2 days)
 
 Phase 2 is focused on setting up Flux, the React Router, and the React view
 structure for the main application. After the basic Flux architecture has been
-set up, Restaurant and Review stores will be implemented and a set of actions
+set up, a Business store will be implemented and a set of actions
 corresponding to the needed CRUD functionality created. Once this is done, I
-will create React views for the Business `Index`, `IndexItem` and `Form` as
-well as the Review `Index`, `IndexItem` and `Form`. At the end of Phase 2,
-Businesses and Reviews can be created, read, edited and destroyed in the browser.
-Both should save to the database.
+will create React views for the Business `Index`, `IndexItem`, and `Form`.
+At the end of Phase 2, Businesses can be created, read, edited and destroyed in
+the browser and should save to the database. Businesses can also be searched for
+using the search bar.
 
 [Details][phase-two]
 
-### Phase 3: Notebooks and Tags (2 days)
+### Phase 3: More Flux Architecture and Review CRUD (2 days)
 
-Phase 3 adds organization to the Notes. Notes belong to a Notebook, which has
-its own `Index` view. Create JSON API for Notebooks. Notes can also now be
-tagged with multiple tags. Users can bring up notes in a separate `SearchIndex`
-view by searching for their tags. Once the tag search is implemented, I will
-extend this to a fuzzy search through every Note's content.
+Phase 3 will be a similar process to Phase 2, but it will be focused on the Reviews.
+The Reviews will be acting as a join table and will become integrated
+with both the Users and the Businesses at this time. React views for the Review
+`Index`, `IndexItem`, and `Form` will be implemented. At the end of Phase 3,
+users should be able to visit a business' page and leave a review, as well as
+edit and delete their own review submissions.
 
 [Details][phase-three]
 
-### Phase 4: Allow Complex Styling in Notes (1 day)
+### Phase 4: Google Maps API and Images (1.5 days)
 
-Using the react-quill library (based on Quill.js), allow for complex styling of
-notes.
+In Phase 4, the Google Maps API will be implemented to show search results in
+map form as well as a map view on each business page. This will also be the
+time to set up the image model and ensure there is a polymorphic relationship
+so that Users, Businesses, and Reviews can all have pictures associated with them.
 
 [Details][phase-four]
 
-### Phase 5: Reminders and Garbage Collection (1 day)
+### Phase 5: Styling and Database Seeding (1.5 day)
 
-Phase 5 introduces two new features. First, users can set reminders on notes
-which will at the time they are set for prompt the user to review and edit the
-given note. In addition, I will implement a feature that asks users to review
-notes once they reach a certain age and ask whether they should be kept,
-archived, or deleted.
+Throughout the project, very basic styling will have been used to organize the
+pages. In Phase 5, this styling will be completed with the help of Bootstrap.
+Additionally, the database will be seeded with several businesses and reviews.
 
 [Details][phase-five]
-
-### Phase 6: Styling Cleanup and Seeding (1 day)
-
-Bootstrap will have been used to keep things organized up until now, but in
-Phase 6 I will add styling flourishes and make modals out of some elements (like
-the NotebookForm).
 
 ### Bonus Features (TBD)
 - [ ] Upvote/downvote reviews

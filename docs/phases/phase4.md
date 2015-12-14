@@ -1,7 +1,8 @@
-# Phase 4: Allow Complex Styling in Notes (1 day)
+# Phase 4: Google Maps API and Images (1.5 days)
 
 ## Rails
 ### Models
+* Images (polymorphic)
 
 ### Controllers
 
@@ -9,10 +10,19 @@
 
 ## Flux
 ### Views (React Components)
+* BusinessesIndex
+  - Map
+* BusinessShow
+  - Map
+  - Photos
+* ReviewIndexItem
+  - Photos
+* UserShow
+  - Photos
 
 ### Stores
 
 ### Actions
 
 ## Gems/Libraries
-* react-quill (npm)
+* Google Maps API

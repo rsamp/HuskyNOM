@@ -1,44 +1,39 @@
-# Phase 3: Notebooks and Tags (2 days)
+# Phase 3: More Flux Architecture, Review CRUD, and Images (2 days)
 
 ## Rails
 ### Models
-* Notebook
-* Tag
-* Tagging
 
 ### Controllers
-* Api::NotebooksController (create, destroy, index, show, update)
 
 ### Views
-* notebooks/index.json.jbuilder
-* notebooks/show.json.jbuilder
-* tags/show.json.jbuilder
+* Landing Page (complete)
 
 ## Flux
 ### Views (React Components)
-* NotebooksIndex
-  - NotebookIndexItem
-* NotebookForm
-* SearchIndex
+* BusinessesIndex
+  - ReviewIndexItem
+  - ReviewForm
+* ReviewIndex
+  - ReviewIndexItem
 
 ### Stores
-* Notebook
+* Review
 
 ### Actions
-* ApiActions.receiveAllNotebooks -> triggered by ApiUtil
-* ApiActions.receiveSingleNotebook
-* ApiActions.deleteNotebook
-* NotebookActions.fetchAllNotebooks -> triggers ApiUtil
-* NotebookActions.fetchSingleNotebook
-* NotebookActions.createNotebook
-* NotebookActions.editNotebook
-* NotebookActions.destroyNotebook
+* ApiActions.receiveAllReviews -> triggered by ApiUtil
+* ApiActions.receiveSingleReview
+* ApiActions.deleteReview
+* ReviewActions.fetchAllReviews -> triggers ApiUtil
+* ReviewActions.fetchSingleReview
+* ReviewActions.createReview
+* ReviewActions.editReview
+* ReviewActions.destroyReview
 
 ### ApiUtil
-* ApiUtil.fetchAllNotebooks
-* ApiUtil.fetchSingleNotebook
-* ApiUtil.createNotebook
-* ApiUtil.editNotebook
-* ApiUtil.destroyNotebook
+* ApiUtil.fetchAllReviews
+* ApiUtil.fetchSingleReview
+* ApiUtil.createReview
+* ApiUtil.editReview
+* ApiUtil.destroyReview
 
 ## Gems/Libraries
