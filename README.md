@@ -2,7 +2,7 @@
 
 [Heroku link][heroku]
 
-[heroku]: http://www.huskynom.herokuapp.com
+[heroku]: http://huskynom.herokuapp.com
 
 ## Minimum Viable Product
 
