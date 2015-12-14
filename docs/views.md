@@ -12,6 +12,12 @@
 ## Home Page (Components)
 ![home-components]
 
+## Search Results
+![search-results]
+
+## Search Results (Components)
+![search-results-components]
+
 ## Business Page
 ![business]
 
@@ -31,6 +37,8 @@
 [new-session]: ./wireframes/new_session.png
 [home]: ./wireframes/home.png
 [home-components]: ./wireframes/home_components.png
+[search-results]: ./wireframes/search_results.png
+[search-results-components]: ./wireframes/search_results_components.png
 [business]: ./wireframes/business.png
 [business-components]: ./wireframes/business_components.png
 [review]: ./wireframes/review.png
