@@ -6,21 +6,33 @@
 ## New Session
 ![new-session]
 
-## NotesIndex / NoteIndexItem / NoteForm
-![notes]
+## Home Page
+![home]
 
-## NotebooksIndex / NotebookIndexItem
-![notebooks]
+## Home Page (Components)
+![home-components]
 
-## NoteBookForm
-![notebook-form]
+## Business Page
+![business]
 
-## Component Heirarchy
-![component-heirarchy]
+## Business Page (Components)
+![business-components]
+
+## Review Page
+![review]
+
+## Review Page (Components)
+![review-components]
+
+## Component Hierarchy
+![component-hierarchy]
 
 [new-user]: ./wireframes/new_user.png
 [new-session]: ./wireframes/new_session.png
-[notes]: ./wireframes/root_notes.png
-[notebooks]: ./wireframes/root_notebooks.png
-[notebook-form]: ./wireframes/notebook_form.png
-[component-heirarchy]: ./wireframes/component_heirarchy.png
+[home]: ./wireframes/home.png
+[home-components]: ./wireframes/home_components.png
+[business]: ./wireframes/business.png
+[business-components]: ./wireframes/business_components.png
+[review]: ./wireframes/review.png
+[review-components]: ./wireframes/review_components.png
+[component-hierarchy]: ./wireframes/component_hierarchy.png
