@@ -3,7 +3,8 @@ var React = require('react'),
     ReactRouter = require('react-router'),
     Router = ReactRouter.Router,
     Route = ReactRouter.Route,
-    IndexRoute = ReactRouter.IndexRoute;
+    IndexRoute = ReactRouter.IndexRoute,
+    Business = require('./components/business/Business');
 
 
 var App = React.createClass({
@@ -19,7 +20,7 @@ var App = React.createClass({
 
 var routes = (
   <Route path="/" component={App}>
-
+    <Route path="business/:id" component={Business}/>
   </Route>
 );
 
