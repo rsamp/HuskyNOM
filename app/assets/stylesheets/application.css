@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+
+
+
+nav h1, h3{
+  float: left;
+}
+
+.body {
+  clear: both;
+}

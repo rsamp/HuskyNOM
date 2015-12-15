@@ -2,14 +2,14 @@ var React = require('react');
 
 var Business = React.createClass({
   getInitialState: function(){
-    return {}
+    return {business: this.props.location.state.business}
   },
 
   render: function(){
-
+    debugger;
     return(
       <div>
-        <p>test</p>
+        <h2>{this.state.business.name}</h2>
       </div>
     );
   }

@@ -4,17 +4,20 @@ var React = require('react'),
     Router = ReactRouter.Router,
     Route = ReactRouter.Route,
     IndexRoute = ReactRouter.IndexRoute,
+    Navbar = require('./components/Navbar'),
     Index = require('./components/Index'),
     BusinessIndex = require('./components/business/Index'),
-    BusinessShow = require('./components/business/Business');
+    BusinessShow = require('./components/business/Show');
 
 
 var App = React.createClass({
   render: function(){
     return(
       <div>
-        <header><h1>HuskyNOM</h1></header>
-        {this.props.children}
+        <Navbar/>
+        <div className="body">
+          {this.props.children}
+        </div>
       </div>
     );
   }
