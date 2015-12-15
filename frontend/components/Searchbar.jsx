@@ -4,7 +4,7 @@ var Searchbar = React.createClass({
 
   render: function(){
     return(
-      <form>
+      <form id="searchbar">
         <input type="text"/>
       </form>
     );

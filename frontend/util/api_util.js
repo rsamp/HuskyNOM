@@ -1,9 +1,14 @@
 var ApiActions = require('../actions/api_actions');
 
 ApiUtil = {
+  fetchCurrentUser: function(){
+    
+  },
+
   fetchBusinesses: function(){
     $.ajax({
       method: "GET",
+      // data: {bounds: bounds},
       url: "api/businesses",
       success: function(businesses){
         ApiActions.receiveAll(businesses);

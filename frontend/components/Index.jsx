@@ -6,7 +6,7 @@ var Index = React.createClass({
 
   render: function(){
     return(
-      <div className="bestOf">
+      <div className="searchResults">
         <BusinessIndex/>
       </div>
     );

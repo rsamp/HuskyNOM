@@ -14,11 +14,22 @@
  *= require_self
  */
 
-
-
-nav h1, h3{
-  float: left;
+nav{
+  background-color: purple;
+  height: 60px;
 }
+nav {
+  h1, h3, #searchbar{
+    float: left;
+    /*display: block;*/
+  }
+
+  #searchbar {
+    padding-top: 15px;
+    height: 30px;
+  }
+}
+
 
 .body {
   clear: both;

@@ -1,10 +1,11 @@
 var React = require('react'),
     BusinessStore = require('../stores/business'),
+    AuthStore = require('../stores/auth'),
     Searchbar = require('./Searchbar');
 
 var Navbar = React.createClass({
   getInitialState: function(){
-    return {businesses: BusinessStore.all()}
+    return {businesses: BusinessStore.all(), user: AuthStore.currentUser()}
   },
 
   render: function(){

@@ -6,7 +6,7 @@ var Business = React.createClass({
   },
 
   render: function(){
-    debugger;
+    // debugger;
     return(
       <div>
         <h2>{this.state.business.name}</h2>

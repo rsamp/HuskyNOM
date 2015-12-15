@@ -8,3 +8,9 @@ After adding Image model, revisit BusinessIndexItem and Business Page. Will also
 removed return statement from store onDispatch
 
 don't forget jbuilder if getting ajax errors
+
+just have map and search on homepage. this would take away the bestOf and the recentActivity. changed Index.jsx
+
+maybe don't allow businesses to be submitted. make sure to remove route and controller function
+
+start new branch before doing map
