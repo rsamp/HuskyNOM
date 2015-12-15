@@ -7,9 +7,12 @@ id          | integer   | not null, primary key
 name        | string    | not null
 type        | string    | not null
 address     | string    | not null
+lat         | float     | not null
+lng         | float     | not null
 hours       | string    |
 delivery    | boolean   |
 accept_cc   | boolean   |
+image_id    | integer   | foreign key (referenes images)
 
 ## reviews
 column name | data type | details
@@ -29,10 +32,10 @@ password_digest | string    | not null
 session_token   | string    | not null, indexed, unique
 num_reviews     | integer   | not null, default: 0
 
-## images (polymorphic)
+## images (polymorphic if time allows)
 column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
-name            | string    | not null
+url             | string    | not null
 imageable_id    | integer   | not null
 imageable_type  | string    | not null
