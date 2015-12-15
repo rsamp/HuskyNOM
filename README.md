@@ -83,6 +83,7 @@ Additionally, the database will be seeded with several businesses and reviews.
 - [ ] Upvote/downvote reviews
 - [ ] Comment on reviews
 - [ ] Add restaurant menus
+- [ ] Polymorphic relationship for Images
 
 [phase-one]: ./docs/phases/phase1.md
 [phase-two]: ./docs/phases/phase2.md
