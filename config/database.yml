@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: huskynom-master_development
+  database: huskynom_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -57,7 +57,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: huskynom-master_test
+  database: huskynom_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -80,6 +80,7 @@ test:
 #
 production:
   <<: *default
-  database: sample-project-proposal-master_production
-  username: sample-project-proposal-master
-  password: <%= ENV['SAMPLE-PROJECT-PROPOSAL-MASTER_DATABASE_PASSWORD'] %>
+  database: huskynom_production
+  username: huskynom
+  password: <%= ENV['HUSKYNOM_DATABASE_PASSWORD'] %>
+  # password: <%= ENV['SAMPLE-PROJECT-PROPOSAL-MASTER_DATABASE_PASSWORD'] %>
