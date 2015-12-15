@@ -9,7 +9,7 @@ var Business = React.createClass({
 
     return(
       <div>
-        test
+        <p>test</p>
       </div>
     );
   }

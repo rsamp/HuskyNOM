@@ -2,20 +2,22 @@ var ApiActions = require('../actions/api_actions');
 
 ApiUtil = {
   fetchBusinesses: function(){
-    $.get({
+    $.ajax({
+      method: "GET",
       url: "api/businesses",
       success: function(businesses){
-        ApiActions.receiveAll(businesses)
+        ApiActions.receiveAll(businesses);
       }
     });
   },
 
   createBusiness: function(data){
-    $.post({
+    $.ajax({
+      method: "POST",
       url: "api/businesses",
       data: {business: data},
-      success: function(){
-        ApiActions.receiveAll([business])
+      success: function(business){
+        ApiActions.createBusiness(business);
       }
     });
   }
