@@ -5,10 +5,10 @@ column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 name        | string    | not null
-type        | string    | not null
-address     | string    | not null
+category    | string    | not null
 lat         | float     | not null
 lng         | float     | not null
+address     | string    |
 hours       | string    |
 delivery    | boolean   |
 accept_cc   | boolean   |
