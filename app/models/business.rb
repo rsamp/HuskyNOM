@@ -3,41 +3,27 @@ class Business < ActiveRecord::Base
 
   has_many :images
 
-  # def self.in_bounds(bounds)
-  #   Business.where("lat < ?", bounds[:northEast][:lat])
-  #       .where("lat > ?", bounds[:southWest][:lat])
-  #       .where("lng > ?", bounds[:southWest][:lng])
-  #       .where("lng < ?", bounds[:northEast][:lng])
-  #   # top = bounds["northEast"]["lat"]
-  #   # right = bounds["northEast"]["lng"]
-  #   # bottom = bounds["southWest"]["lat"]
-  #   # left = bounds["southWest"]["lng"]
-  #   #
-  #   # return Business.where("(lat BETWEEN ? AND ?) AND (lng BETWEEN ? AND ?)", bottom, top, left, right)
-  # end
-  #
-  # def self.match_delivery(delivery)
-  #   Business.where("delivery IS ?", delivery)
-  # end
-  #
-  # def self.match_credit_card(accept_cc)
-  #   Business.where("accept_cc IS ?", accept_cc)
-  # end
-
   def self.filter_all(bounds, delivery, accept_cc)
     businesses = Business.all
+
+    # Filter based on current map bounds
     if bounds
-      businesses.where("lat < ?", bounds[:northEast][:lat])
+      businesses = businesses.where("lat < ?", bounds[:northEast][:lat])
           .where("lat > ?", bounds[:southWest][:lat])
           .where("lng > ?", bounds[:southWest][:lng])
           .where("lng < ?", bounds[:northEast][:lng])
     end
-    if delivery
-      businesses.where(delivery: delivery)
+
+
+    # For these two, only filter if the box is checked. Don't want to
+    # filter out places that offer delivery just because the box isn't checked.
+    if delivery == "true"
+      businesses = businesses.where(delivery: delivery)
     end
-    if accept_cc
-      businesses.where(accept_cc: accept_cc)
+    if accept_cc == "true"
+      businesses = businesses.where(accept_cc: accept_cc)
     end
+
     businesses
   end
 

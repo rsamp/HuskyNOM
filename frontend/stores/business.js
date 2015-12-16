@@ -20,7 +20,6 @@ BusinessStore.all = function(){
 BusinessStore.__onDispatch = function(payload){
   switch (payload.actionType) {
     case BusinessConstants.BUSINESSES_RECEIVED:
-      debugger;
       resetBusinesses(payload.businesses);
       BusinessStore.__emitChange();
       break;
