@@ -13,4 +13,10 @@ just have map and search on homepage. this would take away the bestOf and the re
 
 maybe don't allow businesses to be submitted. make sure to remove route and controller function
 
-start new branch before doing map
+add filters component and to search jsx
+
+benchbnb search.jsx - contextTypes
+
+revisit logo image
+
+tracked bug down to api_actions receiveAll

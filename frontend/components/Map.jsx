@@ -1,5 +1,6 @@
 var React = require('react'),
-    ReactDOM = require('react-dom');
+    ReactDOM = require('react-dom'),
+    FilterActions = require('../actions/filter_actions');
 
 function _getCoordsObj(latLng) {
   return {
@@ -28,6 +29,7 @@ var Map = React.createClass({
       var northEast = _getCoordsObj(bounds.getNorthEast());
       var southWest = _getCoordsObj(bounds.getSouthWest());
       var bounds = {northEast: northEast, southWest: southWest};
+      FilterActions.updateBounds(bounds);
     }.bind(this));
   },
 
@@ -63,15 +65,15 @@ var Map = React.createClass({
     businesses.forEach(function(business, idx){
       var idx = -1;
 
-      for(var i = 0; i < toRemove.length; i ++){
+      for(var i = 0; i < toRemove.length; i++){
         if(toRemove[i].businessId == business.id){
           idx = i;
           break;
         }
       }
-      
+
       if (idx === -1) {
-        toAdd.push(bench);
+        toAdd.push(business);
       } else {
         toRemove.splice(idx, 1);
       }

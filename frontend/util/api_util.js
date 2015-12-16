@@ -1,14 +1,16 @@
-var ApiActions = require('../actions/api_actions');
+var ApiActions = require('../actions/api_actions'),
+    FilterParamsStore = require('../stores/filter_params');
 
 ApiUtil = {
-  fetchCurrentUser: function(){
-    
-  },
+  // fetchCurrentUser: function(){
+  //
+  // },
 
   fetchBusinesses: function(){
+    var filter = FilterParamsStore.params();
     $.ajax({
       method: "GET",
-      // data: {bounds: bounds},
+      data: filter,
       url: "api/businesses",
       success: function(businesses){
         ApiActions.receiveAll(businesses);

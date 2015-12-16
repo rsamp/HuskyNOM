@@ -7,14 +7,14 @@ var ApiActions = {
       actionType: BusinessConstants.BUSINESSES_RECEIVED,
       businesses: businesses
     })
-  },
-
-  createBusiness: function(business){
-    AppDispatcher.dispatch({
-      actionType: BusinessConstants.BUSINESS_RECEIVED,
-      business: business
-    })
   }
+
+  // createBusiness: function(business){
+  //   AppDispatcher.dispatch({
+  //     actionType: BusinessConstants.BUSINESS_RECEIVED,
+  //     business: business
+  //   })
+  // }
 };
 
 module.exports = ApiActions;

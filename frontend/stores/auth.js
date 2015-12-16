@@ -23,12 +23,13 @@ AuthStore.__onDispatch = function(payload){
   switch (payload.actionType) {
     case AuthConstants.USER_LOGGED_IN:
       loginUser(payload.user)
+      AuthStore.__emitChange();
       break;
     case AuthConstants.USER_LOGGED_OUT:
       logoutUser(payload.user)
+      AuthStore.__emitChange();
       break;
   }
-  AuthStore.__emitChange();
 };
 
 module.exports = AuthStore;

@@ -9,6 +9,7 @@ var Navbar = React.createClass({
   },
 
   render: function(){
+    var img = 'assets/images/HuskyNOM-logo.png';
     return(
       <nav>
         <h1>HuskyNOM</h1>
