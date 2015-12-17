@@ -11,11 +11,11 @@ function _getCoordsObj(latLng) {
 
 var Map = React.createClass({
   componentDidMount: function(){
-    console.log('map mounted');
+    console.log("mounting map");
     var map = ReactDOM.findDOMNode(this.refs.map);
     var mapOptions = {
-      center: {lat: 47.655, lng: -122.308},
-      zoom: 13
+      center: {lat: 47.660, lng: -122.3148},
+      zoom: 16
     };
     this.map = new google.maps.Map(map, mapOptions);
     this.registerListeners();
@@ -87,7 +87,7 @@ var Map = React.createClass({
   },
 
   render: function(){
-    return (<div ref="map" className="indexMap">Map</div>)
+    return (<div ref="map" className={this.props.mapClass}>Map</div>)
   }
 });
 

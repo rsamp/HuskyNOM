@@ -16,7 +16,7 @@ function _fetchFilters(){
 
 var Search = React.createClass({
   getInitialState: function(){
-    return {businesses: _fetchBusinesses(), filterParams: _fetchFilters()}
+    return {businesses: [], filterParams: _fetchFilters()}
   },
 
   _businessesChanged: function(){
@@ -24,15 +24,13 @@ var Search = React.createClass({
   },
 
   _filtersChanged: function(){
-    var newParams = _fetchFilters();
-    this.setState({filterParams: newParams});
+    this.setState({filterParams: _fetchFilters()});
     ApiUtil.fetchBusinesses();
   },
 
   componentDidMount: function(){
-    this.businessListener = BusinessStore.addListener(this._businessesChanged);
     this.filterListener = FilterParamsStore.addListener(this._filtersChanged);
-    ApiUtil.fetchBusinesses();
+    this.businessListener = BusinessStore.addListener(this._businessesChanged);
   },
 
   componentWillUnmount: function(){
@@ -41,11 +39,14 @@ var Search = React.createClass({
   },
 
   render: function(){
+    var businesses = this.state.businesses;
+    var index = (businesses.length === 0) ? "Map is loading" : <BusinessIndex businesses={businesses}/>
     return(
       <div>
-        <Map businesses={this.state.businesses}/>
-        <Filters businesses={this.state.businesses} filterParams={this.state.filterParams}/>
-        <BusinessIndex businesses={this.state.businesses}/>
+        <Map mapClass={"indexMap"} businesses={businesses}/>
+        <h3>Businesses within map bounds</h3>
+        <Filters businesses={businesses} filterParams={this.state.filterParams}/>
+        {index}
       </div>
     );
   }

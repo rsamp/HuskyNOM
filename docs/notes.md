@@ -1,5 +1,11 @@
 # Notes:
 
+UW Color Scheme:
+
+Purple: 4b2e83
+Gold: e8e3d3
+Metallic Gold: 85754d
+
 ## Come back to
 I allowed Address to accept null in database. Look into using Google Maps Reverse Geocoding to get address from Lat/Lng
 
@@ -13,10 +19,10 @@ just have map and search on homepage. this would take away the bestOf and the re
 
 maybe don't allow businesses to be submitted. make sure to remove route and controller function
 
-add filters component and to search jsx
-
 benchbnb search.jsx - contextTypes
 
 revisit logo image
 
-tracked bug down to api_actions receiveAll
+refactoring opportunity: reviewIndex - instead of the if statement in render, perform a filter in the model
+
+do review creation through controller with access to current user

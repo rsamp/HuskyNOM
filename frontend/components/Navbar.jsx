@@ -1,22 +1,33 @@
 var React = require('react'),
     BusinessStore = require('../stores/business'),
     AuthStore = require('../stores/auth'),
-    Searchbar = require('./Searchbar');
+    Searchbar = require('./Searchbar')
+    History = require('react-router').History;
 
 var Navbar = React.createClass({
+  mixins: [History],
+
   getInitialState: function(){
     return {businesses: BusinessStore.all(), user: AuthStore.currentUser()}
   },
 
+  goToHome: function(e){
+    e.preventDefault();
+    this.history.pushState(null, "/", {});
+  },
+
   render: function(){
-    var img = 'assets/images/HuskyNOM-logo.png';
+    var img = 'assets/HuskyNOM-logo.png';
     return(
-      <nav>
-        <h1>HuskyNOM</h1>
-        <h3>Home</h3>
-        <h3>Write a Review</h3>
-        <h3>Submit a Business</h3>
-        <Searchbar/>
+      <nav className="navbar navbar-default">
+        <div id="nav-container">
+          <h1><a onClick={this.goToHome}>HuskyNOM</a></h1>
+          <a onClick={this.goToHome}><img src={img} alt="logo" className="logo"/></a>
+          <a href='#'><h5>Home</h5></a>
+          <h5>Write a Review</h5>
+          <h5>Submit a Business</h5>
+          <Searchbar/>
+        </div>
       </nav>
     );
   }

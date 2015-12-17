@@ -1,13 +1,14 @@
 var AppDispatcher = require('../dispatcher/dispatcher'),
-    BusinessConstants = require('../constants/businessConstants');
+    BusinessConstants = require('../constants/businessConstants'),
+    ReviewConstants = require('../constants/reviewConstants');
 
 var ApiActions = {
-  receiveAll: function(businesses){
+  receiveAllBusinesses: function(businesses){
     AppDispatcher.dispatch({
       actionType: BusinessConstants.BUSINESSES_RECEIVED,
       businesses: businesses
     })
-  }
+  },
 
   // createBusiness: function(business){
   //   AppDispatcher.dispatch({
@@ -15,6 +16,13 @@ var ApiActions = {
   //     business: business
   //   })
   // }
+
+  receiveAllReviews: function(reviews){
+    AppDispatcher.dispatch({
+      actionType: ReviewConstants.REVIEWS_RECEIVED,
+      reviews: reviews
+    })
+  }
 };
 
 module.exports = ApiActions;

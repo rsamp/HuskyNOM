@@ -13,7 +13,7 @@ ApiUtil = {
       data: filter,
       url: "api/businesses",
       success: function(businesses){
-        ApiActions.receiveAll(businesses);
+        ApiActions.receiveAllBusinesses(businesses);
       }
     });
   },
@@ -25,6 +25,27 @@ ApiUtil = {
       data: {business: data},
       success: function(business){
         ApiActions.createBusiness(business);
+      }
+    });
+  },
+
+  fetchReviews: function(){
+    $.ajax({
+      method: "GET",
+      url: "api/reviews",
+      success: function(reviews){
+        ApiActions.receiveAllReviews(reviews);
+      }
+    });
+  },
+
+  createReview: function(data){
+    $.ajax({
+      method: "POST",
+      url: "api/reviews",
+      data: {review: data},
+      success: function(review){
+        ApiActions.createReview(review);
       }
     });
   }

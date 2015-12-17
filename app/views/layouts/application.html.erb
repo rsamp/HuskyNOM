@@ -2,14 +2,24 @@
 <html>
 <head>
   <title>HuskyNOM</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <!-- <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyAmlGoELLJ4tBFNTRt1HWGDFeblOuM-f2o"%> -->
+
   <%= csrf_meta_tags %>
+
+  <script type="text/javascript">
+    window.API_KEYS = {
+      GMAP_KEY: "<%= ENV['GMAP_KEY'] %>"
+    };
+  </script>
+  <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV['GMAP_KEY']}"%>
 </head>
 <body>
 
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmlGoELLJ4tBFNTRt1HWGDFeblOuM-f2o">
-  </script>
+  <!-- <script src="https://maps.googleapis.com/maps/api/js?key=" + API_KEYS[GMAP_KEY]>
+  </script> -->
+
 
 <%= yield %>
 
