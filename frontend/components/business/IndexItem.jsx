@@ -10,12 +10,14 @@ var BusinessIndexItem = React.createClass({
   },
 
   render: function(){
-
     return (
       <li>
-        <a><h2 onClick={this.handleClick}>
-          {this.props.business.name}
-        </h2></a>
+        <a>
+          <h2 onClick={this.handleClick}>
+            {this.props.business.name}
+          </h2>
+        </a>
+        <p>Reviews: {this.props.business.reviews.length}</p>
       </li>
     );
   }

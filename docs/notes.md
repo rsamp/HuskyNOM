@@ -26,3 +26,12 @@ revisit logo image
 refactoring opportunity: reviewIndex - instead of the if statement in render, perform a filter in the model
 
 do review creation through controller with access to current user
+
+search.jsx setinterval
+
+average the ratings
+
+
+Questions:
+Map Loading... Search.jsx
+Show.jsx page map - should I have another Map element?

@@ -8,7 +8,13 @@ var Business = React.createClass({
   // },
 
   render: function(){
-    var business = this.props.location.state.business;
+    // debugger;
+    var business;
+    if (this.props.location.state.business) {
+      business = this.props.location.state.business;
+    } else {
+      var business = this.props.business;
+    }
     var address = business.address;
     return(
       <div>

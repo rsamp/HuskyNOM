@@ -69,3 +69,13 @@ nav {
 .body {
   clear: both;
 }
+
+.searchbar-list{
+  border: 1px solid black;
+  list-style: none;
+  width: 149px;
+  background-color: white;
+  position: relative;
+  right: 39px;
+  z-index: 1;
+}

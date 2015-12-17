@@ -1,7 +1,8 @@
 class Business < ActiveRecord::Base
   validates :name, :category, :lat, :lng, presence: true
 
-  has_many :images
+  has_many :images 
+  has_many :reviews
 
   def self.filter_all(bounds, delivery, accept_cc)
     businesses = Business.all

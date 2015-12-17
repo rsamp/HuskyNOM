@@ -47,24 +47,22 @@ var Searchbar = React.createClass({
     return matches;
   },
 
-  selectBusiness: function(e){
+  selectBusiness: function(business, e){
     e.preventDefault();
-    var id = e.currentTarget.id;
-    var url = '/businesses/' + id;
-    debugger;
-    this.history.pushState(null, url)
+    var url = '/businesses/' + business.id;
+    this.history.pushState({business: business}, url)
   },
 
   render: function(){
-    var results = this.matches();
-    results = results.map(function(result, i){
-      return <li key={i} onClick={this.selectBusiness} id={result.id}>{result.name}</li>
+    var businesses = this.matches();
+    businesses = businesses.map(function(business, i){
+      return <li className="searchbar-list" key={i} onClick={this.selectBusiness.bind(null, business)}>{business.name}</li>
     }.bind(this));
     return(
       <form id="searchbar">
         <input type="text" onChange={this.handleInput} value={this.state.inputVal}/>
         <ul>
-          {results}
+          {businesses}
         </ul>
       </form>
     );
