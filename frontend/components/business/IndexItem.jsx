@@ -5,7 +5,6 @@ var BusinessIndexItem = React.createClass({
   mixins: [History],
 
   handleClick: function(){
-    // this.history.pushState(null, "#", {})
     var url = '/businesses/' + this.props.business.id;
     this.history.pushState({business: this.props.business}, url)
   },
@@ -14,9 +13,9 @@ var BusinessIndexItem = React.createClass({
 
     return (
       <li>
-        <h2 onClick={this.handleClick}>
+        <a><h2 onClick={this.handleClick}>
           {this.props.business.name}
-        </h2>
+        </h2></a>
       </li>
     );
   }

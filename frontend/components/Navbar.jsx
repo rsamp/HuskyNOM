@@ -7,23 +7,18 @@ var React = require('react'),
 var Navbar = React.createClass({
   mixins: [History],
 
-  getInitialState: function(){
-    return {businesses: BusinessStore.all(), user: AuthStore.currentUser()}
-  },
-
   goToHome: function(e){
     e.preventDefault();
     this.history.pushState(null, "/", {});
   },
 
   render: function(){
-    var img = 'assets/HuskyNOM-logo.png';
+    var img = 'assets/HuskyNOM.png';
     return(
       <nav className="navbar navbar-default">
         <div id="nav-container">
-          <h1><a onClick={this.goToHome}>HuskyNOM</a></h1>
           <a onClick={this.goToHome}><img src={img} alt="logo" className="logo"/></a>
-          <a href='#'><h5>Home</h5></a>
+          <a onClick={this.goToHome}><h5>Home</h5></a>
           <h5>Write a Review</h5>
           <h5>Submit a Business</h5>
           <Searchbar/>

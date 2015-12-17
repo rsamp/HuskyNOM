@@ -3,9 +3,16 @@ var AppDispatcher = require('../dispatcher/dispatcher'),
     ReviewConstants = require('../constants/reviewConstants');
 
 var ApiActions = {
-  receiveAllBusinesses: function(businesses){
+  receiveFilteredBusinesses: function(businesses){
     AppDispatcher.dispatch({
       actionType: BusinessConstants.BUSINESSES_RECEIVED,
+      businesses: businesses
+    })
+  },
+
+  receiveAllBusinesses: function(businesses){
+    AppDispatcher.dispatch({
+      actionType: BusinessConstants.ALL_BUSINESSES_RECEIVED,
       businesses: businesses
     })
   },

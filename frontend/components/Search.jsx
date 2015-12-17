@@ -7,7 +7,7 @@ var React = require('react'),
     Map = require('./Map');
 
 function _fetchBusinesses(){
-  return BusinessStore.all();
+  return BusinessStore.filtered();
 }
 
 function _fetchFilters(){
@@ -28,6 +28,13 @@ var Search = React.createClass({
     ApiUtil.fetchBusinesses();
   },
 
+  componentWillMount: function(){
+    this.loadState = "Map is loading";
+    setInterval(function(){
+      this.loadState = "No results";
+    }, 3000)
+  },
+
   componentDidMount: function(){
     this.filterListener = FilterParamsStore.addListener(this._filtersChanged);
     this.businessListener = BusinessStore.addListener(this._businessesChanged);
@@ -40,7 +47,7 @@ var Search = React.createClass({
 
   render: function(){
     var businesses = this.state.businesses;
-    var index = (businesses.length === 0) ? "Map is loading" : <BusinessIndex businesses={businesses}/>
+    var index = (businesses.length === 0) ? this.loadState : <BusinessIndex businesses={businesses}/>
     return(
       <div>
         <Map mapClass={"indexMap"} businesses={businesses}/>

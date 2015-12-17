@@ -4,23 +4,6 @@ var React = require('react'),
     BusinessIndexItem = require('./IndexItem');
 
 var BusinessIndex = React.createClass({
-  // getInitialState: function(){
-  //   return {businesses: BusinessStore.all()};
-  // },
-  //
-  // _onChange: function(){
-  //   this.setState({businesses: BusinessStore.all()});
-  // },
-  //
-  // componentDidMount: function(){
-  //   this.businessListener = BusinessStore.addListener(this._onChange);
-  //   ApiUtil.fetchBusinesses();
-  // },
-  //
-  // componentWillUnmount: function(){
-  //   this.businessListener.remove();
-  // },
-
   render: function(){
     var businesses = this.props.businesses.map(function(business){
       return <BusinessIndexItem key={business.id} business={business} />

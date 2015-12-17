@@ -13,6 +13,17 @@ ApiUtil = {
       data: filter,
       url: "api/businesses",
       success: function(businesses){
+        ApiActions.receiveFilteredBusinesses(businesses);
+      }
+    });
+  },
+
+  fetchAllBusinesses: function(){
+
+    $.ajax({
+      method: "GET",
+      url: "api/businesses",
+      success: function(businesses){
         ApiActions.receiveAllBusinesses(businesses);
       }
     });
