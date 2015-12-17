@@ -1,5 +1,5 @@
 var React = require('react'),
-    Map = require('../Map'),
+    Map = require('./Map'),
     ReviewIndex = require('../review/Index');
 
 var Business = React.createClass({
