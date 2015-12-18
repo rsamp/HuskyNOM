@@ -34,22 +34,17 @@ var ReviewForm = React.createClass({
         <h5>{business.name}</h5>
         <p>{business.address}</p>
         <form onSubmit={this.handleSubmit}>
-          <label>
-            Star Rating:
-            <div>
-              <input name="star1" type="radio" className="star-rating"/>
-              <input name="star1" type="radio" className="star-rating"/>
-              <input name="star1" type="radio" className="star-rating"/>
-              <input name="star1" type="radio" className="star-rating"/>
-              <input name="star1" type="radio" className="star-rating"/>
-            </div>
-            <br/>
-            <textarea placeholder='Enter your review here'
-                      onChange={this.handleBody}
-                      value={this.state.body}></textarea>
-            <br/>
-            <input type='submit' value='Post Review'/>
-          </label>
+          <input name="star1" type="radio" className="star"/>
+          <input name="star1" type="radio" className="star"/>
+          <input name="star1" type="radio" className="star"/>
+          <input name="star1" type="radio" className="star"/>
+          <input name="star1" type="radio" className="star"/>
+          <br/>
+          <textarea placeholder='Enter your review here'
+                    onChange={this.handleBody}
+                    value={this.state.body}></textarea>
+          <br/>
+          <input type='submit' value='Post Review'/>
         </form>
       </div>
 
