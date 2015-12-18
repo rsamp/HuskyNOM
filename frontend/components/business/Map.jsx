@@ -17,7 +17,7 @@ var Map = React.createClass({
 
   createMarker: function(){
     var business = this.props.businesses[0];
-    var pos = new google.maps.LatLng(business.lat, business.lng)
+    var pos = new google.maps.LatLng(business.lat, business.lng);
     var marker = new google.maps.Marker({
       position: pos,
       map: this.map,
@@ -28,7 +28,7 @@ var Map = React.createClass({
   },
 
   render: function(){
-    return (<div ref="map" className={this.props.mapClass}>Map</div>)
+    return (<div ref="map" className={this.props.mapClass}>Map</div>);
   }
 });
 

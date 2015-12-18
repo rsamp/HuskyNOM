@@ -7,7 +7,7 @@ var BusinessIndex = React.createClass({
   render: function(){
 
     var businesses = this.props.businesses.map(function(business){
-      return <BusinessIndexItem key={business.id} business={business} />
+      return <BusinessIndexItem key={business.id} business={business} />;
     });
 
     return(
@@ -16,6 +16,6 @@ var BusinessIndex = React.createClass({
       </ul>
     );
   }
-})
+});
 
-module.exports = BusinessIndex
+module.exports = BusinessIndex;

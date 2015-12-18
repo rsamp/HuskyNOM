@@ -39,3 +39,6 @@ use LinkState instead of individual handlers onChange - Form.jsx
 revisit printing of Date. can I use new Date(pass any format here)?
 
 revisit how to auto populate fields with demo account info
+
+star-rating css page not recognized
+heroku assets

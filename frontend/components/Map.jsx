@@ -27,7 +27,7 @@ var Map = React.createClass({
       var bounds = this.map.getBounds();
       var northEast = _getCoordsObj(bounds.getNorthEast());
       var southWest = _getCoordsObj(bounds.getSouthWest());
-      var bounds = {northEast: northEast, southWest: southWest};
+      bounds = {northEast: northEast, southWest: southWest};
       FilterActions.updateBounds(bounds);
     }.bind(this));
   },
@@ -62,10 +62,10 @@ var Map = React.createClass({
     var toAdd = [];
     var toRemove = this.markers.slice(0);
     businesses.forEach(function(business, idx){
-      var idx = -1;
+      idx = -1;
 
       for(var i = 0; i < toRemove.length; i++){
-        if(toRemove[i].businessId == business.id){
+        if(toRemove[i].businessId === business.id){
           idx = i;
           break;
         }
@@ -82,7 +82,7 @@ var Map = React.createClass({
   },
 
   render: function(){
-    return (<div ref="map" className={this.props.mapClass}>Map</div>)
+    return (<div ref="map" className={this.props.mapClass}>Map</div>);
   }
 });
 

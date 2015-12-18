@@ -36,7 +36,13 @@ var ReviewForm = React.createClass({
         <form onSubmit={this.handleSubmit}>
           <label>
             Star Rating:
-            <input id="input-id" className="rating" type='number' min='0' max='5' step='1' onChange={this.handleRating}/>
+            <div>
+              <input name="star1" type="radio" className="star-rating"/>
+              <input name="star1" type="radio" className="star-rating"/>
+              <input name="star1" type="radio" className="star-rating"/>
+              <input name="star1" type="radio" className="star-rating"/>
+              <input name="star1" type="radio" className="star-rating"/>
+            </div>
             <br/>
             <textarea placeholder='Enter your review here'
                       onChange={this.handleBody}
@@ -50,6 +56,6 @@ var ReviewForm = React.createClass({
     );
   }
 });
-// $("input-id").rating();
+// <input id="input-id" className="rating" type='number' min='0' max='5' step='1' onChange={this.handleRating}/>
 
 module.exports = ReviewForm;
