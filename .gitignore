@@ -18,3 +18,5 @@ bundle.js
 # Ignore application configuration
 /config/application.yml
 .eslintrc
+
+/assets/unused/*.png

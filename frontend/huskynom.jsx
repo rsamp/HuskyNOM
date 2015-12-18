@@ -34,4 +34,4 @@ var routes = (
 $(function(){
   var root = document.getElementById('content');
   ReactDOM.render(<Router>{routes}</Router>, root);
-})
+});

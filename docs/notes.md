@@ -2,9 +2,13 @@
 
 UW Color Scheme:
 
-Purple: 4b2e83
-Gold: e8e3d3
-Metallic Gold: 85754d
+Purple: #4b2e83
+Gold: #e8e3d3
+Metallic Gold: #85754d
+Dark Gray: #444444
+Light Gray: #d9d9d9
+
+Wireframe: #8856a1
 
 ## Come back to
 I allowed Address to accept null in database. Look into using Google Maps Reverse Geocoding to get address from Lat/Lng

@@ -1,17 +1,17 @@
-<h1>Sign Up</h1>
-
-<form class="" action=<%= users_url %> method="post">
+<img class="user-auth-logo" src="/assets/HuskyNOMcom-lt-purple.png" alt="HuskyNOM.com" />
+<form class="input-group user-auth" action=<%= users_url %> method="post">
+  <h1>Sign Up</h1>
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <label for="username">Username</label>
-  <input type="text" name=user[username] value="" id="username">
+  <input class="form-control" type="text" name=user[username] value="" id="username" placeholder="Username">
   <br>
-  <label for="password">Password</label>
-  <input type="password" name=user[password] value="" id="password">
   <br>
-  <input type="submit" name="name" value="Sign Up">
+  <input class="form-control" type="password" name=user[password] value="" id="password" placeholder="Password">
+  <br>
+  <br>
+  <input class="form-control auth-submit" type="submit" name="name" value="Sign Up">
+  <br>
   <br>
   <p>
     <%= link_to "Already have an account? Sign in", new_session_url %>
   </p>
-
 </form>

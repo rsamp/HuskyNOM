@@ -18,22 +18,22 @@ var Navbar = React.createClass({
       method: 'DELETE',
       url: '/session',
       success: function(){
-        window.location = '/';
+        window.location.href = '/';
       }
     });
   },
 
   render: function(){
-    var img = 'assets/HuskyNOM.png';
+    var img = 'assets/HuskyNOM-white.png';
     return(
-      <nav className="navbar navbar-default">
+      <nav className="navbar nav" id="navbar">
         <div className="nav-container">
-          <a onClick={this.goToHome}><img src={img} alt="logo" className="logo"/></a>
-          <a onClick={this.goToHome}><h5>Home</h5></a>
-          <h5>Write a Review</h5>
-          <h5>Submit a Business</h5>
+          <img src={img} alt="logo" className="logo" onClick={this.goToHome}/>
+          <h4 onClick={this.goToHome}>Home</h4>
+          <h4>Write a Review</h4>
+          <h4>Submit a Business</h4>
           <Searchbar/>
-          <a onClick={this.signOut} className="sign-out"><h5>Sign Out</h5></a>
+          <h4 onClick={this.signOut} className="sign-out">Sign Out</h4>
         </div>
       </nav>
     );

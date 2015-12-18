@@ -16,12 +16,60 @@
 @import "bootstrap";
 @import "bootstrap-sprockets";
 
+body{
+  background-color: #d9d9d9;
+}
+
+.body {
+  width: 1000px;
+  margin: auto;
+  background-color: #ffffff;
+  clear: both;
+  padding: 10px 50px;
+  overflow: auto;
+}
+
+a{
+  cursor: pointer;
+}
+
+.user-auth-logo{
+  display: block;
+  width: 400px;
+  margin: auto;
+}
+
+.user-auth{
+  width: 350px;
+  margin: auto;
+  padding: 20px 40px;
+  color: #8856a1;
+
+  p {
+    text-align: center;
+  }
+}
+
+.auth-submit{
+  background-color: #8856a1;
+  color: #ffffff;
+}
+
 .navbar-default{
-  // background-color: purple;
   height: 60px;
   width: 100%;
 }
+
+.nav{
+  margin-bottom: 0px;
+  border-radius: 0;
+}
+
 nav {
+  background-color: #8856a1;
+  color: #ffffff;
+
+
   .nav-container {
     width: 900px;
     margin: auto;
@@ -31,17 +79,14 @@ nav {
     height: 60px;
   }
 
-  img, h1, h5, #searchbar{
+  img, h4, #searchbar{
     float: left;
     margin-right: 10px;
+    cursor: pointer;
   }
 
-  h1 {
-    margin-top: 10px;
-  }
-
-  h5 {
-    margin-top: 22px;
+  h4 {
+    margin-top: 20px;
   }
 
   #searchbar {
@@ -49,14 +94,13 @@ nav {
     height: 30px;
   }
 
+  .searchbar-list{
+    z-index: 1;
+  }
+
   .sign-out {
     float: right;
   }
-}
-
-.body {
-  width: 900px;
-  margin: auto;
 }
 
 .indexMap{
@@ -68,18 +112,4 @@ nav {
 .businessMap{
   height: 200px;
   width: 400px;
-}
-
-.body {
-  clear: both;
-}
-
-.searchbar-list{
-  border: 1px solid black;
-  list-style: none;
-  width: 149px;
-  background-color: white;
-  position: relative;
-  right: 39px;
-  z-index: 1;
 }

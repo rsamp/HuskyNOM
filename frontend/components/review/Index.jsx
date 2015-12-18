@@ -1,37 +1,37 @@
 var React = require('react'),
-    ReviewStore = require('../../stores/review'),
-    ApiUtil = require('../../util/api_util'),
-    ReviewIndexItem = require('./IndexItem'),
-    ReviewForm = require('./Form');
+  ReviewStore = require('../../stores/review'),
+  ApiUtil = require('../../util/api_util'),
+  ReviewIndexItem = require('./IndexItem'),
+  ReviewForm = require('./Form');
 
 var ReviewIndex = React.createClass({
-  getInitialState: function(){
-    return {reviews: ReviewStore.all()}
+  getInitialState: function() {
+    return {reviews: ReviewStore.all()};
   },
 
-  _onChange: function(){
-    this.setState({reviews: ReviewStore.all()})
+  _onChange: function() {
+    this.setState({reviews: ReviewStore.all()});
   },
 
-  componentDidMount: function(){
+  componentDidMount: function() {
     this.reviewListener = ReviewStore.addListener(this._onChange);
     ApiUtil.fetchReviews();
   },
 
-  componentWillUnmount: function(){
+  componentWillUnmount: function() {
     this.reviewListener.remove();
   },
 
-  createReview: function(e){
+  createReview: function(e) {
     e.preventDefault();
     // Need to figure out how to hide by default and slide out when clicked
   },
 
-  render: function(){
+  render: function() {
     var business = this.props.business;
-    var reviews = this.state.reviews.map(function(review){
-      if (business.id === review.business_id){
-        return <ReviewIndexItem key={review.id} review={review} />
+    var reviews = this.state.reviews.map(function(review) {
+      if (business.id === review.business_id) {
+        return <ReviewIndexItem key={review.id} review={review}/>;
       }
     });
     // var noReviews;
@@ -42,11 +42,12 @@ var ReviewIndex = React.createClass({
     //   reviews = "There are no reviews for this restaurant. Be the first!"
     // }
 
-    return(
+    return (
       <div>
         <button onClick={this.createReview}>Write a review</button>
         <ReviewForm business={business}/>
-        <h3>Reviews for {business.name}</h3>
+        <h3>Reviews for
+          {business.name}</h3>
         <ul>
           {reviews}
         </ul>
@@ -54,6 +55,6 @@ var ReviewIndex = React.createClass({
     );
     // {business.reviews.length > 0 ? reviews : noReviews}
   }
-})
+});
 
-module.exports = ReviewIndex
+module.exports = ReviewIndex;

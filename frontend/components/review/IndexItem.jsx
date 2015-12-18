@@ -4,7 +4,7 @@ var ReviewIndexItem = React.createClass({
   render: function(){
     var review = this.props.review;
     var date = review.created_at.split("T")[0];
-    var user = review.author.username
+    var user = review.author.username;
     return (
       <li>
           <div className="user-info">

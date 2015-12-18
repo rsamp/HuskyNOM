@@ -18,11 +18,11 @@ var ReviewForm = React.createClass({
   },
 
   handleBody: function(e){
-    this.setState({body: e.target.value})
+    this.setState({body: e.target.value});
   },
 
   handleRating: function(e){
-    this.setState({rating: e.target.value})
+    this.setState({rating: e.target.value});
   },
 
   render: function(){
@@ -36,7 +36,7 @@ var ReviewForm = React.createClass({
         <form onSubmit={this.handleSubmit}>
           <label>
             Star Rating:
-            <input type='number' min='0' max='5' onChange={this.handleRating}/>
+            <input id="input-id" className="rating" type='number' min='0' max='5' step='1' onChange={this.handleRating}/>
             <br/>
             <textarea placeholder='Enter your review here'
                       onChange={this.handleBody}
@@ -46,8 +46,10 @@ var ReviewForm = React.createClass({
           </label>
         </form>
       </div>
+
     );
   }
 });
+// $("input-id").rating();
 
 module.exports = ReviewForm;

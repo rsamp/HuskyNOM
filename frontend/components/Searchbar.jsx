@@ -11,11 +11,11 @@ var Searchbar = React.createClass({
   },
 
   _onChange: function(){
-    this.setState({businesses: BusinessStore.all()})
+    this.setState({businesses: BusinessStore.all()});
   },
 
   componentWillMount: function(){
-    this.searchListener = BusinessStore.addListener(this._onChange)
+    this.searchListener = BusinessStore.addListener(this._onChange);
     ApiUtil.fetchAllBusinesses();
   },
 
@@ -24,7 +24,7 @@ var Searchbar = React.createClass({
   },
 
   handleInput: function(e){
-    this.setState({inputVal: e.currentTarget.value})
+    this.setState({inputVal: e.currentTarget.value});
   },
 
   matches: function(){
@@ -50,20 +50,21 @@ var Searchbar = React.createClass({
   selectBusiness: function(business, e){
     e.preventDefault();
     var url = '/businesses/' + business.id;
-    this.history.pushState({business: business}, url)
+    this.history.pushState({business: business}, url);
   },
 
   render: function(){
     var businesses = this.matches();
     businesses = businesses.map(function(business, i){
-      return <li className="searchbar-list" key={i} onClick={this.selectBusiness.bind(null, business)}>{business.name}</li>
+      return <a className="list-group-item searchbar-list" key={i} onClick={this.selectBusiness.bind(null, business)}>{business.name}</a>;
     }.bind(this));
+
     return(
       <form id="searchbar" className="navbar-form">
         <input type="text" className="form-control" onChange={this.handleInput} value={this.state.inputVal}/>
-        <ul>
+        <div className="list-group">
           {businesses}
-        </ul>
+        </div>
       </form>
     );
   }
