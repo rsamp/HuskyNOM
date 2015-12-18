@@ -10,9 +10,6 @@ var BusinessIndex = React.createClass({
       return <BusinessIndexItem key={business.id} business={business} />
     });
 
-    // businesses = businesses.length === 0 ? "No results" : businesses;
-    // debugger;
-
     return(
       <ul>
         {businesses}

@@ -15,8 +15,8 @@ var allBusinesses = function(businesses){
 }
 
 var createBusiness = function(business){
-  _filteredBusinesses[business.id] = business;
-  _allBusinesses[business.id] = business;
+  _filteredBusinesses.push(business);
+  _allBusinesses.push(business);
 }
 
 BusinessStore.all = function(){

@@ -29,6 +29,13 @@ var ApiActions = {
       actionType: ReviewConstants.REVIEWS_RECEIVED,
       reviews: reviews
     })
+  },
+
+  createReview: function(review){
+    AppDispatcher.dispatch({
+      actionType: ReviewConstants.REVIEW_RECEIVED,
+      review: review
+    })
   }
 };
 

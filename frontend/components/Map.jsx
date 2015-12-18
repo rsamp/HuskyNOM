@@ -11,7 +11,6 @@ function _getCoordsObj(latLng) {
 
 var Map = React.createClass({
   componentDidMount: function(){
-    console.log("mounting map");
     var map = ReactDOM.findDOMNode(this.refs.map);
     var mapOptions = {
       center: {lat: 47.660, lng: -122.3148},
@@ -80,10 +79,6 @@ var Map = React.createClass({
     });
     toAdd.forEach(this.createMarker);
     toRemove.forEach(this.removeMarker);
-  },
-
-  componentWillUnmount: function(){
-    console.log("map unmounted");
   },
 
   render: function(){

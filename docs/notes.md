@@ -21,9 +21,7 @@ maybe don't allow businesses to be submitted. make sure to remove route and cont
 
 benchbnb search.jsx - contextTypes
 
-revisit logo image
-
-refactoring opportunity: reviewIndex - instead of the if statement in render, perform a filter in the model
+refactoring opportunities: reviewIndex - instead of the if statement in render, perform a filter in the model
 
 do review creation through controller with access to current user
 
@@ -31,7 +29,10 @@ search.jsx setinterval
 
 average the ratings
 
+Map Loading... -> No results Search.jsx: Use the store to know when results are finished being filtered. Similar issue with if no reviews yet for a business
 
-Questions:
-Map Loading... Search.jsx
-Show.jsx page map - should I have another Map element?
+use LinkState instead of individual handlers onChange - Form.jsx
+
+revisit printing of Date. can I use new Date(pass any format here)?
+
+revisit how to auto populate fields with demo account info

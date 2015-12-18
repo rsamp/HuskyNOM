@@ -9,7 +9,6 @@ var React = require('react'),
     BusinessIndex = require('./components/business/Index'),
     BusinessShow = require('./components/business/Show');
 
-
 var App = React.createClass({
   render: function(){
     return(

@@ -59,8 +59,8 @@ var Searchbar = React.createClass({
       return <li className="searchbar-list" key={i} onClick={this.selectBusiness.bind(null, business)}>{business.name}</li>
     }.bind(this));
     return(
-      <form id="searchbar">
-        <input type="text" onChange={this.handleInput} value={this.state.inputVal}/>
+      <form id="searchbar" className="navbar-form">
+        <input type="text" className="form-control" onChange={this.handleInput} value={this.state.inputVal}/>
         <ul>
           {businesses}
         </ul>

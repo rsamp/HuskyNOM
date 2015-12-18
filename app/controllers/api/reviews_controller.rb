@@ -4,13 +4,15 @@ class Api::ReviewsController < ApplicationController
   end
 
   def create
-    review = Review.create!(review_params)
-    render json: review
+    @review = Review.new(review_params)
+    @review.author = current_user
+    @review.author_id = current_user.id
+    @review.save!
+    render :show
   end
 
   def show
-    review = Review.find(params[:id])
-    render json: review
+    @review = Review.find(params[:id])
   end
 
   def destroy

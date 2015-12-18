@@ -10,7 +10,7 @@ var resetReviews = function(reviews){
 }
 
 var createReview = function(review){
-  _reviews[review.id] = review;
+  _reviews.push(review);
 }
 
 ReviewStore.all = function(){

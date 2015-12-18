@@ -9,5 +9,11 @@
   <input type="password" name=user[password] value="" id="password">
   <br>
   <input type="submit" name="name" value="Sign Up">
+  <br>
+  <p>
+    Already have an account?
+    <br>
+    Please <%= link_to "sign in", new_session_url %> or use the <%= link_to "demo account" %>
+  </p>
 
 </form>

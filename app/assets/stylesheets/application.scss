@@ -22,7 +22,7 @@
   width: 100%;
 }
 nav {
-  #nav-container {
+  .nav-container {
     width: 900px;
     margin: auto;
   }
@@ -45,8 +45,12 @@ nav {
   }
 
   #searchbar {
-    margin-top: 17px;
+    margin-top: 12px;
     height: 30px;
+  }
+
+  .sign-out {
+    float: right;
   }
 }
 

@@ -3,9 +3,7 @@ var React = require('react'),
 
 var Map = React.createClass({
   componentDidMount: function(){
-    debugger;
     var business = this.props.businesses[0];
-    console.log("mounting map");
     var map = ReactDOM.findDOMNode(this.refs.map);
     var mapOptions = {
       center: {lat: business.lat, lng: business.lng},
@@ -27,10 +25,6 @@ var Map = React.createClass({
       businessId: business.id
     });
     this.markers.push(marker);
-  },
-
-  componentWillUnmount: function(){
-    console.log("map unmounted");
   },
 
   render: function(){
