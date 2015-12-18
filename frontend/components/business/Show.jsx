@@ -7,7 +7,7 @@ var Business = React.createClass({
   mixins: [History],
 
   getInitialState: function(){
-    return {business: this.props.location.state.business}
+    return {business: this.props.location.state.business};
   },
 
   render: function(){

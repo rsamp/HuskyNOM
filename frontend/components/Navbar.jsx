@@ -24,11 +24,11 @@ var Navbar = React.createClass({
   },
 
   render: function(){
-    var img = 'assets/HuskyNOM-white.png';
+    var logo = 'assets/HuskyNOM-white.png';
     return(
       <nav className="navbar nav" id="navbar">
         <div className="nav-container">
-          <img src={img} alt="logo" className="logo" onClick={this.goToHome}/>
+          <img src={logo} alt="logo" className="logo" onClick={this.goToHome}/>
           <h4 onClick={this.goToHome}>Home</h4>
           <h4>Write a Review</h4>
           <h4>Submit a Business</h4>

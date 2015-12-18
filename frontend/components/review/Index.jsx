@@ -46,8 +46,7 @@ var ReviewIndex = React.createClass({
       <div>
         <button onClick={this.createReview}>Write a review</button>
         <ReviewForm business={business}/>
-        <h3>Reviews for
-          {business.name}</h3>
+        <h3>Reviews for {business.name}</h3>
         <ul>
           {reviews}
         </ul>

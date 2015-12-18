@@ -1,20 +1,20 @@
 var React = require('react'),
-    ApiUtil = require('../../util/api_util');
+    ApiUtil = require('../../util/api_util'),
+    Rating = require('react-rating');
 
 var ReviewForm = React.createClass({
   getInitialState: function(){
-    return {rating: 5, body: ""};
+    return {rating: 0, body: ""};
   },
 
   handleSubmit: function(e){
     e.preventDefault();
-
     ApiUtil.createReview({
       business_id: this.props.business.id,
       rating: this.state.rating,
       body: this.state.body });
 
-    this.setState({rating: 5, body: ""});
+    this.setState({rating: 0, body: ""});
   },
 
   handleBody: function(e){
@@ -22,23 +22,22 @@ var ReviewForm = React.createClass({
   },
 
   handleRating: function(e){
-    this.setState({rating: e.target.value});
+    this.setState({rating: e});
   },
 
   render: function(){
     var business = this.props.business;
 
+    var style = {
+      color: 'blue'
+    };
+
     return(
       <div>
         <h3>Write a Review</h3>
-        <h5>{business.name}</h5>
         <p>{business.address}</p>
         <form onSubmit={this.handleSubmit}>
-          <input name="star1" type="radio" className="star"/>
-          <input name="star1" type="radio" className="star"/>
-          <input name="star1" type="radio" className="star"/>
-          <input name="star1" type="radio" className="star"/>
-          <input name="star1" type="radio" className="star"/>
+          <Rating initialRate={this.state.rating} onChange={this.handleRating} />
           <br/>
           <textarea placeholder='Enter your review here'
                     onChange={this.handleBody}
@@ -47,10 +46,8 @@ var ReviewForm = React.createClass({
           <input type='submit' value='Post Review'/>
         </form>
       </div>
-
     );
   }
 });
-// <input id="input-id" className="rating" type='number' min='0' max='5' step='1' onChange={this.handleRating}/>
 
 module.exports = ReviewForm;

@@ -15,8 +15,6 @@ I allowed Address to accept null in database. Look into using Google Maps Revers
 
 After adding Image model, revisit BusinessIndexItem and Business Page. Will also need default "no-image" image
 
-removed return statement from store onDispatch
-
 don't forget jbuilder if getting ajax errors
 
 just have map and search on homepage. this would take away the bestOf and the recentActivity. changed Index.jsx
@@ -40,5 +38,10 @@ revisit printing of Date. can I use new Date(pass any format here)?
 
 revisit how to auto populate fields with demo account info
 
-star-rating css page not recognized
-heroku assets
+edit star.gif to be purple
+
+show stars in review index item
+set minimum rating. use flash errors? could be annoying with react.
+form component did mount weird star thing after refresh
+
+glyphicons in ratings

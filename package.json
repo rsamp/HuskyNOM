@@ -23,6 +23,7 @@
     "jquery": "^2.1.4",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
+    "react-rating": "^0.1.0",
     "react-router": "^1.0.2",
     "webpack": "^1.12.9"
   },
