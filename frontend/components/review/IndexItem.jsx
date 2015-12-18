@@ -8,30 +8,9 @@ var ReviewIndexItem = React.createClass({
     var user = review.author.username;
     var rating = review.rating;
 
-    // var reviewName = "review" + review.id;
-
-    // var checked = [];
-
-    // for (var i = 1; i < 6; i++){
-    //   if (i === rating){
-    //     checked.push("checked");
-    //   } else {
-    //     checked.push("");
-    //   }
-    // }
-    //
-    // var starRating = checked.map(function(star, idx){
-    //   return <input name={reviewName}
-    //                 key={idx}
-    //                 type="radio"
-    //                 readOnly
-    //                 className="star posted-review"
-    //                 checked={checked[idx]} />;
-    // });
-
-    var ratingStyle= {
-      color: 'white'
-    };
+    // var ratingStyle= {
+    //   color: 'white'
+    // };
 
     return (
       <li>

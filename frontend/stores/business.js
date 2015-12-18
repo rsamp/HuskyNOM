@@ -8,16 +8,16 @@ var _allBusinesses = [];
 
 var filterBusinesses = function(businesses){
   _filteredBusinesses = businesses.slice(0);
-}
+};
 
 var allBusinesses = function(businesses){
   _allBusinesses = businesses;
-}
+};
 
 var createBusiness = function(business){
   _filteredBusinesses.push(business);
   _allBusinesses.push(business);
-}
+};
 
 BusinessStore.all = function(){
   return _allBusinesses.slice(0);
