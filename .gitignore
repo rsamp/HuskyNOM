@@ -17,4 +17,4 @@ bundle.js
 
 # Ignore application configuration
 /config/application.yml
-.eslintrc.json
+.eslintrc

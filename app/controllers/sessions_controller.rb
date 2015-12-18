@@ -15,8 +15,7 @@ class SessionsController < ApplicationController
 
   def destroy
     logout_user
-    render json: {up: "whats up"}
-    # redirect_to new_session_url
+    render json: {sign_out: "complete"}
   end
 
 end
