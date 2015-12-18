@@ -25,10 +25,9 @@ refactoring opportunities: reviewIndex - instead of the if statement in render, 
 
 do review creation through controller with access to current user
 
-search.jsx setinterval
-
 average the ratings
 
+search.jsx setinterval
 Map Loading... -> No results Search.jsx: Use the store to know when results are finished being filtered. Similar issue with if no reviews yet for a business
 
 use LinkState instead of individual handlers onChange - Form.jsx

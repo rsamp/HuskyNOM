@@ -12,7 +12,6 @@ address     | string    |
 hours       | string    |
 delivery    | boolean   |
 accept_cc   | boolean   |
-image_id    | integer   | foreign key (referenes images)
 
 ## reviews
 column name | data type | details
@@ -35,6 +34,8 @@ session_token   | string    | not null, indexed, unique
 column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
-url             | string    | not null
-imageable_id    | integer   | not null
-imageable_type  | string    | not null
+cloudinary_id   | string    | not null
+business_id     | integer   | not null (for starters)
+main            | boolean   | not null
+imageable_id    | integer   | not null (if time allows)
+imageable_type  | string    | not null (if time allows)

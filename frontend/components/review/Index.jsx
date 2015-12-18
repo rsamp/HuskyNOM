@@ -34,7 +34,7 @@ var ReviewIndex = React.createClass({
         return <ReviewIndexItem key={review.id} review={review} />
       }
     });
-    var noReviews;
+    // var noReviews;
     // if (business.reviews.length === 0){
     //   noReviews = "There are no reviews for this restaurant. Be the first!";
     // }
