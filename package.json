@@ -22,6 +22,7 @@
     "history": "~1.13.x",
     "jquery": "^2.1.4",
     "react": "^0.14.3",
+    "react-bootstrap": "^0.28.1",
     "react-dom": "^0.14.3",
     "react-rating": "^0.1.0",
     "react-router": "^1.0.2",

@@ -15,7 +15,6 @@ var ApiUtil = {
   },
 
   fetchAllBusinesses: function(){
-
     $.ajax({
       method: "GET",
       url: "api/businesses",

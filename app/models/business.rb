@@ -15,7 +15,6 @@ class Business < ActiveRecord::Base
           .where("lng < ?", bounds[:northEast][:lng])
     end
 
-
     # For these two, only filter if the box is checked. Don't want to
     # filter out places that offer delivery just because the box isn't checked.
     if delivery == "true"
@@ -26,6 +25,18 @@ class Business < ActiveRecord::Base
     end
 
     businesses
+  end
+
+  def self.average_rating
+    total_stars = 0
+
+    reviews.each do |review|
+      total_stars += review.rating
+    end
+
+    avg = 1.0 * total_stars / reviews.count
+
+    rounded_avg = (avg * 4).round.to_f/4
   end
 
 end

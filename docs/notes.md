@@ -45,3 +45,5 @@ set minimum rating. use flash errors? could be annoying with react.
 form component did mount weird star thing after refresh
 
 glyphicons in ratings
+
+need to understand how to get average rating from model to react
