@@ -1,8 +1,8 @@
 var React = require('react'),
-  ReviewStore = require('../../stores/review'),
-  ApiUtil = require('../../util/api_util'),
-  ReviewIndexItem = require('./IndexItem'),
-  ReviewForm = require('./Form');
+    ReviewStore = require('../../stores/review'),
+    ApiUtil = require('../../util/api_util'),
+    ReviewIndexItem = require('./IndexItem'),
+    ReviewForm = require('./Form');
 
 var ReviewIndex = React.createClass({
   getInitialState: function() {

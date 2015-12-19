@@ -1,11 +1,7 @@
 var ApiActions = require('../actions/api_actions'),
     FilterParamsStore = require('../stores/filter_params');
 
-ApiUtil = {
-  // fetchCurrentUser: function(){
-  //
-  // },
-
+var ApiUtil = {
   fetchBusinesses: function(){
     var filter = FilterParamsStore.params();
     $.ajax({
@@ -57,6 +53,27 @@ ApiUtil = {
       data: {review: data},
       success: function(review){
         ApiActions.createReview(review);
+      }
+    });
+  },
+
+  fetchImages: function(){
+    $.ajax({
+      method: "GET",
+      url: "api/images",
+      success: function(images){
+        ApiActions.receiveAllImages(images);
+      }
+    });
+  },
+
+  createImage: function(data){
+    $.ajax({
+      method: "POST",
+      url: "api/images",
+      data: data,
+      success: function(image){
+        ApiActions.createImage(image);
       }
     });
   }

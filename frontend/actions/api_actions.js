@@ -1,6 +1,7 @@
 var AppDispatcher = require('../dispatcher/dispatcher'),
-  BusinessConstants = require('../constants/businessConstants'),
-  ReviewConstants = require('../constants/reviewConstants');
+    BusinessConstants = require('../constants/businessConstants'),
+    ReviewConstants = require('../constants/reviewConstants'),
+    ImageConstants = require('../constants/imageConstants');
 
 var ApiActions = {
   receiveFilteredBusinesses: function(businesses) {
@@ -35,6 +36,20 @@ var ApiActions = {
     AppDispatcher.dispatch({
       actionType: ReviewConstants.REVIEW_RECEIVED,
       review: review
+    });
+  },
+
+  receiveAllImages: function(images) {
+    AppDispatcher.dispatch({
+      actionType: ImageConstants.IMAGES_RECEIVED,
+      images: images
+    });
+  },
+
+  createImage: function(image) {
+    AppDispatcher.dispatch({
+      actionType: ImageConstants.IMAGE_RECEIVED,
+      image: image
     });
   }
 };

@@ -7,11 +7,11 @@ var _reviews = [];
 
 var resetReviews = function(reviews){
   _reviews = reviews.slice(0);
-}
+};
 
 var createReview = function(review){
   _reviews.push(review);
-}
+};
 
 ReviewStore.all = function(){
   return _reviews.slice(0);

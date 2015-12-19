@@ -1,6 +1,4 @@
 var React = require('react'),
-    BusinessStore = require('../../stores/business'),
-    ApiUtil = require('../../util/api_util'),
     BusinessIndexItem = require('./IndexItem');
 
 var BusinessIndex = React.createClass({

@@ -19,6 +19,6 @@ class Api::ImagesController < ApplicationController
   private
 
   def image_params
-    params.require(:image).permit(:cloudinary_id, :business_id, :main)
+    params.require(:image).permit(:cloudinary_id, :business_id)
   end
 end

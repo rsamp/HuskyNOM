@@ -15,9 +15,12 @@
 
 <script type="text/javascript">
   window.API_KEYS = {
-    GMAP_KEY: "<%= ENV['GMAP_KEY'] %>",
-    CLOUD_NAME: "<%= ENV['CLOUD_NAME'] %>",
-    UPLOAD_PRESET: "<%= ENV['UPLOAD_PRESET'] %>"
+    GMAP_KEY: "<%= ENV['GMAP_KEY'] %>"
+  };
+  window.CLOUDINARY_OPTIONS = {
+    cloud_name: "<%= ENV['CLOUD_NAME'] %>",
+    upload_preset: "<%= ENV['UPLOAD_PRESET'] %>",
+    theme: 'purple'
   };
 </script>
 <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV['GMAP_KEY']}"%>
