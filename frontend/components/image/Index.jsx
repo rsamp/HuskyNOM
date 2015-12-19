@@ -1,7 +1,8 @@
 var React = require('react'),
     ImageStore = require('../../stores/image'),
     ApiUtil = require('../../util/api_util'),
-    AddImageButton = require('./AddButton');
+    AddImageButton = require('./AddButton'),
+    ImageIndexItem = require('./IndexItem');
 
 var ImageIndex = React.createClass({
   getInitialState: function(){
@@ -30,15 +31,13 @@ var ImageIndex = React.createClass({
     var images = this.state.images.map(function(image){
       if (this.props.businessId === image.business_id) {
         return (
-          <li className="image" key={image.id}>
-            <img src={'http://res.cloudinary.com/djk3yhmfn/image/upload/' + image.cloudinary_id}/>
-          </li>
+          <ImageIndexItem image={image} key={image.id}/>
         );
       }
     }.bind(this));
 
     return(
-      <div>
+      <div className="images">
         <AddImageButton postImage={this.postImage}/>
         <ul>
           {images}

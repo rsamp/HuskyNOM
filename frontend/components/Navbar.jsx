@@ -31,7 +31,7 @@ var Navbar = React.createClass({
           <img src={logo} alt="logo" className="logo" onClick={this.goToHome}/>
           <h4 onClick={this.goToHome}>Home</h4>
           <h4>Write a Review</h4>
-          <h4>Submit a Business</h4>
+          <h4>Submit a Restaurant</h4>
           <Searchbar/>
           <h4 onClick={this.signOut} className="sign-out">Sign Out</h4>
         </div>

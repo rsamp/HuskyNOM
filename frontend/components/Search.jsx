@@ -51,7 +51,7 @@ var Search = React.createClass({
     return(
       <div>
         <Map mapClass={"indexMap"} businesses={businesses}/>
-        <h3>Businesses within map bounds</h3>
+        <h3>Restaurants within map bounds</h3>
         <Filters businesses={businesses} filterParams={this.state.filterParams}/>
         {index}
       </div>
