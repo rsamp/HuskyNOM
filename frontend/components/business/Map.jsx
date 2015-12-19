@@ -8,7 +8,8 @@ var Map = React.createClass({
     var mapOptions = {
       center: {lat: business.lat, lng: business.lng},
       zoom: 16,
-      draggable: false
+      draggable: false,
+      scrollwheel: false
     };
     this.map = new google.maps.Map(map, mapOptions);
     this.markers = [];
