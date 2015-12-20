@@ -1,3 +1,48 @@
 // Place all the styles related to the Sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.user-auth-logo {
+  display: block;
+  width: 400px;
+  margin: auto;
+}
+.user-auth {
+  width: 350px;
+  margin: auto;
+  padding: 20px 40px;
+  color: #8856a1;
+  p {
+    text-align: center;
+  }
+  .errors {
+    text-align: left;
+    // position: relative;
+    // top: 30px;
+    // left: 40px;
+  }
+  .auth-submit {
+    background-color: #8856a1;
+    color: #ffffff;
+  }
+  .demo-account {
+    margin-top: 10px;
+    border-radius: 0;
+    color: #ffffff;
+    background-color: #8856a1;
+  }
+  .divider {
+    text-align: center;
+    padding: 0px 10px;
+  }
+  .divider hr {
+    border-top: 1px solid #8856a1;
+    margin: 10px auto;
+    width: 43%;
+  }
+  .left {
+    float: left;
+  }
+  .right {
+    float: right;
+  }
+}

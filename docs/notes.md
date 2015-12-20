@@ -47,3 +47,6 @@ form component did mount weird star thing after refresh
 glyphicons in ratings
 
 need to understand how to get average rating from model to react
+bootstrap not loading to react elements
+
+remove "non-react" message from root
