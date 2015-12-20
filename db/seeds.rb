@@ -12,7 +12,7 @@ Business.create(name: "Business2", category: "bar", lat: 47.675, lng: -122.318, 
 Business.create(name: "Business3", category: "bar", lat: 47.665, lng: -122.313, delivery: false, accept_cc: false)
 
 # User.delete_all
-# User.create!(username: "user1", password_digest: "testaccount", session_token: "testaccount")
+# User.create!(username: "demo-user", password: "demo-user")
 #
 # b = Business.where(name: "Chipotle")
 # u = User.where(username: "user1")

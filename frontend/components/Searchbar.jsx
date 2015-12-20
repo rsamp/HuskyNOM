@@ -27,6 +27,16 @@ var Searchbar = React.createClass({
     this.setState({inputVal: e.currentTarget.value});
   },
 
+  enterSearchbox: function(){
+    this.setState({businesses: BusinessStore.all()});
+    this.inSearchbox = true;
+  },
+
+  leaveSearchbox: function(){
+    this.setState({businesses: []});
+    this.inSearchbox = false;
+  },
+
   matches: function(){
     var matches = [];
     if(this.state.inputVal.length === 0){
@@ -51,17 +61,25 @@ var Searchbar = React.createClass({
     e.preventDefault();
     var url = '/businesses/' + business.id;
     this.history.pushState({business: business}, url);
+    this.setState({inputVal: ""});
   },
 
   render: function(){
-    var businesses = this.matches();
-    businesses = businesses.map(function(business, i){
-      return <a className="list-group-item searchbar-list" key={i} onClick={this.selectBusiness.bind(null, business)}>{business.name}</a>;
-    }.bind(this));
+    var businesses = "";
+    if (this.inSearchbox) {
+      businesses = this.matches();
+      businesses = businesses.map(function(business, i){
+        if (business === "No matches"){
+          return <li className="list-group-item no-matches" key={i}>No matches</li>;
+        } else {
+          return <a className="list-group-item searchbar-list" key={i} onClick={this.selectBusiness.bind(null, business)}>{business.name}</a>;
+        }
+      }.bind(this));
+    }
 
     return(
       <form id="searchbar" className="navbar-form">
-        <input type="text" className="form-control" onChange={this.handleInput} value={this.state.inputVal}/>
+        <input type="text" className="form-control" onChange={this.handleInput} onFocus={this.enterSearchbox} onBlur={this.leaveSearchbox} value={this.state.inputVal}/>
         <div className="list-group">
           {businesses}
         </div>

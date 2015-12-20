@@ -1,0 +1,53 @@
+.navbar-default{
+  height: 60px;
+  width: 100%;
+}
+
+.nav{
+  margin-bottom: 0px;
+  border-radius: 0;
+}
+
+nav {
+  background-color: #8856a1;
+  color: #ffffff;
+
+
+  .nav-container {
+    width: 900px;
+    margin: auto;
+  }
+
+  .logo {
+    height: 60px;
+  }
+
+  img, h4, #searchbar{
+    float: left;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+
+  h4 {
+    margin-top: 20px;
+  }
+
+  #searchbar {
+    margin-top: 12px;
+    height: 30px;
+  }
+
+  .searchbar-list{
+    z-index: 1;
+  }
+
+  .no-matches{
+    color: #555;
+    margin-left: 0px;
+    cursor: default;
+  }
+
+  .sign-out {
+    float: right;
+  }
+}
