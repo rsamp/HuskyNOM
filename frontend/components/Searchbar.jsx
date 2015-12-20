@@ -27,15 +27,15 @@ var Searchbar = React.createClass({
     this.setState({inputVal: e.currentTarget.value});
   },
 
-  // enterSearchbox: function(){
-  //   this.setState({businesses: BusinessStore.all()});
-  //   this.inSearchbox = true;
-  // },
-  //
-  // leaveSearchbox: function(){
-  //   this.setState({businesses: []});
-  //   this.inSearchbox = false;
-  // },
+  enterSearchbox: function(){
+    this.setState({businesses: BusinessStore.all()});
+    this.inSearchbox = true;
+  },
+
+  leaveSearchbox: function(){
+    this.setState({businesses: []});
+    this.inSearchbox = false;
+  },
 
   matches: function(){
     var matches = [];
@@ -59,6 +59,7 @@ var Searchbar = React.createClass({
 
   selectBusiness: function(business, e){
     e.preventDefault();
+    // this.inSearchbox = true;
     var url = '/businesses/' + business.id;
     this.history.pushState({business: business}, url);
     this.setState({inputVal: ""});
@@ -66,20 +67,29 @@ var Searchbar = React.createClass({
 
   render: function(){
     var businesses = "";
-    // if (this.inSearchbox) {
+    if (this.inSearchbox) {
       businesses = this.matches();
       businesses = businesses.map(function(business, i){
         if (business === "No matches"){
-          return <li className="list-group-item no-matches" key={i}>No matches</li>;
+          return <li className="list-group-item no-matches"
+                     key={i}>No matches</li>;
         } else {
-          return <a className="list-group-item searchbar-list" key={i} onClick={this.selectBusiness.bind(null, business)}>{business.name}</a>;
+          return <a className="list-group-item searchbar-list"
+                    key={i}
+                    onMouseDown={this.selectBusiness.bind(null, business)}>{business.name}</a>;
         }
       }.bind(this));
-    // }
+    }
 
     return(
-      <form id="searchbar" className="navbar-form" onFocus={this.enterSearchbox} onBlur={this.leaveSearchbox}>
-        <input type="text" className="form-control" onChange={this.handleInput} value={this.state.inputVal}/>
+      <form id="searchbar"
+            className="navbar-form"
+            onFocus={this.enterSearchbox}
+            onBlur={this.leaveSearchbox}>
+        <input type="text"
+               className="form-control"
+               onChange={this.handleInput}
+               value={this.state.inputVal}/>
         <div className="list-group">
           {businesses}
         </div>

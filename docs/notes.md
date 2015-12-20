@@ -50,3 +50,5 @@ need to understand how to get average rating from model to react
 bootstrap not loading to react elements
 
 remove "non-react" message from root
+
+click on business in searchbar while already on a business page doesn't work

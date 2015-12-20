@@ -26,12 +26,12 @@
   <div class="divider">
     <hr class="left">OR<hr class="right">
   </div>
-  <form class="input-group user-auth" action=<%= session_url %> method="post">
-    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-    <input type="hidden" name=user[username] value="user">
-    <input type="hidden" name=user[password] value="password">
-    <input class="form-control demo-account" type="submit" value="Sign in with demo account">
-  </form>
+</form>
+<form class="input-group user-auth" action=<%= session_url %> method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="hidden" name=user[username] value="user">
+  <input type="hidden" name=user[password] value="password">
+  <input class="form-control demo-account" type="submit" value="Sign in with demo account">
 </form>
 
 <%= image_tag("Watermark.png", class: 'watermark') %>
