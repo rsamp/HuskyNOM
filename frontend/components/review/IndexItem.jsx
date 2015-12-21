@@ -12,6 +12,7 @@ var ReviewIndexItem = React.createClass({
     //   color: 'white'
     // };
 
+    // <Rating initialRate={rating} readonly={true} />
     return (
       <li>
         <div className="row">
@@ -19,7 +20,7 @@ var ReviewIndexItem = React.createClass({
             {user}
           </div>
           <div className="col-md-8 review-info">
-            <Rating initialRate={rating} readonly={true} />
+            <Rating full="glyphicon glyphicon-star" empty="glyphicon glyphicon-star-empty" initialRate={rating} readonly={true} />
             <br/>
             Date: {date}
             <br/>
@@ -31,5 +32,4 @@ var ReviewIndexItem = React.createClass({
   }
 });
 
-// <Rating full="glyphicon glyphicon-star" empty="glyphicon glyphicon-star-empty" initialRate={rating} readonly={true} />
 module.exports = ReviewIndexItem;

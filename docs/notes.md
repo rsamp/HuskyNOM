@@ -8,7 +8,7 @@ Metallic Gold: #85754d
 Dark Gray: #444444
 Light Gray: #d9d9d9
 
-Wireframe: #8856a1
+Wireframe purple: #8856a1
 
 ## Come back to
 I allowed Address to accept null in database. Look into using Google Maps Reverse Geocoding to get address from Lat/Lng
@@ -27,28 +27,29 @@ refactoring opportunities: reviewIndex - instead of the if statement in render, 
 
 do review creation through controller with access to current user
 
-average the ratings
-
 search.jsx setinterval
 Map Loading... -> No results Search.jsx: Use the store to know when results are finished being filtered. Similar issue with if no reviews yet for a business
 
-use LinkState instead of individual handlers onChange - Form.jsx
+look up LinkState instead of individual handlers onChange - Form.jsx
 
 revisit printing of Date. can I use new Date(pass any format here)?
 
-revisit how to auto populate fields with demo account info
-
-edit star.gif to be purple
+edit stars to be purple
 
 show stars in review index item
 set minimum rating. use flash errors? could be annoying with react.
 form component did mount weird star thing after refresh
 
-glyphicons in ratings
-
-need to understand how to get average rating from model to react
-bootstrap not loading to react elements
-
 remove "non-react" message from root
 
-click on business in searchbar while already on a business page doesn't work
+how to defend against entering something in address bar manually. breaks functionality of site
+
+revisit business Show page to maybe implement store
+
+flash error messages
+
+hours on business form
+
+reverse geocoding in show page
+
+Bonus: open now

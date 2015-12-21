@@ -37,9 +37,11 @@ var ReviewForm = React.createClass({
     return(
       <div>
         <h3>Write a Review</h3>
-        <p>{business.address}</p>
         <form onSubmit={this.handleSubmit}>
-          <Rating initialRate={this.state.rating} onChange={this.handleRating} />
+          <Rating full="glyphicon glyphicon-star"
+                  empty="glyphicon glyphicon-star-empty"
+                  initialRate={this.state.rating}
+                  onChange={this.handleRating} />
           <br/>
           <textarea placeholder='Enter your review here'
                     onChange={this.handleBody}
@@ -52,5 +54,4 @@ var ReviewForm = React.createClass({
   }
 });
 
-// <Rating full="glyphicon glyphicon-star" empty="glyphicon glyphicon-star-empty" initialRate={this.state.rating} onChange={this.handleRating} />
 module.exports = ReviewForm;

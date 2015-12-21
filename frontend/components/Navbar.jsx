@@ -12,6 +12,11 @@ var Navbar = React.createClass({
     this.history.pushState(null, "/", {});
   },
 
+  restaurantForm: function(e){
+    e.preventDefault();
+    this.history.pushState(null, 'businesses/new', {});
+  },
+
   signOut: function(e){
     e.preventDefault();
     $.ajax({
@@ -31,7 +36,7 @@ var Navbar = React.createClass({
           <img src={logo} alt="logo" className="logo" onClick={this.goToHome}/>
           <h4 onClick={this.goToHome}>Home</h4>
           <h4>Write a Review</h4>
-          <h4>Submit a Restaurant</h4>
+          <h4 onClick={this.restaurantForm}>Submit a Restaurant</h4>
           <Searchbar/>
           <h4 onClick={this.signOut} className="sign-out">Sign Out</h4>
         </div>

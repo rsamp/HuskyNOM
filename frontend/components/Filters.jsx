@@ -3,16 +3,17 @@ var React = require('react'),
 
 var Filters = React.createClass({
   deliveryChanged: function(e){
-    FilterActions.updateDelivery(e.target.checked)
+    FilterActions.updateDelivery(e.target.checked);
   },
 
   acceptCreditChanged: function(e){
-    FilterActions.updateCreditCard(e.target.checked)
+    FilterActions.updateCreditCard(e.target.checked);
   },
 
   render: function(){
     return(
       <div>
+        <h5>Filters</h5>
         <label>
           Delivery?
           <input type="checkbox" onChange={this.deliveryChanged}/>
