@@ -1,10 +1,11 @@
-// require('jquery');
-// require('bootstrap');
 var React = require('react'),
     ApiUtil = require('../../util/api_util'),
-    Rating = require('react-rating');
+    Rating = require('react-rating'),
+    LinkedStateMixin = require('react-addons-linked-state-mixin');
 
 var ReviewForm = React.createClass({
+  mixins: [LinkedStateMixin],
+
   getInitialState: function(){
     return {rating: 0, body: ""};
   },
@@ -30,24 +31,21 @@ var ReviewForm = React.createClass({
   render: function(){
     var business = this.props.business;
 
-    var style = {
-      color: 'blue'
-    };
-
     return(
-      <div>
+      <div hidden={this.props.hiddenForm}>
         <h3>Write a Review</h3>
-        <form onSubmit={this.handleSubmit}>
-          <Rating full="glyphicon glyphicon-star"
-                  empty="glyphicon glyphicon-star-empty"
+        <form onSubmit={this.handleSubmit} className="input-group review">
+          <Rating full="glyphicon glyphicon-star large"
+                  empty="glyphicon glyphicon-star-empty large"
                   initialRate={this.state.rating}
                   onChange={this.handleRating} />
           <br/>
-          <textarea placeholder='Enter your review here'
-                    onChange={this.handleBody}
-                    value={this.state.body}></textarea>
+          <textarea className="form-control review-textarea" rows="4"
+                    placeholder='Enter your review here'
+                    valueLink={this.linkState('body')}></textarea>
           <br/>
-          <input type='submit' value='Post Review'/>
+          <input type='submit' className="form-control purple-button" id="review-button" value='Post Review'/>
+          <a onClick={this.props.toggleForm} className="cancel-button">cancel</a>
         </form>
       </div>
     );

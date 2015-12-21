@@ -20,16 +20,10 @@
     // top: 30px;
     // left: 40px;
   }
-  .auth-submit {
-    background-color: #8856a1;
-    color: #ffffff;
-  }
   .demo-account {
     position: relative;
     top: -30px;
     border-radius: 0;
-    color: #ffffff;
-    background-color: #8856a1;
   }
   .divider {
     text-align: center;
@@ -49,7 +43,7 @@
 }
 
 .watermark {
-  position: absolute;
+  position: fixed;
   bottom: 10px;
   left: 10px;
 }

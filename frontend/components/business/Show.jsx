@@ -44,7 +44,7 @@ var Business = React.createClass({
         <ImageIndex businessId={business.id}/>
         <Map businesses={[business]} mapClass="businessMap"/>
         <p>{address}</p>
-        <ReviewIndex business={business}/>
+        <ReviewIndex business={business} hiddenForm={true}/>
       </div>
     );
   }

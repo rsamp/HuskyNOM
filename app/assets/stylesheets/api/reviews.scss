@@ -8,3 +8,19 @@ li {
   list-style: none;
   margin-bottom: 10px;
 }
+
+.review {
+  width: 400px;
+}
+
+#review-button {
+  margin-top: 5px;
+  width: 120px;
+  border-radius: 0px;
+}
+
+.cancel-button {
+  margin: 5px;
+  position: relative;
+  top: 12px;
+}
