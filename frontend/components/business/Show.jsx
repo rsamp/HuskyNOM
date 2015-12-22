@@ -37,7 +37,6 @@ var Business = React.createClass({
                           fractions={6} /> :
                   <h4>No reviews</h4>;
 
-
     return(
       <div>
         <h2>{business.name}</h2>
@@ -52,6 +51,3 @@ var Business = React.createClass({
 });
 
 module.exports = Business;
-
-
-// <Rating full="glyphicon glyphicon-star" empty="glyphicon glyphicon-star-empty" initialRate={business.average_rating} readonly={true} />

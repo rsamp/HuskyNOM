@@ -11,7 +11,14 @@ var BusinessForm = React.createClass({
 
   getInitialState: function(){
     this.geocoder = new google.maps.Geocoder();
-    return({name: "", address: "", hours: "", delivery: null, accept_cc: null});
+    return(
+      {
+        name: "",
+        address: "",
+        hours: "",
+        delivery: null,
+        accept_cc: null
+      });
   },
 
   geocode: function(address){
@@ -47,7 +54,14 @@ var BusinessForm = React.createClass({
       accept_cc: this.state.accept_cc
     }, this.goToBusiness);
 
-    this.setState({name: "", address: "", hours: "", delivery: null, accept_cc: null});
+    this.setState(
+      {
+        name: "",
+        address: "",
+        hours: "",
+        delivery: null,
+        accept_cc: null
+      });
   },
 
   goToBusiness: function (business) {

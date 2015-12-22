@@ -47,3 +47,6 @@ Bonus: open now
 improve markers: change color on index item hover, have an onclick balloon
 
 2048 lakeshore ave, oakland, ca, 94606
+
+idea for images on business submit form:
+after uploading, show image and an option to delete

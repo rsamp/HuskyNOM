@@ -1,3 +1,5 @@
+/* globals cloudinary, CLOUDINARY_OPTIONS */
+
 var React = require('react');
 
 var AddImageButton = React.createClass({
@@ -14,7 +16,8 @@ var AddImageButton = React.createClass({
   render: function(){
     return(
       <div className="upload-image">
-        <button onClick={this.uploadImage}>Add Photo</button>
+        <button className="form-control purple-button" id="add-photo"
+                onClick={this.uploadImage}>Add Photo</button>
       </div>
     );
   }

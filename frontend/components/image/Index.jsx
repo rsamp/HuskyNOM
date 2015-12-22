@@ -23,7 +23,10 @@ var ImageIndex = React.createClass({
   },
 
   postImage: function(image){
-    var data = {image: {cloudinary_id: image.public_id, business_id: this.props.businessId}};
+    var data = {
+      image: {
+        cloudinary_id: image.public_id, business_id: this.props.businessId
+      }};
     ApiUtil.createImage(data);
   },
 
