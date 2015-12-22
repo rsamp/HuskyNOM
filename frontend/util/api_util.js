@@ -67,13 +67,12 @@ var ApiUtil = {
     });
   },
 
-  createImage: function(data, callback){
+  createImage: function(data){
     $.ajax({
       method: "POST",
       url: "api/images",
       data: data,
       success: function(image){
-        callback(image);
         ApiActions.createImage(image);
       }
     });

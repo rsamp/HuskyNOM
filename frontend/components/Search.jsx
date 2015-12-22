@@ -47,12 +47,14 @@ var Search = React.createClass({
 
   render: function(){
     var businesses = this.state.businesses;
-    var index = (businesses.length === 0) ? this.loadState : <BusinessIndex count={businesses.length} businesses={businesses}/>;
+    var index = (businesses.length === 0) ? this.loadState :
+            <BusinessIndex count={businesses.length} businesses={businesses}/>;
     return(
       <div>
         <Map mapClass={"indexMap"} businesses={businesses}/>
         <h3>Restaurants within map bounds</h3>
-        <Filters businesses={businesses} filterParams={this.state.filterParams}/>
+        <Filters businesses={businesses}
+                 filterParams={this.state.filterParams}/>
         {index}
       </div>
     );
