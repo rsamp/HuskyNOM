@@ -45,19 +45,20 @@ var BusinessForm = React.createClass({
       address: address,
       delivery: this.state.delivery,
       accept_cc: this.state.accept_cc
-    });
+    }, this.goToBusiness);
 
     this.setState({name: "", address: "", hours: "", delivery: null, accept_cc: null});
-    var lastBusiness = BusinessStore.last();
-    debugger;
+  },
 
-    var url = '/businesses/' + lastBusiness.id;
-    this.history.pushState({business: lastBusiness}, url);
+  goToBusiness: function (business) {
+    var url = '/businesses/' + business.id;
+    this.history.pushState({business: business}, url);
   },
 
   render: function(){
     return(
-      <form onSubmit={this.submitHandler} className="input-group">
+      <form onSubmit={this.submitHandler} className="input-group business-form">
+        <h3>Submit a Restaurant</h3>
         <label>
           Name:
           <input type="text" className="form-control"

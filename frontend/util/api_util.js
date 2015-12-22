@@ -24,12 +24,13 @@ var ApiUtil = {
     });
   },
 
-  createBusiness: function(data){
+  createBusiness: function(data, callback){
     $.ajax({
       method: "POST",
       url: "api/businesses",
       data: {business: data},
       success: function(business){
+        callback(business);
         ApiActions.createBusiness(business);
       }
     });

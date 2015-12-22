@@ -45,7 +45,7 @@ var ReviewForm = React.createClass({
                     valueLink={this.linkState('body')}></textarea>
           <br/>
           <input type='submit'className="form-control purple-button"
-                 id="review-button" value='Post Review'/>
+                 id="review-button" value='Post review'/>
           <a onClick={this.props.toggleForm} className="cancel">cancel</a>
         </form>
       </div>

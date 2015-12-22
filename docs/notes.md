@@ -46,6 +46,4 @@ Bonus: open now
 
 improve markers: change color on index item hover, have an onclick balloon
 
-most recent db entry
-review form drawer
-business map needs to re render
+2048 lakeshore ave, oakland, ca, 94606

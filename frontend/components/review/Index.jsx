@@ -6,7 +6,7 @@ var React = require('react'),
 
 var ReviewIndex = React.createClass({
   getInitialState: function() {
-    return {reviews: ReviewStore.all(), hiddenForm: this.props.hiddenForm};
+    return {reviews: ReviewStore.all(), hiddenForm: true};
   },
 
   _onChange: function() {
@@ -16,6 +16,10 @@ var ReviewIndex = React.createClass({
   componentDidMount: function() {
     this.reviewListener = ReviewStore.addListener(this._onChange);
     ApiUtil.fetchReviews();
+  },
+
+  componentWillReceiveProps: function(){
+    this.setState({hiddenForm: true});
   },
 
   componentWillUnmount: function() {
