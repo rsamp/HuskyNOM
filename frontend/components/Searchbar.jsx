@@ -76,7 +76,8 @@ var Searchbar = React.createClass({
         } else {
           return <a className="list-group-item searchbar-list"
                     key={i}
-                    onMouseDown={this.selectBusiness.bind(null, business)}>{business.name}</a>;
+                    onMouseDown={this.selectBusiness.bind(null, business)}>
+                    {business.name}</a>;
         }
       }.bind(this));
     }

@@ -6,7 +6,7 @@ var ImageIndexItem = React.createClass({
 
     return(
       <li className="image">
-        <img src={'http://res.cloudinary.com/djk3yhmfn/image/upload/' + image.cloudinary_id}/>
+        <img src={'http://res.cloudinary.com/djk3yhmfn/image/upload/w_200,h_200,c_fit/' + image.cloudinary_id}/>
       </li>
     );
   }

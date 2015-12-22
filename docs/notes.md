@@ -40,8 +40,6 @@ flash error messages
 
 hours on business form
 
-reverse geocoding in show page
-
 Bonus: open now
 
 improve markers: change color on index item hover, have an onclick balloon

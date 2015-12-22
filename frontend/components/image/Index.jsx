@@ -23,7 +23,6 @@ var ImageIndex = React.createClass({
   },
 
   postImage: function(image){
-    debugger;
     var data = {
       image: {
         cloudinary_id: image.public_id, business_id: this.props.businessId
@@ -43,6 +42,7 @@ var ImageIndex = React.createClass({
     return(
       <div className="images">
         <AddImageButton postImage={this.postImage}/>
+        <br/>
         <ul>
           {images}
         </ul>

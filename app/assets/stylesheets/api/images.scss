@@ -4,8 +4,18 @@
 
 .images {
   float: right;
+  width: 50%;
 }
 
 #add-photo {
   border-radius: 0px;
+  width: 100px;
+  float: right;
+}
+
+.image {
+  clear: right;
+  float: left;
+  margin-left: 5px;
+  margin-top: 30px;
 }

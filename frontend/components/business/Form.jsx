@@ -26,12 +26,8 @@ var BusinessForm = React.createClass({
       if (status === google.maps.GeocoderStatus.OK){
         var lat = results[0].geometry.location.lat();
         var lng = results[0].geometry.location.lng();
-        var latLng = new google.maps.LatLng(lat, lng);
-
-        this.geocoder.geocode({latLng: latLng}, function(results2, status2){
-          var newAddress = results2[0].formatted_address;
-          this.createBusiness(latLng, newAddress);
-        }.bind(this));
+        var newAddress = results[0].formatted_address;
+        this.createBusiness(lat, lng, newAddress);
       } else {
         alert("Address was not in correct format. Error: " + status);
       }
@@ -44,11 +40,11 @@ var BusinessForm = React.createClass({
     this.geocode(this.state.address);
   },
 
-  createBusiness: function(latLng, address){
+  createBusiness: function(lat, lng, address){
     ApiUtil.createBusiness({
       name: this.state.name,
-      lat: latLng.lat,
-      lng: latLng.lng,
+      lat: lat,
+      lng: lng,
       address: address,
       delivery: this.state.delivery,
       accept_cc: this.state.accept_cc
