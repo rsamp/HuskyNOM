@@ -9,7 +9,7 @@ var BusinessIndex = React.createClass({
     });
 
     return(
-      <ul>
+      <ul className="business-index">
         {businesses}
       </ul>
     );

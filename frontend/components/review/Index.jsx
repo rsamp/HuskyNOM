@@ -7,9 +7,11 @@ var React = require('react'),
 var ReviewIndex = React.createClass({
   getInitialState: function() {
     return {reviews: ReviewStore.all(), hiddenForm: true};
+    // return {reviews: ReviewStore.initialFive(), hiddenForm: true};
   },
 
   _onChange: function() {
+    // this.setState({reviews: ReviewStore.initialFive()});
     this.setState({reviews: ReviewStore.all()});
   },
 
@@ -28,6 +30,10 @@ var ReviewIndex = React.createClass({
 
   toggleForm: function() {
     this.setState({hiddenForm: !this.state.hiddenForm});
+  },
+
+  loadNextFive: function() {
+    this.setState({reviews: ReviewStore.addFive()});
   },
 
   render: function() {
@@ -67,4 +73,5 @@ var ReviewIndex = React.createClass({
   }
 });
 
+// <button onClick={this.loadNextFive}>Load More</button>
 module.exports = ReviewIndex;

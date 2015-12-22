@@ -22,6 +22,9 @@ var Map = React.createClass({
     this.registerListeners();
     this.markers = [];
     this.props.businesses.forEach(this.createMarker);
+    // setInterval(function(){
+    //   this.props.initialFetch();
+    // }.bind(this), 3000);
   },
 
   registerListeners: function(){

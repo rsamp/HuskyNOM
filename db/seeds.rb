@@ -7,9 +7,86 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 Business.delete_all
-Business.create(name: "Chipotle", category: "restaurant", lat: 47.6589878, lng: -122.3126178, delivery: false, accept_cc: true)
-Business.create(name: "Business2", category: "bar", lat: 47.675, lng: -122.318, delivery: true, accept_cc: true)
-Business.create(name: "Business3", category: "bar", lat: 47.665, lng: -122.313, delivery: false, accept_cc: false)
+Business.create(name: "Chipotle Mexican Grill",
+                lat: 47.6592353,
+                lng: -122.3134728,
+                address: "4229 University Way NE, Seattle, WA 98105, USA",
+                hours: nil,
+                delivery: false,
+                accept_cc: true,
+                image_id: nil)
+Business.create(name: "U:Don Fresh Japanese Noodle Station",
+                lat: 47.6617732,
+                lng: -122.3134794,
+                address: "4515 University Way NE, Seattle, WA 98105, USA",
+                hours: nil,
+                delivery: false,
+                accept_cc: true,
+                image_id: nil)
+Business.create(name: "Banh Mi Unwrapped",
+                lat: 47.6638562,
+                lng: -122.3135354,
+                address: "4725 University Way NE, Seattle, WA 98105, USA",
+                hours: nil,
+                delivery: false,
+                accept_cc: true,
+                image_id: nil)
+Business.create(name: "Aladdin Falafel Corner",
+                lat: 47.6624936,
+                lng: -122.3135355,
+                address: "4541 University Way NE, Seattle, WA 98105, USA",
+                hours: nil,
+                delivery: false,
+                accept_cc: true,
+                image_id: nil)
+Business.create(name: "Thanh Vi",
+                lat: 47.6591327,
+                lng: -122.3128987,
+                address: "4226 University Way NE, Seattle, WA 98105, USA",
+                hours: nil,
+                delivery: false,
+                accept_cc: true,
+                image_id: nil)
+Business.create(name: "Guanaco's Tacos Pupuseria",
+                lat: 47.6571112,
+                lng: -122.3140477,
+                address: "4106 Brooklyn Ave NE #102a, Seattle, WA 98105, USA",
+                hours: nil,
+                delivery: false,
+                accept_cc: true,
+                image_id: nil)
+Business.create(name: "Portage Bay Café & Catering",
+                lat: 47.6577795,
+                lng: -122.3175253,
+                address: "4130 Roosevelt Way NE, Seattle, WA 98105, USA",
+                hours: nil,
+                delivery: false,
+                accept_cc: true,
+                image_id: nil)
+Business.create(name: "MOD Pizza",
+                lat: 47.658608,
+                lng: -122.3123911,
+                address: "George F. Russell Jr. Hall, 1414 NE 42nd St, Seattle, WA 98105, USA",
+                hours: nil,
+                delivery: false,
+                accept_cc: true,
+                image_id: nil)
+Business.create(name: "Burger and Kabob Hut",
+                lat: 47.6581333,
+                lng: -122.3129758,
+                address: "4142 University Way NE, Seattle, WA 98105, USA",
+                hours: nil,
+                delivery: false,
+                accept_cc: true,
+                image_id: nil)
+Business.create(name: "EJ Burger",
+                lat: 47.6616328,
+                lng: -122.3131181,
+                address: "4510 University Way NE, Seattle, WA 98105, USA",
+                hours: nil,
+                delivery: false,
+                accept_cc: true,
+                image_id: nil)
 
 # User.delete_all
 # User.create!(username: "demo-user", password: "demo-user")

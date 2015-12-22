@@ -31,7 +31,7 @@ var Navbar = React.createClass({
   render: function(){
     var logo = 'assets/HuskyNOM-white.png';
     return(
-      <nav className="nav" id="navbar">
+      <nav className="nav navbar-fixed-top" id="navbar">
         <div className="nav-container">
           <img src={logo} alt="logo" className="logo" onClick={this.goToHome}/>
           <h4 onClick={this.goToHome}>Home</h4>

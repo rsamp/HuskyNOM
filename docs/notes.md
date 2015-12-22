@@ -48,3 +48,7 @@ improve markers: change color on index item hover, have an onclick balloon
 
 idea for images on business submit form:
 after uploading, show image and an option to delete
+
+pagination - business index, reviews, images
+
+sorting by reviews, top rated, etc

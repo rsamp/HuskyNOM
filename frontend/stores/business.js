@@ -27,6 +27,10 @@ BusinessStore.all = function(){
   return _allBusinesses.slice(0);
 };
 
+BusinessStore.fetchTen = function(startIdx){
+  return _filteredBusinesses.slice(startIdx, startIdx + 10);
+},
+
 // BusinessStore.find = function(id){
 //   return _allBusinesses[id];
 // };
