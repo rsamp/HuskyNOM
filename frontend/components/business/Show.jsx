@@ -12,22 +12,19 @@ var Business = React.createClass({
   mixins: [History],
 
   getInitialState: function(){
-    // set business to store
     var business = this.props.location.state.business;
-    return({business: BusinessStore.find(business.id)});
-    // return {business: null, average_rating: business.average_rating};
+    return({business: business, average_rating: business.average_rating});
+    // return({business: BusinessStore.find(business.id), average_rating: business.average_rating});
+    // may not need average_rating state
   },
 
-  _onChange: function(){
-    debugger;
-    this.setState({business: BusinessStore.find(this.state.business.id)});
+  _reviewsChanged: function(){
+    // debugger;
+    this.setState({average_rating: this.state.business.average_rating});
   },
 
   componentDidMount: function () {
-    // this.setState({business: ApiUtil.fetchBusiness(this.props.location.state.business.id)});
-    //fetch business from API
-    //add listener to store
-    this.reviewListener = ReviewStore.addListener(this._onChange);
+    this.reviewListener = ReviewStore.addListener(this._reviewsChanged);
   },
 
   componentWillUnmount: function () {
@@ -41,10 +38,10 @@ var Business = React.createClass({
   render: function(){
     var business = this.state.business;
     var address = business.address;
-    var rating = business.average_rating ?
+    var rating = this.state.average_rating ?
                   <Rating full="glyphicon glyphicon-star large"
                           empty="glyphicon glyphicon-star-empty large"
-                          initialRate={business.average_rating}
+                          initialRate={this.state.average_rating}
                           readonly={true}
                           fractions={6} /> :
                   <h4>No reviews</h4>;
@@ -56,7 +53,7 @@ var Business = React.createClass({
         <ImageIndex businessId={business.id}/>
         <Map businesses={[business]} mapClass="businessMap"/>
         <p>{address}</p>
-        <ReviewIndex business={business} hiddenForm={true}/>
+        <ReviewIndex business={business} hiddenForm={true} reviewsChanged={this._reviewsChanged}/>
       </div>
     );
   }

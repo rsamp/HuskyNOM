@@ -24,16 +24,16 @@ var ApiUtil = {
     });
   },
 
-  fetchBusiness: function(id){
-    $.ajax({
-      method: "GET",
-      url: "api/businesses/" + id,
-      data: {id: id},
-      success: function(business){
-        ApiActions.receiveBusiness(business);
-      }
-    });
-  },
+  // fetchBusiness: function(id){
+  //   $.ajax({
+  //     method: "GET",
+  //     url: "api/businesses/" + id,
+  //     data: {id: id},
+  //     success: function(business){
+  //       ApiActions.receiveBusiness(business);
+  //     }
+  //   });
+  // },
 
   createBusiness: function(data, callback){
     $.ajax({

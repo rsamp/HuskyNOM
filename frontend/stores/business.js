@@ -19,17 +19,17 @@ var createBusiness = function(business){
   _allBusinesses.push(business);
 };
 
-var fetchBusiness = function(business){
-  return BusinessStore.find(business);
-};
+// var fetchBusiness = function(business){
+//   return BusinessStore.find(business);
+// };
 
 BusinessStore.all = function(){
   return _allBusinesses.slice(0);
 };
 
-// BusinessStore.fetchTen = function(startIdx){
-//   return _filteredBusinesses.slice(startIdx, startIdx + 10);
-// },
+BusinessStore.fetchTen = function(startIdx){
+  return _filteredBusinesses.slice(startIdx, startIdx + 10);
+},
 
 BusinessStore.find = function(id){
   for (var i = 0; i < _allBusinesses.length; i++) {
@@ -58,10 +58,10 @@ BusinessStore.__onDispatch = function(payload){
       allBusinesses(payload.businesses);
       BusinessStore.__emitChange();
       break;
-    case BusinessConstants.FIND_BUSINESS:
-      fetchBusiness(payload.business);
-      BusinessStore.__emitChange();
-      break;
+    // case BusinessConstants.FIND_BUSINESS:
+    //   fetchBusiness(payload.business);
+    //   BusinessStore.__emitChange();
+    //   break;
   }
 };
 

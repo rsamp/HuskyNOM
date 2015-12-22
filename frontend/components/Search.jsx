@@ -10,9 +10,9 @@ function _fetchBusinesses(){
   return BusinessStore.filtered();
 }
 
-// function _fetchTen(startIdx){
-//   return BusinessStore.fetchTen(startIdx);
-// }
+function _fetchTen(startIdx){
+  return BusinessStore.fetchTen(startIdx);
+}
 
 function _fetchFilters(){
   return FilterParamsStore.params();
@@ -22,15 +22,15 @@ var Search = React.createClass({
   getInitialState: function(){
     return {businesses: [],
             filterParams: _fetchFilters(),
-            // nextTenStartIdx: 0,
+            nextTenStartIdx: 0,
             // prevTenStartIdx: -10
           };
   },
 
   _businessesChanged: function(){
     this.setState({businesses: _fetchBusinesses()});
-    // this.setState({businesses: _fetchTen(0)});
-    // this.setState({nextTenStartIdx: 10});
+    this.setState({businesses: _fetchTen(0)});
+    this.setState({nextTenStartIdx: 10});
     // this.setState({prevTenStartIdx: this.state.prevTenStartIdx + 10});
   },
 
@@ -39,9 +39,9 @@ var Search = React.createClass({
     ApiUtil.fetchBusinesses();
   },
 
-  // nextTen: function(){
-  //   this.setState({businesses: _fetchTen(this.state.nextTenStartIdx)});
-  // },
+  nextTen: function(){
+    this.setState({businesses: _fetchTen(this.state.nextTenStartIdx)});
+  },
   //
   // prevTen: function(){
   //   this.setState({businesses: _fetchTen(this.state.prevTenStartIdx)});
@@ -79,6 +79,7 @@ var Search = React.createClass({
         <Filters businesses={businesses}
                  filterParams={this.state.filterParams}/>
         {index}
+        <button onClick={this.nextTen}>Next 10</button>
       </div>
     );
   }
@@ -86,5 +87,4 @@ var Search = React.createClass({
 
 module.exports = Search;
 
-// <button onClick={this.nextTen}>Next 10</button>
 // <button onClick={this.prevTen}>Previous 10</button>

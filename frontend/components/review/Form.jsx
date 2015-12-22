@@ -15,8 +15,8 @@ var ReviewForm = React.createClass({
     ApiUtil.createReview({
       business_id: this.props.business.id,
       rating: this.state.rating,
-      body: this.state.body });
-
+      body: this.state.body
+    });
     this.setState({rating: 0, body: ""});
   },
 

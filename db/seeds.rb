@@ -87,6 +87,47 @@ Business.create(name: "EJ Burger",
                 delivery: false,
                 accept_cc: true,
                 image_id: nil)
+Business.create(name: "Itadakimasu",
+                lat: 47.6643577,
+                lng: -122.3144566,
+                address: "4743 Brooklyn Ave NE, Seattle, WA 98105, USA",
+                hours: nil,
+                delivery: false,
+                accept_cc: true,
+                image_id: nil)
+Business.create(name: "Thai Tom",
+                lat: 47.6625525,
+                lng: -122.313329,
+                address: "4543 University Way NE, Seattle, WA 98105, USA",
+                hours: nil,
+                delivery: false,
+                accept_cc: false,
+                image_id: nil)
+Business.create(name: "Mr Lu’s Burgers & Seafood",
+                lat: 47.6646239,
+                lng: -122.3127929,
+                address: "4752 University Way NE, Seattle, WA 98105, USA",
+                hours: nil,
+                delivery: true,
+                accept_cc: true,
+                image_id: nil)
+Business.create(name: "Which Wich",
+                lat: 47.6638595,
+                lng: -122.3127645,
+                address: "4730 University Way NE #102, Seattle, WA 98105, USA",
+                hours: nil,
+                delivery: false,
+                accept_cc: true,
+                image_id: nil)
+Business.create(name: "Noodle Nation",
+                lat: 47.659263,
+                lng: -122.312951,
+                address: "4232 University Way NE, Seattle, WA 98105, USA",
+                hours: nil,
+                delivery: false,
+                accept_cc: true,
+                image_id: nil)
+
 
 # User.delete_all
 # User.create!(username: "demo-user", password: "demo-user")

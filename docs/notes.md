@@ -52,3 +52,8 @@ after uploading, show image and an option to delete
 pagination - business index, reviews, images
 
 sorting by reviews, top rated, etc
+
+1. master review doesn't change
+refetch business on create review
+2. strategy for showing only ~10 businesses at a time
+3. ordering businesses by rating - average rating isn't in db - just do it in frontend?
