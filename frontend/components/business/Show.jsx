@@ -13,14 +13,16 @@ var Business = React.createClass({
 
   getInitialState: function(){
     var business = this.props.location.state.business;
-    return({business: business, average_rating: business.average_rating});
+    return({business: business});//, average_rating: business.average_rating});
+    // return({business: ApiUtil.fetchBusiness(business.id)});
     // return({business: BusinessStore.find(business.id), average_rating: business.average_rating});
     // may not need average_rating state
   },
 
   _reviewsChanged: function(){
     // debugger;
-    this.setState({average_rating: this.state.business.average_rating});
+    // this.setState({business: ApiUtil.fetchBusiness(this.state.business.id)});
+    // this.setState({average_rating: this.state.business.average_rating});
   },
 
   componentDidMount: function () {
@@ -38,10 +40,10 @@ var Business = React.createClass({
   render: function(){
     var business = this.state.business;
     var address = business.address;
-    var rating = this.state.average_rating ?
+    var rating = business.average_rating ?
                   <Rating full="glyphicon glyphicon-star large"
                           empty="glyphicon glyphicon-star-empty large"
-                          initialRate={this.state.average_rating}
+                          initialRate={business.average_rating}
                           readonly={true}
                           fractions={6} /> :
                   <h4>No reviews</h4>;

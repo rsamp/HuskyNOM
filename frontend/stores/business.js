@@ -19,9 +19,9 @@ var createBusiness = function(business){
   _allBusinesses.push(business);
 };
 
-// var fetchBusiness = function(business){
-//   return BusinessStore.find(business);
-// };
+var fetchBusiness = function(business){
+  return BusinessStore.find(business);
+};
 
 BusinessStore.all = function(){
   return _allBusinesses.slice(0);
@@ -37,7 +37,6 @@ BusinessStore.find = function(id){
       return _allBusinesses[i];
     }
   }
-  // return _allBusinesses[_allBusinesses.indexOf(business)];
 };
 
 BusinessStore.filtered = function(){
@@ -58,10 +57,10 @@ BusinessStore.__onDispatch = function(payload){
       allBusinesses(payload.businesses);
       BusinessStore.__emitChange();
       break;
-    // case BusinessConstants.FIND_BUSINESS:
-    //   fetchBusiness(payload.business);
-    //   BusinessStore.__emitChange();
-    //   break;
+    case BusinessConstants.FIND_BUSINESS:
+      fetchBusiness(payload.business);
+      BusinessStore.__emitChange();
+      break;
   }
 };
 

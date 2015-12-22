@@ -18,12 +18,12 @@ var ApiActions = {
     });
   },
 
-  // receiveBusiness: function(business){
-  //   AppDispatcher.dispatch({
-  //     actionType: BusinessConstants.FIND_BUSINESS,
-  //     business: business
-  //   });
-  // },
+  fetchBusiness: function(business){
+    AppDispatcher.dispatch({
+      actionType: BusinessConstants.FIND_BUSINESS,
+      business: business
+    });
+  },
 
   createBusiness: function(business){
     AppDispatcher.dispatch({

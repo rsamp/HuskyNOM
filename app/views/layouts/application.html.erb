@@ -29,6 +29,11 @@
     theme: 'minimal',
     sources: ['local'],
   };
+  window.CURRENT_USER = {
+    id: <%= current_user.id %>,
+    username: "<%= current_user.username %>"
+  }
+
 </script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

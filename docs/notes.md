@@ -57,3 +57,9 @@ sorting by reviews, top rated, etc
 refetch business on create review
 2. strategy for showing only ~10 businesses at a time
 3. ordering businesses by rating - average rating isn't in db - just do it in frontend?
+
+edit reviews
+
+stars don't change when business change from searchbar
+
+profile page
