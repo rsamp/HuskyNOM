@@ -30,6 +30,12 @@
     sources: ['local'],
   };
 
+  window.CURRENT_USER = {
+    <% if current_user %>
+      id: <%= current_user.id %>,
+      username: "<%= current_user.username %>"
+    <% end %>
+  }
 
 </script>
 
