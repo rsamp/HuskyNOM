@@ -31,6 +31,12 @@ BusinessStore.all = function(){
 //   return _allBusinesses[id];
 // };
 
+BusinessStore.last = function(){
+  var last = _allBusinesses.pop();
+  _allBusinesses.push(last);
+  return last;
+};
+
 BusinessStore.filtered = function(){
   return _filteredBusinesses.slice(0);
 };

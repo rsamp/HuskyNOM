@@ -17,7 +17,7 @@ var BusinessIndexItem = React.createClass({
                           empty="glyphicon glyphicon-star-empty large"
                           initialRate={business.average_rating}
                           readonly={true}
-                          fractions={12} /> :
+                          fractions={6} /> :
                   <h4>No reviews</h4>;
 
     return (

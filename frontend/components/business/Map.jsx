@@ -1,9 +1,14 @@
+/* globals google */
+
 var React = require('react'),
     ReactDOM = require('react-dom');
 
 var Map = React.createClass({
   componentDidMount: function(){
-    var business = this.props.businesses[0];
+    this.renderMap(this.props.businesses[0]);
+  },
+
+  renderMap: function(business){
     var map = ReactDOM.findDOMNode(this.refs.map);
     var mapOptions = {
       center: {lat: business.lat, lng: business.lng},
@@ -13,11 +18,14 @@ var Map = React.createClass({
     };
     this.map = new google.maps.Map(map, mapOptions);
     this.markers = [];
-    this.createMarker();
+    this.createMarker(business);
   },
 
-  createMarker: function(){
-    var business = this.props.businesses[0];
+  componentWillReceiveProps: function(newProps){
+    this.renderMap(newProps.businesses[0]);
+  },
+
+  createMarker: function(business){
     var pos = new google.maps.LatLng(business.lat, business.lng);
     var marker = new google.maps.Marker({
       position: pos,

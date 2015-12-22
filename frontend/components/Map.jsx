@@ -1,3 +1,5 @@
+/* globals google */
+
 var React = require('react'),
     ReactDOM = require('react-dom'),
     FilterActions = require('../actions/filter_actions');
@@ -14,7 +16,7 @@ var Map = React.createClass({
     var map = ReactDOM.findDOMNode(this.refs.map);
     var mapOptions = {
       center: {lat: 47.660, lng: -122.3148},
-      zoom: 16
+      zoom: 15
     };
     this.map = new google.maps.Map(map, mapOptions);
     this.registerListeners();
@@ -33,7 +35,7 @@ var Map = React.createClass({
   },
 
   createMarker: function(business){
-    var pos = new google.maps.LatLng(business.lat, business.lng)
+    var pos = new google.maps.LatLng(business.lat, business.lng);
     var marker = new google.maps.Marker({
       position: pos,
       map: this.map,

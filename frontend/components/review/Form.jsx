@@ -40,12 +40,13 @@ var ReviewForm = React.createClass({
                   initialRate={this.state.rating}
                   onChange={this.handleRating} />
           <br/>
-          <textarea className="form-control review-textarea" rows="4"
+          <textarea className="form-control review-textarea" rows="5"
                     placeholder='Enter your review here'
                     valueLink={this.linkState('body')}></textarea>
           <br/>
-          <input type='submit' className="form-control purple-button" id="review-button" value='Post Review'/>
-          <a onClick={this.props.toggleForm} className="cancel-button">cancel</a>
+          <input type='submit'className="form-control purple-button"
+                 id="review-button" value='Post Review'/>
+          <a onClick={this.props.toggleForm} className="cancel">cancel</a>
         </form>
       </div>
     );

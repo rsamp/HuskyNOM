@@ -22,11 +22,8 @@ var ReviewIndex = React.createClass({
     this.reviewListener.remove();
   },
 
-  toggleForm: function(e) {
-    e.preventDefault();
-
+  toggleForm: function() {
     this.setState({hiddenForm: !this.state.hiddenForm});
-    // Need to figure out how to hide by default and slide out when clicked
   },
 
   render: function() {
@@ -38,8 +35,9 @@ var ReviewIndex = React.createClass({
     });
 
     var formButton = this.state.hiddenForm ?
-                  <button onClick={this.toggleForm} className="form-control purple-button" id="review-button">Write a review</button> :
-                  "";
+                  <button onClick={this.toggleForm}
+                          className="form-control purple-button"
+                          id="review-button">Write a review</button> : "";
 
     // var noReviews;
     // if (business.reviews.length === 0){
@@ -51,7 +49,9 @@ var ReviewIndex = React.createClass({
 
     return (
       <div>
-        <ReviewForm business={business} hiddenForm={this.state.hiddenForm} toggleForm={this.toggleForm}/>
+        <ReviewForm business={business}
+                    hiddenForm={this.state.hiddenForm}
+                    toggleForm={this.toggleForm}/>
         {formButton}
         <h3>Reviews for {business.name}</h3>
         <ul>

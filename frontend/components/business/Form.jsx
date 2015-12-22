@@ -1,9 +1,13 @@
+/* globals google */
+
 var React = require('react'),
     ApiUtil = require('../../util/api_util'),
-    LinkedStateMixin = require('react-addons-linked-state-mixin');
+    BusinessStore = require('../../stores/business'),
+    LinkedStateMixin = require('react-addons-linked-state-mixin'),
+    History = require('react-router').History;
 
 var BusinessForm = React.createClass({
-  mixins: [LinkedStateMixin],
+  mixins: [LinkedStateMixin, History],
 
   getInitialState: function(){
     this.geocoder = new google.maps.Geocoder();
@@ -15,10 +19,14 @@ var BusinessForm = React.createClass({
       if (status === google.maps.GeocoderStatus.OK){
         var lat = results[0].geometry.location.lat();
         var lng = results[0].geometry.location.lng();
-        var latLng = {lat: lat, lng: lng};
-        this.createBusiness(latLng);
+        var latLng = new google.maps.LatLng(lat, lng);
+
+        this.geocoder.geocode({latLng: latLng}, function(results2, status2){
+          var newAddress = results2[0].formatted_address;
+          this.createBusiness(latLng, newAddress);
+        }.bind(this));
       } else {
-        alert("Address was not in correct format " + status);
+        alert("Address was not in correct format. Error: " + status);
       }
     }.bind(this));
   },
@@ -29,33 +37,43 @@ var BusinessForm = React.createClass({
     this.geocode(this.state.address);
   },
 
-  createBusiness: function(latLng){
+  createBusiness: function(latLng, address){
     ApiUtil.createBusiness({
       name: this.state.name,
       lat: latLng.lat,
       lng: latLng.lng,
-      address: this.state.address,
+      address: address,
       delivery: this.state.delivery,
       accept_cc: this.state.accept_cc
     });
+
+    this.setState({name: "", address: "", hours: "", delivery: null, accept_cc: null});
+    var lastBusiness = BusinessStore.last();
+    debugger;
+
+    var url = '/businesses/' + lastBusiness.id;
+    this.history.pushState({business: lastBusiness}, url);
   },
 
   render: function(){
     return(
-      <form onSubmit={this.submitHandler}>
+      <form onSubmit={this.submitHandler} className="input-group">
         <label>
           Name:
-          <input type="text" valueLink={this.linkState('name')}/>
+          <input type="text" className="form-control"
+                 valueLink={this.linkState('name')}/>
         </label>
         <br/>
         <label>
           Address:
-          <input type="text" valueLink={this.linkState('address')}/>
+          <input type="text" className="form-control"
+                 valueLink={this.linkState('address')}/>
         </label>
         <br/>
         <label>
           Offers Delivery? (optional)
-          <select name="delivery" valueLink={this.linkState('delivery')}>
+          <select name="delivery" className="form-control"
+                  valueLink={this.linkState('delivery')}>
             <option value={null}>---</option>
             <option value={true}>Yes</option>
             <option value={false}>No</option>
@@ -64,14 +82,16 @@ var BusinessForm = React.createClass({
         <br/>
         <label>
           Accepts Credit Card? (optional)
-          <select name="accept_cc" valueLink={this.linkState('accept_cc')}>
+          <select name="accept_cc" className="form-control"
+                  valueLink={this.linkState('accept_cc')}>
             <option value={null}>---</option>
             <option value={true}>Yes</option>
             <option value={false}>No</option>
           </select>
         </label>
         <br/>
-        <input type="submit" value="Submit"/>
+        <input type="submit"
+               className="form-control purple-button" value="Submit"/>
       </form>
     );
   }

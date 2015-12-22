@@ -10,9 +10,10 @@ var Business = React.createClass({
 
   getInitialState: function(){
     // set business to store
-    // debugger;
-    return {business: this.props.location.state.business};
+    var business = this.props.location.state.business;
+    return {business: business};
   },
+
   componentDidMount: function () {
     //fetch business from API
     //add listener to store
@@ -33,7 +34,7 @@ var Business = React.createClass({
                           empty="glyphicon glyphicon-star-empty large"
                           initialRate={business.average_rating}
                           readonly={true}
-                          fractions={12} /> :
+                          fractions={6} /> :
                   <h4>No reviews</h4>;
 
 

@@ -38,7 +38,7 @@ class Business < ActiveRecord::Base
     avg = 1.0 * total_stars / reviews.count
 
     # Rounds to nearest 1/12
-    (avg * 12).round.to_f/12
+    (avg * 6).round.to_f/6
   end
 
 end
