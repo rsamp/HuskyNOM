@@ -37,7 +37,6 @@ var Navbar = React.createClass({
           <h4 onClick={this.goToHome}>Home</h4>
           <h4 onClick={this.restaurantForm}>Submit a Restaurant</h4>
           <Searchbar/>
-          <h4 className="sign-out">{window.CURRENT_USER.username}</h4>
           <h4 onClick={this.signOut} className="sign-out">Sign Out</h4>
         </div>
       </nav>

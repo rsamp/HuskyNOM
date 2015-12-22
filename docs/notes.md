@@ -63,3 +63,5 @@ edit reviews
 stars don't change when business change from searchbar
 
 profile page
+
+spacing of filters- buttons maybe?
