@@ -1,7 +1,8 @@
-BusinessConstants = {
+var BusinessConstants = {
   BUSINESSES_RECEIVED: "BUSINESSES_RECEIVED",
   BUSINESS_RECEIVED: "BUSINESS_RECEIVED",
-  ALL_BUSINESSES_RECEIVED: "ALL_BUSINESSES_RECEIVED"
+  ALL_BUSINESSES_RECEIVED: "ALL_BUSINESSES_RECEIVED",
+  FIND_BUSINESS: "FIND_BUSINESS"
 };
 
-module.exports = BusinessConstants
+module.exports = BusinessConstants;

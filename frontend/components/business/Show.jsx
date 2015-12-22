@@ -3,7 +3,10 @@ var React = require('react'),
     ReviewIndex = require('../review/Index'),
     History = require('react-router').History,
     ImageIndex = require('../image/Index'),
-    Rating = require('react-rating');
+    Rating = require('react-rating'),
+    ApiUtil = require('../../util/api_util'),
+    BusinessStore = require('../../stores/business'),
+    ReviewStore = require('../../stores/review');
 
 var Business = React.createClass({
   mixins: [History],
@@ -11,21 +14,30 @@ var Business = React.createClass({
   getInitialState: function(){
     // set business to store
     var business = this.props.location.state.business;
-    return {business: business};
+    return({business: BusinessStore.find(business.id)});
+    // return {business: null, average_rating: business.average_rating};
+  },
+
+  _onChange: function(){
+    debugger;
+    this.setState({business: BusinessStore.find(this.state.business.id)});
   },
 
   componentDidMount: function () {
+    // this.setState({business: ApiUtil.fetchBusiness(this.props.location.state.business.id)});
     //fetch business from API
     //add listener to store
+    this.reviewListener = ReviewStore.addListener(this._onChange);
   },
+
   componentWillUnmount: function () {
-    // console.log("unmounting");
+    this.reviewListener.remove();
   },
+
   componentWillReceiveProps: function(newProps) {
-    // console.log(newProps);
-    this.setState({business: newProps.location.state.business});
-    //fetch new business from store and setstate
+    this.setState({business: BusinessStore.find(parseInt(newProps.params.id))});
   },
+
   render: function(){
     var business = this.state.business;
     var address = business.address;

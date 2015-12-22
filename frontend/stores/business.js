@@ -19,21 +19,26 @@ var createBusiness = function(business){
   _allBusinesses.push(business);
 };
 
-// var fetchBusiness = function(business){
-//   _allBusinesses.find(business);
-// };
+var fetchBusiness = function(business){
+  return BusinessStore.find(business);
+};
 
 BusinessStore.all = function(){
   return _allBusinesses.slice(0);
 };
 
-BusinessStore.fetchTen = function(startIdx){
-  return _filteredBusinesses.slice(startIdx, startIdx + 10);
-},
+// BusinessStore.fetchTen = function(startIdx){
+//   return _filteredBusinesses.slice(startIdx, startIdx + 10);
+// },
 
-// BusinessStore.find = function(id){
-//   return _allBusinesses[id];
-// };
+BusinessStore.find = function(id){
+  for (var i = 0; i < _allBusinesses.length; i++) {
+    if (_allBusinesses[i].id === id){
+      return _allBusinesses[i];
+    }
+  }
+  // return _allBusinesses[_allBusinesses.indexOf(business)];
+};
 
 BusinessStore.filtered = function(){
   return _filteredBusinesses.slice(0);
@@ -51,6 +56,10 @@ BusinessStore.__onDispatch = function(payload){
       break;
     case BusinessConstants.ALL_BUSINESSES_RECEIVED:
       allBusinesses(payload.businesses);
+      BusinessStore.__emitChange();
+      break;
+    case BusinessConstants.FIND_BUSINESS:
+      fetchBusiness(payload.business);
       BusinessStore.__emitChange();
       break;
   }
