@@ -65,3 +65,26 @@ stars don't change when business change from searchbar
 profile page
 
 spacing of filters- buttons maybe?
+
+
+BusinessIndex Sort
+
+Peer feedback:
+reduce space between top of page and logo as well as logo to sign in/up area
+
+make sure "next 10" doesn't show up if at the end
+
+put images in a box
+
+formatting of review index item:
+make user area a bit bigger, take away "Date:" and "Body:"
+
+password confirmation on sign up
+
+long username goes into review. set max on length
+
+drag map to find more
+
+parse over entire string for search
+
+validate against empty stars

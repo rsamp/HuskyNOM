@@ -27,7 +27,7 @@ class Business < ActiveRecord::Base
     businesses#.order(:average_rating)
 
     # something along these lines to get average_rating available for ordering
-    # business.select("busisness.*, SUM(reviews.rating) / COUNT(reviews.*) AS avg_rating").order()
+    # business.select("business.*, SUM(reviews.rating) / COUNT(reviews.*) AS avg_rating").order()
   end
 
   def average_rating

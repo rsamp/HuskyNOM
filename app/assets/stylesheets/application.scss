@@ -51,8 +51,7 @@ a{
 }
 
 .glyphicon {
-  font-size: 20px;
-  color: #85754d;
+  color: #FFC125;
 }
 
 .glyphicon.large {
@@ -66,4 +65,14 @@ a{
 .purple-button {
   background-color: #8856a1;
   color: #ffffff;
+}
+
+.indexMapTitle {
+  float: right;
+  width: 500px;
+  text-align: center;
+}
+
+.filter {
+  margin: 5px;
 }

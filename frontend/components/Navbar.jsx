@@ -38,11 +38,11 @@ var Navbar = React.createClass({
           <h4 onClick={this.restaurantForm}>Submit a Restaurant</h4>
           <Searchbar/>
           <h4 onClick={this.signOut} className="sign-out">Sign Out</h4>
-          <h4 class className="sign-out">{window.CURRENT_USER.username}</h4>
         </div>
       </nav>
     );
   }
 });
 
+// <h4 className="sign-out">Hello {window.CURRENT_USER.username}</h4>
 module.exports = Navbar;

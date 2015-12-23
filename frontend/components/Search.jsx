@@ -48,9 +48,9 @@ var Search = React.createClass({
   // },
 
   componentWillMount: function(){
-    this.loadState = "Map is loading...";
+    this.loadingStatus = "Map is loading...";
     setTimeout(function(){
-      this.loadState = "No results";
+      this.loadingStatus = "No results";
     }.bind(this), 3000);
   },
 
@@ -70,12 +70,12 @@ var Search = React.createClass({
 
   render: function(){
     var businesses = this.state.businesses;
-    var index = (businesses.length === 0) ? this.loadState :
+    var index = (businesses.length === 0) ? this.loadingStatus :
             <BusinessIndex count={businesses.length} businesses={businesses}/>;
     return(
       <div>
+        <h3 className="indexMapTitle">Move map to filter results</h3>
         <Map mapClass={"indexMap"} initialFetch={this.initialFetch} businesses={businesses}/>
-        <h3>Restaurants within map bounds</h3>
         <Filters businesses={businesses}
                  filterParams={this.state.filterParams}/>
         {index}

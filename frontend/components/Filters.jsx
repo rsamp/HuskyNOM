@@ -16,11 +16,11 @@ var Filters = React.createClass({
         <h5>Filters</h5>
         <label>
           Delivery?
-          <input type="checkbox" onChange={this.deliveryChanged}/>
+          <input className="filter" type="checkbox" onChange={this.deliveryChanged}/>
         </label>
         <label>
           Accept Credit Card?
-          <input type="checkbox" onChange={this.acceptCreditChanged}/>
+          <input className="filter" type="checkbox" onChange={this.acceptCreditChanged}/>
         </label>
       </div>
     );

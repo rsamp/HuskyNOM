@@ -31,9 +31,9 @@ var ReviewIndex = React.createClass({
     this.setState({hiddenForm: !this.state.hiddenForm});
   },
 
-  loadNextFive: function() {
-    this.setState({reviews: ReviewStore.addFive()});
-  },
+  // loadNextFive: function() {
+  //   this.setState({reviews: ReviewStore.addFive()});
+  // },
 
   render: function() {
     var business = this.props.business;

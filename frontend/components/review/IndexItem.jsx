@@ -15,8 +15,8 @@ var ReviewIndexItem = React.createClass({
             {user}
           </div>
           <div className="col-md-8 review-info">
-            <Rating full="glyphicon glyphicon-star"
-                    empty="glyphicon glyphicon-star-empty"
+            <Rating full="glyphicon glyphicon-star med"
+                    empty="glyphicon glyphicon-star-empty med"
                     initialRate={rating} readonly={true} />
             <br/>
             Date: {date}
