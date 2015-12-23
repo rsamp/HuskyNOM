@@ -62,8 +62,9 @@ var ApiUtil = {
       url: "api/reviews",
       data: {review: data},
       success: function(review){
+        this.fetchBusiness(review.business_id);
         ApiActions.createReview(review);
-      }
+      }.bind(this)
     });
   },
 

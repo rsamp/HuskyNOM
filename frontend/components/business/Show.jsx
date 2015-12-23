@@ -4,7 +4,6 @@ var React = require('react'),
     History = require('react-router').History,
     ImageIndex = require('../image/Index'),
     Rating = require('react-rating'),
-    ApiUtil = require('../../util/api_util'),
     BusinessStore = require('../../stores/business'),
     ReviewStore = require('../../stores/review');
 
@@ -12,29 +11,33 @@ var Business = React.createClass({
   mixins: [History],
 
   getInitialState: function(){
-    var business = this.props.location.state.business;
-    return({business: business});//, average_rating: business.average_rating});
-    // return({business: ApiUtil.fetchBusiness(business.id)});
-    // return({business: BusinessStore.find(business.id), average_rating: business.average_rating});
-    // may not need average_rating state
+    var business = BusinessStore.find(parseInt(this.props.params.id));
+    return({business: business});
   },
 
   _reviewsChanged: function(){
-    // debugger;
-    // this.setState({business: ApiUtil.fetchBusiness(this.state.business.id)});
-    // this.setState({average_rating: this.state.business.average_rating});
+    this.setState({average_rating: this.state.business.average_rating});
+  },
+
+  _businessChanged: function(){
+    var business = BusinessStore.find(parseInt(this.props.params.id));
+    this.setState({business: business});
   },
 
   componentDidMount: function () {
     this.reviewListener = ReviewStore.addListener(this._reviewsChanged);
+    this.businessListener = BusinessStore.addListener(this._businessChanged);
   },
 
   componentWillUnmount: function () {
     this.reviewListener.remove();
+    this.businessListener.remove();
   },
 
   componentWillReceiveProps: function(newProps) {
-    this.setState({business: BusinessStore.find(parseInt(newProps.params.id))});
+    var business = BusinessStore.find(parseInt(newProps.params.id));
+
+    this.setState({business: business});
   },
 
   render: function(){
@@ -45,8 +48,7 @@ var Business = React.createClass({
                           empty="glyphicon glyphicon-star-empty large"
                           initialRate={business.average_rating}
                           readonly={true}
-                          fractions={6} /> :
-                  <h4>No reviews</h4>;
+                          fractions={6} /> : <h4>No reviews</h4>;
 
     return(
       <div>
@@ -55,7 +57,7 @@ var Business = React.createClass({
         <ImageIndex businessId={business.id}/>
         <Map businesses={[business]} mapClass="businessMap"/>
         <p>{address}</p>
-        <ReviewIndex business={business} hiddenForm={true} reviewsChanged={this._reviewsChanged}/>
+        <ReviewIndex business={business} hiddenForm={true}/>
       </div>
     );
   }

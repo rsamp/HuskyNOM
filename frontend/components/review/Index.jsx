@@ -11,7 +11,6 @@ var ReviewIndex = React.createClass({
 
   _onChange: function() {
     this.setState({reviews: ReviewStore.all()});
-    // this.props.reviewsChanged();
   },
 
   componentDidMount: function() {
@@ -31,10 +30,6 @@ var ReviewIndex = React.createClass({
     this.setState({hiddenForm: !this.state.hiddenForm});
   },
 
-  // loadNextFive: function() {
-  //   this.setState({reviews: ReviewStore.addFive()});
-  // },
-
   render: function() {
     var business = this.props.business;
     var reviews = this.state.reviews.map(function(review) {
@@ -48,13 +43,9 @@ var ReviewIndex = React.createClass({
                           className="form-control purple-button"
                           id="review-button">Write a review</button> : "";
 
-    // var noReviews;
-    // if (business.reviews.length === 0){
-    //   noReviews = "There are no reviews for this restaurant. Be the first!";
-    // }
-    // if (reviews[0] === undefined){
-    //   reviews = "There are no reviews for this restaurant. Be the first!"
-    // }
+    if (business.reviews.length === 0){
+      reviews = "There are no reviews for this restaurant. Be the first!";
+    }
 
     return (
       <div>
@@ -68,7 +59,6 @@ var ReviewIndex = React.createClass({
         </ul>
       </div>
     );
-    // {business.reviews.length > 0 ? reviews : noReviews}
   }
 });
 

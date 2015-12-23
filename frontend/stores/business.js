@@ -14,6 +14,14 @@ var allBusinesses = function(businesses){
   _allBusinesses = businesses;
 };
 
+var updateBusiness = function(business){
+  for (var i = 0; i < _allBusinesses.length; i++) {
+    if (_allBusinesses[i].id === business.id) {
+      _allBusinesses[i] = business;
+    }
+  }
+};
+
 var createBusiness = function(business){
   _filteredBusinesses.push(business);
   _allBusinesses.push(business);
@@ -26,10 +34,6 @@ var fetchBusiness = function(business){
 BusinessStore.all = function(){
   return _allBusinesses.slice(0);
 };
-
-BusinessStore.fetchTen = function(startIdx){
-  return _filteredBusinesses.slice(startIdx, startIdx + 10);
-},
 
 BusinessStore.find = function(id){
   for (var i = 0; i < _allBusinesses.length; i++) {
@@ -58,7 +62,7 @@ BusinessStore.__onDispatch = function(payload){
       BusinessStore.__emitChange();
       break;
     case BusinessConstants.FIND_BUSINESS:
-      fetchBusiness(payload.business);
+      updateBusiness(payload.business);
       BusinessStore.__emitChange();
       break;
   }

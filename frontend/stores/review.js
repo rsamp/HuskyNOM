@@ -18,17 +18,6 @@ ReviewStore.all = function(){
   return _reviews.slice(0);
 };
 
-ReviewStore.initialFive = function(){
-  _showingReviews = _reviews.slice(0, 5);
-  return _showingReviews;
-},
-
-ReviewStore.addFive = function(){
-  var showingRevCount = _showingReviews.length;
-  _showingReviews = _showingReviews.concat(_reviews.slice(showingRevCount + 1, showingRevCount + 6));
-  return _showingReviews;
-};
-
 ReviewStore.__onDispatch = function(payload){
   switch (payload.actionType) {
     case ReviewConstants.REVIEWS_RECEIVED:
