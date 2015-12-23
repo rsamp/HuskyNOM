@@ -5,6 +5,7 @@ var React = require('react'),
     Route = ReactRouter.Route,
     IndexRoute = ReactRouter.IndexRoute,
     Navbar = require('./components/Navbar'),
+    Footer = require('./components/Footer'),
     Search = require('./components/Search'),
     BusinessIndex = require('./components/business/Index'),
     BusinessShow = require('./components/business/Show'),
@@ -18,6 +19,7 @@ var App = React.createClass({
         <div className="body">
           {this.props.children}
         </div>
+        <Footer/>
       </div>
     );
   }

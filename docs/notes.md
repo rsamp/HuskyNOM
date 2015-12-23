@@ -36,8 +36,6 @@ Bonus: open now - hours
 
 improve markers: change color on index item hover, have an onclick balloon
 
-2048 lakeshore ave, oakland, ca, 94606
-
 idea for images on business submit form:
 after uploading, show image and an option to delete
 
@@ -45,11 +43,9 @@ pagination - business index, reviews, images
 
 edit reviews
 
-
 profile page
 
 spacing of filters- buttons maybe?
-
 
 BusinessIndex Sort
 

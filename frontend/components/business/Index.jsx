@@ -27,12 +27,12 @@ var BusinessIndex = React.createClass({
             return b.average_rating - a.average_rating;
         });
         break;
-      case "Most Reviews":
+      case "Most Reviewed":
         businesses.sort(function(a,b) {
             return b.reviews.length - a.reviews.length;
         });
         break;
-      case "Least Reviews":
+      case "Least Reviewed":
         businesses.sort(function(a,b) {
             return a.reviews.length - b.reviews.length;
         });
@@ -64,10 +64,10 @@ var BusinessIndex = React.createClass({
     });
 
     var pageDownBtn = this.state.page > 0 ?
-                    <button onClick={this.pageDown}>Previous</button> : "";
+                    <button className="purple-button" onClick={this.pageDown}>Previous</button> : "";
 
     var pageUpBtn = this.state.page < groupsOfTenBusinesses.length - 1?
-                    <button onClick={this.pageUp}>Next</button> : "";
+                    <button className="purple-button" onClick={this.pageUp}>Next</button> : "";
 
     return(
       <div>
@@ -75,8 +75,8 @@ var BusinessIndex = React.createClass({
           Sort by:
           <select name="sort" className="form-control" valueLink={this.linkState('sortBy')}>
             <option value={"Top Rated"}>Top Rated</option>
-            <option value={"Most Reviews"}>Most Reviews</option>
-            <option value={"Least Reviews"}>Least Reviews</option>
+            <option value={"Most Reviewed"}>Most Reviewed</option>
+            <option value={"Least Reviewed"}>Least Reviewed</option>
             <option value={"A to Z"}>A to Z</option>
             <option value={"Z to A"}>Z to A</option>
           </select>

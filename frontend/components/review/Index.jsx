@@ -6,11 +6,11 @@ var React = require('react'),
 
 var ReviewIndex = React.createClass({
   getInitialState: function() {
-    return {reviews: ReviewStore.all(), hiddenForm: true};
+    return {reviews: this.props.reviews, hiddenForm: true};
   },
 
   _onChange: function() {
-    this.setState({reviews: ReviewStore.all()});
+    this.setState({reviews: this.props.business.reviews});
   },
 
   componentDidMount: function() {
@@ -18,8 +18,8 @@ var ReviewIndex = React.createClass({
     ApiUtil.fetchReviews();
   },
 
-  componentWillReceiveProps: function(){
-    this.setState({hiddenForm: true});
+  componentWillReceiveProps: function(newProps){
+    this.setState({reviews: newProps.reviews, hiddenForm: true});
   },
 
   componentWillUnmount: function() {
@@ -33,9 +33,7 @@ var ReviewIndex = React.createClass({
   render: function() {
     var business = this.props.business;
     var reviews = this.state.reviews.map(function(review) {
-      if (business.id === review.business_id) {
-        return <ReviewIndexItem key={review.id} review={review}/>;
-      }
+      return <ReviewIndexItem key={review.id} review={review}/>;
     });
 
     var formButton = this.state.hiddenForm ?
@@ -43,7 +41,7 @@ var ReviewIndex = React.createClass({
                           className="form-control purple-button"
                           id="review-button">Write a review</button> : "";
 
-    if (business.reviews.length === 0){
+    if (this.state.reviews.length === 0){
       reviews = "There are no reviews for this restaurant. Be the first!";
     }
 

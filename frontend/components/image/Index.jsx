@@ -2,7 +2,8 @@ var React = require('react'),
     ImageStore = require('../../stores/image'),
     ApiUtil = require('../../util/api_util'),
     AddImageButton = require('./AddButton'),
-    ImageIndexItem = require('./IndexItem');
+    ImageIndexItem = require('./IndexItem'),
+    Carousel = require('react-responsive-carousel').Carousel;
 
 var ImageIndex = React.createClass({
   getInitialState: function(){
@@ -34,11 +35,20 @@ var ImageIndex = React.createClass({
     var images = this.state.images.map(function(image){
       if (this.props.businessId === image.business_id) {
         return (
+          // <img key={image.id} src={'http://res.cloudinary.com/djk3yhmfn/image/upload/w_200,h_200,c_fit/' + image.cloudinary_id}/>
+
           <ImageIndexItem image={image} key={image.id}/>
         );
       }
     }.bind(this));
 
+    // var carousel = "";
+    //
+    // if (images.length !== 0) {
+    //   carousel = <Carousel type="slider" showControls={true} showStatus={true}>{images}</Carousel>;
+    // }
+
+    // debugger;
     return(
       <div className="images">
         <AddImageButton postImage={this.postImage}/>
@@ -51,4 +61,5 @@ var ImageIndex = React.createClass({
   }
 });
 
+// {carousel}
 module.exports = ImageIndex;

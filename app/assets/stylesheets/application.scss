@@ -29,6 +29,7 @@ body{
   clear: both;
   padding: 10px 50px;
   overflow: auto;
+  min-height: 1100px;
 }
 
 a{
@@ -75,4 +76,10 @@ a{
 
 .filter {
   margin: 5px;
+}
+
+footer {
+  height: 60px;
+  background-color: #8856a1;
+  color: #fff;
 }

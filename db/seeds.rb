@@ -7,6 +7,8 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 Business.delete_all
+Review.delete_all
+Image.delete_all
 Business.create(name: "Chipotle Mexican Grill",
                 lat: 47.6592353,
                 lng: -122.3134728,
