@@ -23,9 +23,6 @@ var Map = React.createClass({
     this.registerListeners();
     this.markers = [];
     this.props.businesses.forEach(this.createMarker);
-    // setInterval(function(){
-    //   this.props.initialFetch();
-    // }.bind(this), 3000);
   },
 
   registerListeners: function(){
@@ -40,11 +37,20 @@ var Map = React.createClass({
 
   createMarker: function(business){
     var pos = new google.maps.LatLng(business.lat, business.lng);
+    var infoWindow = new google.maps.InfoWindow({
+      content: business.name,
+    });
+    // infoWindow.addListener('click', function(){
+    //
+    // });
     var marker = new google.maps.Marker({
       position: pos,
       map: this.map,
       title: business.name,
       businessId: business.id
+    });
+    marker.addListener('click', function(){
+      infoWindow.open(this.map, marker);
     });
     this.markers.push(marker);
   },

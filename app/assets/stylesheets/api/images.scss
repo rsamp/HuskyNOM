@@ -13,6 +13,11 @@
   float: right;
 }
 
+.carousel {
+  position: relative;
+  bottom: 22px;
+}
+
 .image {
   clear: right;
   float: left;
@@ -24,10 +29,20 @@
   height: 200px;
 }
 
-.image-next {
+#image-next {
   float: right;
+  width: 80px;
+  position: relative;
+  bottom: 35px;
+  display: inline;
+  border-radius: 0;
 }
 
-.image-prev {
+#image-prev {
   margin-left: 45px;
+  width: 80px;
+  position: relative;
+  bottom: 35px;
+  display: inline;
+  border-radius: 0;
 }

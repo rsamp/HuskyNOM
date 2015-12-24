@@ -58,16 +58,20 @@ var ImageIndex = React.createClass({
     }
 
     var pageDownBtn = this.state.page > 0 ?
-                    <button className="purple-button image-prev" onClick={this.pageDown}>Previous</button> : "";
+                    <button className="form-control purple-button"
+                            id="image-prev"
+                            onClick={this.pageDown}>Previous</button> : "";
 
     var pageUpBtn = this.state.page < imagePairs.length - 1?
-                    <button className="purple-button image-next" onClick={this.pageUp}>Next</button> : "";
+                    <button className="form-control purple-button"
+                            id="image-next"
+                            onClick={this.pageUp}>Next</button> : "";
 
     return(
       <div className="images">
         <AddImageButton postImage={this.postImage}/>
         <br/>
-        <ul>
+        <ul className="carousel">
           {images}
         </ul>
         {pageDownBtn}
