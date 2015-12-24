@@ -20,7 +20,7 @@ class Api::BusinessesController < ApplicationController
 
   def business_params
     params.require(:business).permit(:name, :lat, :lng, :address,
-                                     :delivery, :accept_cc, :image_id)
+                                     :delivery, :accept_cc, :image_id, :description)
   end
 
   def bounds
