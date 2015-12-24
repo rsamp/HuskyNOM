@@ -8,8 +8,8 @@ var ReviewIndexItem = React.createClass({
     var user = review.author.username;
     var rating = review.rating;
 
-    var editButton = user === window.CURRENT_USER.username ?
-                <button onClick={this.editReview}>Edit Review</button> : "";
+    // var editButton = user === window.CURRENT_USER.username ?
+    //             <button onClick={this.editReview}>Edit Review</button> : "";
 
     return (
       <li>
@@ -26,11 +26,12 @@ var ReviewIndexItem = React.createClass({
             <br/>
             Body: {review.body}
           </div>
-        {editButton}
         </div>
       </li>
     );
   }
 });
+
+// {editButton}
 
 module.exports = ReviewIndexItem;

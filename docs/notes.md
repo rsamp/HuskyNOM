@@ -62,3 +62,7 @@ validate against empty stars
 algorithm for 'most popular'
 
 map connection to business index
+
+click on markers
+
+number of reviews by user under their user info

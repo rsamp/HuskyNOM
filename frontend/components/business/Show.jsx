@@ -5,7 +5,8 @@ var React = require('react'),
     ImageIndex = require('../image/Index'),
     Rating = require('react-rating'),
     BusinessStore = require('../../stores/business'),
-    ReviewStore = require('../../stores/review');
+    ReviewStore = require('../../stores/review'),
+    ApiUtil = require('../../util/api_util');
 
 var Business = React.createClass({
   mixins: [History],
@@ -25,6 +26,7 @@ var Business = React.createClass({
   },
 
   componentDidMount: function () {
+    ApiUtil.fetchBusiness(this.props.params.id);
     this.reviewListener = ReviewStore.addListener(this._reviewsChanged);
     this.businessListener = BusinessStore.addListener(this._businessChanged);
   },
@@ -35,12 +37,18 @@ var Business = React.createClass({
   },
 
   componentWillReceiveProps: function(newProps) {
-    var business = BusinessStore.find(parseInt(newProps.params.id));
-
-    this.setState({business: business});
+    this._businessChanged();
   },
 
-  render: function(){
+  render: function() {
+    if (this.state.business) {
+      return this.renderBusiness();
+    } else {
+      return <div/>;
+    }
+  },
+
+  renderBusiness: function(){
     var business = this.state.business;
     var address = business.address;
     var rating = business.average_rating ?

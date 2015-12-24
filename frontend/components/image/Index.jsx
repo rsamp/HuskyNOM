@@ -2,8 +2,7 @@ var React = require('react'),
     ImageStore = require('../../stores/image'),
     ApiUtil = require('../../util/api_util'),
     AddImageButton = require('./AddButton'),
-    ImageIndexItem = require('./IndexItem'),
-    Carousel = require('react-responsive-carousel').Carousel;
+    ImageIndexItem = require('./IndexItem');
 
 var ImageIndex = React.createClass({
   getInitialState: function(){
@@ -46,8 +45,6 @@ var ImageIndex = React.createClass({
         imagesForBusiness.push(this.state.images[i]);
       }
     }
-    // this.state.images.forEach(function(image){
-    // }.bind(this));
 
     var imagePairs = [];
     while (imagesForBusiness.length > 0){
@@ -60,29 +57,12 @@ var ImageIndex = React.createClass({
       });
     }
 
-    // var images = this.state.images.map(function(image){
-    //   if (this.props.business.id === image.business_id) {
-    //     return (
-    //       // <img key={image.id} src={'http://res.cloudinary.com/djk3yhmfn/image/upload/w_200,h_200,c_fit/' + image.cloudinary_id}/>
-    //
-    //       <ImageIndexItem image={image} key={image.id}/>
-    //     );
-    //   }
-    // }.bind(this));
-
-    // var carousel = "";
-    //
-    // if (images.length !== 0) {
-    //   carousel = <Carousel type="slider" showControls={true} showStatus={true}>{images}</Carousel>;
-    // }
-
     var pageDownBtn = this.state.page > 0 ?
                     <button className="purple-button image-prev" onClick={this.pageDown}>Previous</button> : "";
 
     var pageUpBtn = this.state.page < imagePairs.length - 1?
                     <button className="purple-button image-next" onClick={this.pageUp}>Next</button> : "";
 
-    // debugger;
     return(
       <div className="images">
         <AddImageButton postImage={this.postImage}/>
@@ -97,5 +77,4 @@ var ImageIndex = React.createClass({
   }
 });
 
-// {carousel}
 module.exports = ImageIndex;
