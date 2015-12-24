@@ -9,6 +9,8 @@
 Business.delete_all
 Review.delete_all
 Image.delete_all
+User.delete_all
+User.create(username: "DemoUser", password: "Password")
 Business.create(name: "Chipotle Mexican Grill",
                 lat: 47.6592353,
                 lng: -122.3134728,

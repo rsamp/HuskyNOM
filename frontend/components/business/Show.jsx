@@ -69,7 +69,7 @@ var Business = React.createClass({
         <p>{address}</p>
         <ReviewIndex business={business} reviews={business.reviews} hiddenForm={true}/>
         <div className="hours-information">
-          <h4>Hours/Other Information:</h4>
+          <h4>Hours and Other Information:</h4>
           {description}
         </div>
       </div>
