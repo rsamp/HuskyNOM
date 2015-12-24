@@ -13,6 +13,11 @@ li {
   width: 400px;
 }
 
+.review-area{
+  display: inline-block;
+  width: 720px;
+}
+
 #review-button {
   margin-top: 5px;
   width: 120px;
@@ -38,7 +43,8 @@ li {
 }
 
 .review-content {
+  padding-bottom: 10px;
   border-bottom: 1px solid #d9d9d9;
-  width: 80%;
+  width: 100%;
   margin: auto;
 }

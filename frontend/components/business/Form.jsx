@@ -15,10 +15,9 @@ var BusinessForm = React.createClass({
       {
         name: "",
         address: "",
-        hours: "",
+        description: "",
         delivery: null,
-        accept_cc: null,
-        other_info: null
+        accept_cc: null
       });
   },
 
@@ -49,17 +48,16 @@ var BusinessForm = React.createClass({
       address: address,
       delivery: this.state.delivery,
       accept_cc: this.state.accept_cc,
-      hours: this.state.other_info
+      description: this.state.description
     }, this.goToBusiness);
 
     this.setState(
       {
         name: "",
         address: "",
-        hours: "",
+        description: "",
         delivery: null,
-        accept_cc: null,
-        other_info: null
+        accept_cc: null
       });
   },
 
@@ -105,9 +103,9 @@ var BusinessForm = React.createClass({
         </label>
         <br/>
         <label>
-          Other information:
-          <textarea name="other_info" className="form-control"
-                    valueLink={this.linkState('other_info')}>
+          Hours/Other information:
+          <textarea name="description" className="form-control"
+                    valueLink={this.linkState('description')}>
 
           </textarea>
         </label>

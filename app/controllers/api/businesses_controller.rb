@@ -2,9 +2,6 @@ class Api::BusinessesController < ApplicationController
 
   def index
     @businesses = Business.filter_all(bounds, params[:delivery], params[:accept_cc])
-    # @businesses.each do |business|
-    #   business.avg_rating = business.average_rating
-    # end
   end
 
   def create
@@ -14,7 +11,6 @@ class Api::BusinessesController < ApplicationController
 
   def show
     @business = Business.find(params[:id])
-    # render json: @business
   end
 
   def destroy
@@ -23,8 +19,8 @@ class Api::BusinessesController < ApplicationController
   private
 
   def business_params
-    params.require(:business).permit(:name, :lat, :lng, :address,
-                                     :hours, :delivery, :accept_cc, :image_id)
+    params.require(:business).permit(:name, :lat, :lng, :address, :description,
+                                     :delivery, :accept_cc, :image_id)
   end
 
   def bounds

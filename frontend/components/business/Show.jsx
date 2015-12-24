@@ -58,6 +58,7 @@ var Business = React.createClass({
                           readonly={true}
                           fractions={6} /> :
                           <h4 className="no-reviews">No reviews</h4>;
+    var description = business.description;
 
     return(
       <div>
@@ -67,6 +68,10 @@ var Business = React.createClass({
         <Map businesses={[business]} mapClass="businessMap"/>
         <p>{address}</p>
         <ReviewIndex business={business} reviews={business.reviews} hiddenForm={true}/>
+        <div className="hours-information">
+          <h4>Hours/Other Information:</h4>
+          {description}
+        </div>
       </div>
     );
   }

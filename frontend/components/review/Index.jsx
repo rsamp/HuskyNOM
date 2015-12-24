@@ -54,13 +54,13 @@ var ReviewIndex = React.createClass({
     }
 
     return (
-      <div>
+      <div className="review-area">
         <ReviewForm business={business}
                     hiddenForm={this.state.hiddenForm}
                     toggleForm={this.toggleForm}/>
         {formButton}
         <h3>Reviews for {business.name}</h3>
-        <ul>
+        <ul className="reviews-area">
           {reviews}
         </ul>
       </div>

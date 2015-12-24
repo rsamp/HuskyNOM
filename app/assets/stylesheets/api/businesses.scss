@@ -9,6 +9,10 @@
   margin-bottom: 0px;
 }
 
+// #row{
+//   width: 720px;
+// }
+
 .business-index-item:hover{
   // background-color: rgba(136, 86, 161, 0.2);
   background-color: rgba(217, 217, 217, 0.4);
@@ -20,9 +24,7 @@
 }
 
 .business-index{
-  width: 40%;
-  // overflow: scroll;
-  // height: 600px;
+  width: 35%;
 }
 
 .no-reviews{
@@ -38,4 +40,13 @@
 
 .index-rating{
   cursor: pointer;
+}
+
+.hours-information{
+  float: right;
+  width: 21%;
+  position: relative;
+  padding-left: 20px;
+  border-left: 1px solid #d9d9d9;
+
 }

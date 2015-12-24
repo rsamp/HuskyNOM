@@ -15,34 +15,40 @@
 
 .carousel {
   position: relative;
-  bottom: 22px;
+  bottom: 20px;
+  left: 10px;
 }
 
 .image {
   clear: right;
   float: left;
   margin-left: 5px;
-  margin-top: 30px;
+  margin-top: 10px;
 }
 
 .images ul{
-  height: 200px;
+  height: 165px;
+  margin-top: 30px;
 }
 
 #image-next {
   float: right;
-  width: 80px;
+  width: 50px;
   position: relative;
-  bottom: 35px;
+  bottom: 32px;
   display: inline;
   border-radius: 0;
+  font-size: 12px;
+  height: 30px;
 }
 
 #image-prev {
   margin-left: 45px;
-  width: 80px;
+  width: 70px;
   position: relative;
-  bottom: 35px;
+  bottom: 32px;
   display: inline;
   border-radius: 0;
+  font-size: 12px;
+  height: 30px;
 }
