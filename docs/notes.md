@@ -14,8 +14,6 @@ Wireframe purple: #8856a1
 
 After adding Image model, revisit BusinessIndexItem and Business Page. Will also need default "no-image" image
 
-refactoring opportunities: reviewIndex - instead of the if statement in render, perform a filter in the model
-
 search.jsx setinterval
 Map Loading... -> No results Search.jsx: Use the store to know when results are finished being filtered. Similar issue with if no reviews yet for a business
 
@@ -47,11 +45,7 @@ profile page
 
 spacing of filters- buttons maybe?
 
-BusinessIndex Sort
-
 Peer feedback:
-reduce space between top of page and logo as well as logo to sign in/up area
-
 put images in a box
 
 formatting of review index item:
@@ -59,7 +53,7 @@ make user area a bit bigger, take away "Date:" and "Body:"
 
 password confirmation on sign up
 
-long username goes into review. set max on length
+long username goes into review. set max on length, increase column width
 
 parse over entire string for search
 

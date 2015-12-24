@@ -24,10 +24,7 @@ class Business < ActiveRecord::Base
       businesses = businesses.where(accept_cc: accept_cc)
     end
 
-    businesses#.order(:average_rating)
-
-    # something along these lines to get average_rating available for ordering
-    # business.select("business.*, SUM(reviews.rating) / COUNT(reviews.*) AS avg_rating").order()
+    businesses
   end
 
   def average_rating
@@ -40,7 +37,7 @@ class Business < ActiveRecord::Base
 
     avg = 1.0 * total_stars / reviews.count
 
-    # Rounds to nearest 1/12
+    # Rounds to nearest 1/6
     (avg * 6).round.to_f/6
   end
 

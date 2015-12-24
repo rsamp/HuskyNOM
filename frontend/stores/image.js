@@ -13,6 +13,17 @@ var createImage = function(image){
   _images.push(image);
 };
 
+// ImageStore.imagesByBusiness = function(business){
+//   var imagesByBusiness = [];
+//
+//   _images.forEach(function(image){
+//     if (image.business.id === business.id){
+//       imagesByBusiness.push(image);
+//     }
+//   });
+//   return imagesByBusiness;
+// };
+
 ImageStore.all = function(){
   return _images.slice(0);
 };

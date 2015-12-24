@@ -59,7 +59,6 @@ var Searchbar = React.createClass({
 
   selectBusiness: function(business, e){
     e.preventDefault();
-    // this.inSearchbox = true;
     var url = '/businesses/' + business.id;
     this.history.pushState({business: business}, url);
     this.setState({inputVal: ""});
