@@ -6,7 +6,7 @@ var React = require('react'),
 
 var ReviewIndex = React.createClass({
   getInitialState: function() {
-    return {reviews: this.props.reviews, hiddenForm: true};
+    return {reviews: this.props.business.reviews, hiddenForm: true};
   },
 
   _onChange: function() {
@@ -30,7 +30,15 @@ var ReviewIndex = React.createClass({
     this.setState({hiddenForm: !this.state.hiddenForm});
   },
 
-  render: function() {
+  render: function(){
+    if (this.state.reviews){
+      return this.renderReviews();
+    } else {
+      return <div/>;
+    }
+  },
+
+  renderReviews: function() {
     var business = this.props.business;
     var reviews = this.state.reviews.map(function(review) {
       return <ReviewIndexItem key={review.id} review={review}/>;

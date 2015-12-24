@@ -17,7 +17,8 @@ var BusinessForm = React.createClass({
         address: "",
         hours: "",
         delivery: null,
-        accept_cc: null
+        accept_cc: null,
+        other_info: null
       });
   },
 
@@ -47,7 +48,8 @@ var BusinessForm = React.createClass({
       lng: lng,
       address: address,
       delivery: this.state.delivery,
-      accept_cc: this.state.accept_cc
+      accept_cc: this.state.accept_cc,
+      hours: this.state.other_info
     }, this.goToBusiness);
 
     this.setState(
@@ -56,7 +58,8 @@ var BusinessForm = React.createClass({
         address: "",
         hours: "",
         delivery: null,
-        accept_cc: null
+        accept_cc: null,
+        other_info: null
       });
   },
 
@@ -101,6 +104,13 @@ var BusinessForm = React.createClass({
           </select>
         </label>
         <br/>
+        <label>
+          Other information:
+          <textarea name="other_info" className="form-control"
+                    valueLink={this.linkState('other_info')}>
+
+          </textarea>
+        </label>
         <input type="submit"
                className="form-control purple-button" value="Submit"/>
       </form>
@@ -109,29 +119,3 @@ var BusinessForm = React.createClass({
 });
 
 module.exports = BusinessForm;
-
-// <label>
-//   Hours (optional)
-//   <br/>
-//   Sunday:
-//   <input type="text"/>
-//   <br/>
-//   Monday:
-//   <input type="text"/>
-//   <br/>
-//   Tuesday:
-//   <input type="text"/>
-//   <br/>
-//   Wednesday:
-//   <input type="text"/>
-//   <br/>
-//   Thursday:
-//   <input type="text"/>
-//   <br/>
-//   Friday:
-//   <input type="text"/>
-//   <br/>
-//   Saturday:
-//   <input type="text"/>
-// </label>
-// <br/>
