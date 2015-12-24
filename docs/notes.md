@@ -24,8 +24,6 @@ set minimum rating. use flash errors? could be annoying with react.
 
 remove "non-react" message from root
 
-how to defend against entering something in address bar manually. breaks functionality of site
-
 flash error messages
 
 hours on business form
@@ -53,8 +51,6 @@ make user area a bit bigger, take away "Date:" and "Body:"
 
 password confirmation on sign up
 
-long username goes into review. set max on length, increase column width
-
 parse over entire string for search
 
 validate against empty stars
@@ -64,5 +60,3 @@ algorithm for 'most popular'
 map connection to business index
 
 click on markers
-
-number of reviews by user under their user info

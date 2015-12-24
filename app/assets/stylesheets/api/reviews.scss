@@ -24,3 +24,21 @@ li {
   position: relative;
   top: 12px;
 }
+
+.review-beside {
+  position: relative;
+  bottom: 8px;
+  left: 20px;
+}
+
+.user-info {
+  position: relative;
+  top: 5px;
+  font-weight: bold;
+}
+
+.review-content {
+  border-bottom: 1px solid #d9d9d9;
+  width: 80%;
+  margin: auto;
+}

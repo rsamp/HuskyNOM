@@ -13,22 +13,22 @@ var BusinessIndexItem = React.createClass({
   render: function(){
     var business = this.props.business;
     var rating = business.average_rating ?
-                  <Rating full="glyphicon glyphicon-star med"
-                          empty="glyphicon glyphicon-star-empty med"
-                          initialRate={business.average_rating}
-                          readonly={true}
-                          fractions={6} /> :
-                  <h4>No reviews</h4>;
+                  <div>
+                    <Rating full="glyphicon glyphicon-star med index-rating"
+                            empty="glyphicon glyphicon-star-empty med index-rating"
+                            initialRate={business.average_rating}
+                            readonly={true}
+                            fractions={6} />
+                    <span className="review-beside">
+                      Reviews: {business.reviews.length}
+                    </span>
+                  </div> :
+                  <h5>No reviews</h5>;
 
     return (
-      <li>
-        <a>
-          <h4 onClick={this.handleClick}>
-            {business.name}
-          </h4>
-        </a>
+      <li className="business-index-item" onClick={this.handleClick}>
+        <h4>{business.name}</h4>
         {rating}
-        <p>Reviews: {business.reviews.length}</p>
       </li>
     );
   }

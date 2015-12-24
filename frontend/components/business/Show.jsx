@@ -56,7 +56,8 @@ var Business = React.createClass({
                           empty="glyphicon glyphicon-star-empty large"
                           initialRate={business.average_rating}
                           readonly={true}
-                          fractions={6} /> : <h4>No reviews</h4>;
+                          fractions={6} /> :
+                          <h4 className="no-reviews">No reviews</h4>;
 
     return(
       <div>

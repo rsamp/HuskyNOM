@@ -13,18 +13,17 @@ var ReviewIndexItem = React.createClass({
 
     return (
       <li>
-        <div className="row">
-          <div className="col-md-1 user-info">
+        <div className="row review-content">
+          <div className="col-md-2 user-info">
             {user}
           </div>
-          <div className="col-md-8 review-info">
+          <div className="col-md-10 review-info">
             <Rating full="glyphicon glyphicon-star med"
                     empty="glyphicon glyphicon-star-empty med"
                     initialRate={rating} readonly={true} />
+            <span className="review-beside">{date}</span>
             <br/>
-            Date: {date}
-            <br/>
-            Body: {review.body}
+            {review.body}
           </div>
         </div>
       </li>

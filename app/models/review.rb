@@ -1,5 +1,6 @@
 class Review < ActiveRecord::Base
   validates :author_id, :business_id, :rating, :body, presence: true
+  # validates :rating, inclusion: { in: 1..5 }
 
   belongs_to :business
 

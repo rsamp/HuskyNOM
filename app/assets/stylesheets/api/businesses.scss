@@ -1,6 +1,19 @@
 // Place all the styles related to the api/businesses controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.business-index-item{
+  height: 90px;
+  cursor: pointer;
+  padding: 10px;
+  margin-bottom: 0px;
+}
+
+.business-index-item:hover{
+  // background-color: rgba(136, 86, 161, 0.2);
+  background-color: rgba(217, 217, 217, 0.4);
+}
+
 .business-form{
   width: 230px;
 }
@@ -9,4 +22,19 @@
   width: 40%;
   // overflow: scroll;
   // height: 600px;
+}
+
+.no-reviews{
+  display: inline-block;
+  margin-top: 6px;
+  margin-bottom: 12px;
+}
+
+.businessMap{
+  height: 200px;
+  width: 400px;
+}
+
+.index-rating{
+  cursor: pointer;
 }

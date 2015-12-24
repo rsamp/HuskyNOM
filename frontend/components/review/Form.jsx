@@ -38,7 +38,7 @@ var ReviewForm = React.createClass({
           <Rating full="glyphicon glyphicon-star large"
                   empty="glyphicon glyphicon-star-empty large"
                   initialRate={this.state.rating}
-                  onChange={this.handleRating} />
+                  onChange={this.handleRating}/>
           <br/>
           <textarea className="form-control review-textarea" rows="5"
                     placeholder='Enter your review here'
