@@ -64,10 +64,10 @@ var BusinessIndex = React.createClass({
     });
 
     var pageDownBtn = this.state.page > 0 ?
-                    <button className="purple-button" onClick={this.pageDown}>Previous</button> : "";
+                    <button className="form-control purple-button" id="business-prev" onClick={this.pageDown}>Previous</button> : "";
 
     var pageUpBtn = this.state.page < groupsOfTenBusinesses.length - 1?
-                    <button className="purple-button" onClick={this.pageUp}>Next</button> : "";
+                    <button className="form-control purple-button" id="business-next" onClick={this.pageUp}>Next</button> : "";
 
     return(
       <div>
@@ -83,9 +83,9 @@ var BusinessIndex = React.createClass({
         </label>
         <ul className="business-index">
           {businesses}
+          {pageDownBtn}
+          {pageUpBtn}
         </ul>
-        {pageDownBtn}
-        {pageUpBtn}
       </div>
     );
   }
