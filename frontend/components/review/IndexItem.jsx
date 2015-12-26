@@ -4,7 +4,7 @@ var React = require('react'),
 var ReviewIndexItem = React.createClass({
   render: function(){
     var review = this.props.review;
-    var date = review.created_at.split("T")[0];
+    var date = new Date(review.created_at).toLocaleDateString();
     var user = review.author.username;
     var rating = review.rating;
 
