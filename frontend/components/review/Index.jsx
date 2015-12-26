@@ -2,11 +2,18 @@ var React = require('react'),
     ReviewStore = require('../../stores/review'),
     ApiUtil = require('../../util/api_util'),
     ReviewIndexItem = require('./IndexItem'),
-    ReviewForm = require('./Form');
+    ReviewForm = require('./Form'),
+    LinkedStateMixin = require('react-addons-linked-state-mixin');
 
 var ReviewIndex = React.createClass({
+  mixins: [LinkedStateMixin],
+
   getInitialState: function() {
-    return {reviews: this.props.business.reviews, hiddenForm: true};
+    return {
+      reviews: this.props.business.reviews,
+      hiddenForm: true,
+      sortBy: "Most Recent"
+    };
   },
 
   _onChange: function() {
@@ -40,7 +47,36 @@ var ReviewIndex = React.createClass({
 
   renderReviews: function() {
     var business = this.props.business;
-    var reviews = this.state.reviews.map(function(review) {
+    var reviews = this.state.reviews.slice(0);
+
+    switch (this.state.sortBy) {
+      case "Most Recent":
+        reviews.sort(function(a,b) {
+            var aDate = new Date(a.created_at);
+            var bDate = new Date(b.created_at);
+            return bDate - aDate;
+        });
+        break;
+      case "Oldest":
+        reviews.sort(function(a,b) {
+            var aDate = new Date(a.created_at);
+            var bDate = new Date(b.created_at);
+            return aDate - bDate;
+        });
+        break;
+      case "Highest Rating":
+        reviews.sort(function(a,b) {
+            return b.rating - a.rating;
+        });
+        break;
+      case "Lowest Rating":
+        reviews.sort(function(a,b) {
+            return a.rating - b.rating;
+        });
+        break;
+    }
+
+    reviews = reviews.map(function(review) {
       return <ReviewIndexItem key={review.id} review={review}/>;
     });
 
@@ -59,7 +95,13 @@ var ReviewIndex = React.createClass({
                     hiddenForm={this.state.hiddenForm}
                     toggleForm={this.toggleForm}/>
         {formButton}
-        <h3>Reviews for {business.name}</h3>
+        <h3 className="reviews-header">Reviews for {business.name}</h3>
+          <select name="sort" className="form-control" id="review-sort" valueLink={this.linkState('sortBy')}>
+            <option value={"Most Recent"}>Date: Most Recent First</option>
+            <option value={"Oldest"}>Date: Oldest First</option>
+            <option value={"Highest Rating"}>Rating: Highest First</option>
+            <option value={"Lowest Rating"}>Rating: Lowest First</option>
+          </select>
         <ul className="reviews-area">
           {reviews}
         </ul>

@@ -152,7 +152,7 @@ Business.create(name: "Earl’s On the Avenue",
                 delivery: true,
                 accept_cc: true,
                 image_id: nil)
-Business.create(name: "Finn MacCools Irish Pub & Restaurant",
+Business.create(name: "Finn MacCools Irish Pub",
                 lat: 47.6588737,
                 lng: -122.3134989,
                 address: "4217 University Way NE, Seattle, WA 98105, USA",
