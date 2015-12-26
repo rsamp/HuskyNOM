@@ -136,12 +136,81 @@ Business.create(name: "Noodle Nation",
                 delivery: false,
                 accept_cc: true,
                 image_id: nil)
-
-
+Business.create(name: "Pizza Ragazzi",
+                lat: 47.6666598,
+                lng: -122.3133993,
+                address: "5201 University Way NE, Seattle, WA 98105, USA",
+                description: Faker::Lorem.paragraphs(4),
+                delivery: true,
+                accept_cc: true,
+                image_id: nil)
+Business.create(name: "Earl’s On the Avenue",
+                lat: 47.6608176,
+                lng: -122.3134618,
+                address: "4333 University Way NE, Seattle, WA 98105, USA",
+                description: Faker::Lorem.paragraphs(4),
+                delivery: true,
+                accept_cc: true,
+                image_id: nil)
+Business.create(name: "Finn MacCools Irish Pub & Restaurant",
+                lat: 47.6588737,
+                lng: -122.3134989,
+                address: "4217 University Way NE, Seattle, WA 98105, USA",
+                delivery: false,
+                accept_cc: true,
+                image_id: nil)
+Business.create(name: "Jimmy John’s",
+                lat: 47.658097,
+                lng: -122.3136501,
+                address: "4141 University Way NE, Seattle, WA 98105, USA",
+                description: Faker::Lorem.paragraphs(4),
+                delivery: true,
+                accept_cc: true,
+                image_id: nil)
+Business.create(name: "Thaiger Room",
+                lat: 47.6591942,
+                lng: -122.3129028,
+                address: "4228 University Way NE, Seattle, WA 98105, USA",
+                description: Faker::Lorem.paragraphs(4),
+                delivery: true,
+                accept_cc: true,
+                image_id: nil)
+Business.create(name: "Taste of India",
+                lat: 47.6690513,
+                lng: -122.3175771,
+                address: "5517 Roosevelt Way NE, Seattle, WA 98105, USA",
+                description: Faker::Lorem.paragraphs(4),
+                delivery: true,
+                accept_cc: true,
+                image_id: nil)
+Business.create(name: "Pagliacci Pizza",
+                lat: 47.6621632,
+                lng: -122.3134133,
+                address: "4529 University Way NE, Seattle, WA 98105, USA",
+                description: Faker::Lorem.paragraphs(4),
+                delivery: true,
+                accept_cc: true,
+                image_id: nil)
+Business.create(name: "Delfino’s Chicago Style Pizza",
+                lat: 47.6632857,
+                lng: -122.299267,
+                address: "2631 NE University Village St, Seattle, WA 98105, USA",
+                description: Faker::Lorem.paragraphs(4),
+                delivery: true,
+                accept_cc: true,
+                image_id: nil)
+Business.create(name: "Thai 65",
+                lat: 47.6587736,
+                lng: -122.3128673,
+                address: "4214 University Way NE, Seattle, WA 98105, USA",
+                description: Faker::Lorem.paragraphs(4),
+                delivery: true,
+                accept_cc: true,
+                image_id: nil)
 
 # Reviews
 
-150.times do
+160.times do
   reviewData = {
     author_id: User.all.sample.id,
     business_id: Business.all.sample.id,
