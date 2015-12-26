@@ -98,14 +98,15 @@ var BusinessIndex = React.createClass({
     return(
       <div>
         <label>
-          Sort by:
+          Order by:
           <select name="sort" className="form-control"
+                  id="business-sort"
                   valueLink={this.linkState('sortBy')}>
-            <option value={"Top Rated"}>Top Rated</option>
-            <option value={"Most Reviewed"}>Most Reviewed</option>
-            <option value={"Least Reviewed"}>Least Reviewed</option>
-            <option value={"A to Z"}>A to Z</option>
-            <option value={"Z to A"}>Z to A</option>
+            <option value={"Top Rated"}>Rating: Top Rated</option>
+            <option value={"Most Reviewed"}>Reviews: Most Reviews</option>
+            <option value={"Least Reviewed"}>Reviews: Least Reviews</option>
+            <option value={"A to Z"}>Alphabet: A to Z</option>
+            <option value={"Z to A"}>Alphabet: Z to A</option>
           </select>
         </label>
         <ul className="business-index">

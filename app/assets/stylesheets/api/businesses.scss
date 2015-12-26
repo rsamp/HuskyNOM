@@ -73,26 +73,21 @@
   border-left: 1px solid #d9d9d9;
 }
 
-.filters{
-  // float: right;
-  // display: inline;
-}
-
-
 .filters label {
-  margin: 10px;
-  padding: 5px;
-  border: 1px solid gray;
+  margin: 5px;
+  padding: 7px 15px;
+  border: 1px solid #d9d9d9;
+  border-radius: 5px;
 }
 
-.filters input:focus + label {
-  border-color: blue;
+#filter {
+  margin-left: 5px;
 }
 
-.filters input:checked + label {
-  border-color: red;
-}
-
-.filters input:focus:checked + label {
-  border-color: green;
+#business-sort {
+  position: relative;
+  top: 5px;
+  left: 5px;
+  width: 305px;
+  height: 36px;
 }
