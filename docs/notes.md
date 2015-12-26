@@ -50,3 +50,7 @@ validate against empty stars
 algorithm for 'most popular'
 
 map connection to business index
+
+styling of submit page
+
+seed

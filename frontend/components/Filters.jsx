@@ -2,6 +2,11 @@ var React = require('react'),
     FilterActions = require('../actions/filter_actions');
 
 var Filters = React.createClass({
+  componentDidMount: function() {
+    FilterActions.updateDelivery(false);
+    FilterActions.updateCreditCard(false);
+  },
+
   deliveryChanged: function(e){
     FilterActions.updateDelivery(e.target.checked);
   },

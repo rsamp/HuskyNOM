@@ -1,7 +1,8 @@
 var React = require('react'),
     BusinessIndexItem = require('./IndexItem'),
     LinkedStateMixin = require('react-addons-linked-state-mixin'),
-    BusinessStore = require('../../stores/business');
+    BusinessStore = require('../../stores/business'),
+    FilterParamsStore = require('../../stores/filter_params');
 
 var BusinessIndex = React.createClass({
   mixins: [LinkedStateMixin],
@@ -10,12 +11,28 @@ var BusinessIndex = React.createClass({
     return({sortBy: "Top Rated", page: 0});
   },
 
+  _filtersChanged: function(){
+    this.setState({page: 0});
+  },
+
+  componentDidMount: function(){
+    this.filterListener = FilterParamsStore.addListener(this._filtersChanged);
+  },
+
+  componentWillUnmount: function(){
+    this.filterListener.remove();
+  },
+
   pageUp: function(){
     this.setState({page: this.state.page + 1});
   },
 
   pageDown: function(){
     this.setState({page: this.state.page - 1});
+  },
+
+  resetPage: function(){
+    this.setState({page: 0});
   },
 
   render: function(){

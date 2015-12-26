@@ -20,7 +20,7 @@ var BusinessIndexItem = React.createClass({
                             readonly={true}
                             fractions={6} />
                     <span className="review-beside">
-                      Reviews: {business.reviews.length}
+                      {business.reviews.length} reviews
                     </span>
                   </div> :
                   <h5>No reviews</h5>;

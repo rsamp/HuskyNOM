@@ -52,11 +52,14 @@ var Business = React.createClass({
     var business = this.state.business;
     var address = business.address;
     var rating = business.average_rating ?
-                  <Rating full="glyphicon glyphicon-star large"
+                  <div><Rating full="glyphicon glyphicon-star large"
                           empty="glyphicon glyphicon-star-empty large"
                           initialRate={business.average_rating}
                           readonly={true}
-                          fractions={6} /> :
+                          fractions={6} />
+                        <span className="main-rating-beside">
+                            {business.reviews.length} reviews
+                          </span></div> :
                           <h4 className="no-reviews">No reviews</h4>;
     var description = business.description;
 
