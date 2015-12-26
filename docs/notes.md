@@ -51,8 +51,6 @@ make user area a bit bigger, take away "Date:" and "Body:"
 
 password confirmation on sign up
 
-parse over entire string for search
-
 validate against empty stars
 
 algorithm for 'most popular'
@@ -60,3 +58,5 @@ algorithm for 'most popular'
 map connection to business index
 
 click on markers
+
+sql injection sanitization

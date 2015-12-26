@@ -44,9 +44,12 @@ var Searchbar = React.createClass({
     }
 
     this.state.businesses.forEach(function(business){
-      var sub = business.name.slice(0, this.state.inputVal.length);
-      if(sub.toLowerCase() === this.state.inputVal.toLowerCase()){
-        matches.push(business);
+      var sub;
+      for (var i = 0; i < business.name.length; i++){
+        sub = business.name.slice(i, i + this.state.inputVal.length);
+        if(sub.toLowerCase() === this.state.inputVal.toLowerCase() && matches.indexOf(business) === -1){
+          matches.push(business);
+        }
       }
     }.bind(this));
 
