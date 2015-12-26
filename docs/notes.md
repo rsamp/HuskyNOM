@@ -17,7 +17,6 @@ After adding Image model, revisit BusinessIndexItem and Business Page. Will also
 search.jsx setinterval
 Map Loading... -> No results Search.jsx: Use the store to know when results are finished being filtered. Similar issue with if no reviews yet for a business
 
-show stars in review index item
 set minimum rating. use flash errors? could be annoying with react.
 
 remove "non-react" message from root

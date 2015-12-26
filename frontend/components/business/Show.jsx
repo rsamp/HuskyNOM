@@ -73,7 +73,9 @@ var Business = React.createClass({
         <ReviewIndex business={business} reviews={business.reviews} hiddenForm={true}/>
         <div className="hours-information">
           <h4>Hours and Other Information:</h4>
-          {description}
+          <p>Delivery: {business.delivery ? "Yes" : "No"}</p>
+          <p>Accepts Credit Card: {business.accept_cc ? "Yes" : "No"}</p>
+          <p>{description}</p>
         </div>
       </div>
     );

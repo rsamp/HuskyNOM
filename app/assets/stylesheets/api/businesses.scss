@@ -9,18 +9,9 @@
   margin-bottom: 0px;
 }
 
-// #row{
-//   width: 720px;
-// }
-
 .business-index-item:hover{
   // background-color: rgba(136, 86, 161, 0.2);
   background-color: rgba(217, 217, 217, 0.4);
-}
-
-.business-form{
-  width: 230px;
-  margin: auto;
 }
 
 .business-index{
@@ -90,4 +81,47 @@
   left: 5px;
   width: 305px;
   height: 36px;
+  margin-bottom: 5px;
+}
+
+.business-form{
+  // width: 230px;
+  margin: auto;
+}
+
+.business-form input{
+  border-radius: 0px;
+}
+
+#name-input, #address-input, #delivery-input, #cc-input{
+  width: 300px;
+}
+
+.business-form-right textarea {
+  border-radius: 0px;
+}
+
+.other-info {
+  float: right;
+
+}
+.business-form-left {
+  float: left;
+}
+
+.business-form-right{
+  float: right;
+  margin-left: 20px;
+}
+
+#info-input{
+  width: 450px;
+  max-width: 450px;
+  min-height: 212px;
+}
+
+#business-submit{
+  width: 150px;
+  float: right;
+  clear: right;
 }

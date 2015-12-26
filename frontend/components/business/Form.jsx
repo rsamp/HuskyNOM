@@ -29,7 +29,7 @@ var BusinessForm = React.createClass({
         var newAddress = results[0].formatted_address;
         this.createBusiness(lat, lng, newAddress);
       } else {
-        alert("Address was not in correct format. Error: " + status);
+        alert("Address was not in correct format. Google Maps Error: " + status);
       }
     }.bind(this));
   },
@@ -70,47 +70,56 @@ var BusinessForm = React.createClass({
     return(
       <form onSubmit={this.submitHandler} className="input-group business-form">
         <h3>Submit a Restaurant</h3>
-        <label>
-          Name:
-          <input type="text" className="form-control"
-                 valueLink={this.linkState('name')}/>
-        </label>
-        <br/>
-        <label>
-          Address:
-          <input type="text" className="form-control"
-                 valueLink={this.linkState('address')}/>
-        </label>
-        <br/>
-        <label>
-          Offers Delivery? (optional)
-          <select name="delivery" className="form-control"
-                  valueLink={this.linkState('delivery')}>
-            <option value={null}>---</option>
-            <option value={true}>Yes</option>
-            <option value={false}>No</option>
-          </select>
-        </label>
-        <br/>
-        <label>
-          Accepts Credit Card? (optional)
-          <select name="accept_cc" className="form-control"
-                  valueLink={this.linkState('accept_cc')}>
-            <option value={null}>---</option>
-            <option value={true}>Yes</option>
-            <option value={false}>No</option>
-          </select>
-        </label>
-        <br/>
-        <label>
-          Hours/Other information:
-          <textarea name="description" className="form-control"
-                    valueLink={this.linkState('description')}>
+        <div className="business-form-left">
+          <label>
+            Name
+            <br/>
+            <input type="text" className="form-control" id="name-input"
+                   valueLink={this.linkState('name')}/>
+          </label>
+          <br/>
+          <label>
+            Address
+            <br/>
+            <input type="text" className="form-control" id="address-input"
+                   valueLink={this.linkState('address')}/>
+          </label>
+          <br/>
+          <label>
+            Offers Delivery? (optional)
+            <br/>
+            <select name="delivery" className="form-control" id="delivery-input"
+                    valueLink={this.linkState('delivery')}>
+              <option value={null}>---</option>
+              <option value={true}>Yes</option>
+              <option value={false}>No</option>
+            </select>
+          </label>
+          <br/>
+          <label>
+            Accepts Credit Card? (optional)
+            <br/>
+            <select name="accept_cc" className="form-control" id="cc-input"
+                    valueLink={this.linkState('accept_cc')}>
+              <option value={null}>---</option>
+              <option value={true}>Yes</option>
+              <option value={false}>No</option>
+            </select>
+          </label>
+        </div>
 
-          </textarea>
-        </label>
-        <input type="submit"
-               className="form-control purple-button" value="Submit"/>
+        <div className="business-form-right">
+          <label className="other-info">
+            Hours/Other information (optional)
+            <br/>
+            <textarea name="description" className="form-control" id="info-input"
+                      valueLink={this.linkState('description')}>
+
+            </textarea>
+          </label>
+          <input type="submit" id="business-submit"
+                 className="form-control purple-button" value="Submit"/>
+        </div>
       </form>
     );
   }
