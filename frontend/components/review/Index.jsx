@@ -37,16 +37,7 @@ var ReviewIndex = React.createClass({
     this.setState({hiddenForm: !this.state.hiddenForm});
   },
 
-  render: function(){
-    if (this.state.reviews){
-      return this.renderReviews();
-    } else {
-      return <div/>;
-    }
-  },
-
-  renderReviews: function() {
-    var business = this.props.business;
+  sortReviews: function(){
     var reviews = this.state.reviews.slice(0);
 
     switch (this.state.sortBy) {
@@ -75,6 +66,20 @@ var ReviewIndex = React.createClass({
         });
         break;
     }
+    return reviews;
+  },
+
+  render: function(){
+    if (this.state.reviews){
+      return this.renderReviews();
+    } else {
+      return <div/>;
+    }
+  },
+
+  renderReviews: function() {
+    var business = this.props.business;
+    var reviews = this.sortReviews();
 
     reviews = reviews.map(function(review) {
       return <ReviewIndexItem key={review.id} review={review}/>;

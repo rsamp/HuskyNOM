@@ -35,7 +35,7 @@ var BusinessIndex = React.createClass({
     this.setState({page: 0});
   },
 
-  render: function(){
+  sortBusinesses: function(){
     var businesses = this.props.businesses.slice(0);
 
     switch (this.state.sortBy) {
@@ -69,6 +69,11 @@ var BusinessIndex = React.createClass({
         });
         break;
     }
+    return businesses;
+  },
+
+  render: function(){
+    var businesses = this.sortBusinesses();
 
     var groupsOfTenBusinesses = [];
 
