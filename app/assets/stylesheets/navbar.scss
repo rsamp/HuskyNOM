@@ -40,5 +40,12 @@ nav {
 
   .sign-out {
     float: right;
+    position: relative;
+    top: 12px;
+    cursor: pointer;
+  }
+
+  #searchbox{
+    width: 240px;
   }
 }

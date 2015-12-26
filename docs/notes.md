@@ -53,4 +53,4 @@ map connection to business index
 
 styling of submit page
 
-seed
+seed images

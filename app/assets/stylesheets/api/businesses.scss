@@ -72,3 +72,27 @@
   padding-left: 20px;
   border-left: 1px solid #d9d9d9;
 }
+
+.filters{
+  // float: right;
+  // display: inline;
+}
+
+
+.filters label {
+  margin: 10px;
+  padding: 5px;
+  border: 1px solid gray;
+}
+
+.filters input:focus + label {
+  border-color: blue;
+}
+
+.filters input:checked + label {
+  border-color: red;
+}
+
+.filters input:focus:checked + label {
+  border-color: green;
+}

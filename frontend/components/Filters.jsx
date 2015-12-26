@@ -17,15 +17,19 @@ var Filters = React.createClass({
 
   render: function(){
     return(
-      <div>
-        <h5>Filters</h5>
+      <div className="filters">
+        <h5>Filters:</h5>
         <label>
           Delivery?
-          <input className="filter" type="checkbox" onChange={this.deliveryChanged}/>
+          <input className="filter"
+                 type="checkbox"
+                 onChange={this.deliveryChanged}/>
         </label>
         <label>
           Accept Credit Card?
-          <input className="filter" type="checkbox" onChange={this.acceptCreditChanged}/>
+          <input className="filter"
+                 type="checkbox"
+                 onChange={this.acceptCreditChanged}/>
         </label>
       </div>
     );

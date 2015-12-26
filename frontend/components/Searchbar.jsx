@@ -47,7 +47,8 @@ var Searchbar = React.createClass({
       var sub;
       for (var i = 0; i < business.name.length; i++){
         sub = business.name.slice(i, i + this.state.inputVal.length);
-        if(sub.toLowerCase() === this.state.inputVal.toLowerCase() && matches.indexOf(business) === -1){
+        if(sub.toLowerCase() === this.state.inputVal.toLowerCase() &&
+              matches.indexOf(business) === -1){
           matches.push(business);
         }
       }
@@ -91,8 +92,10 @@ var Searchbar = React.createClass({
             onBlur={this.leaveSearchbox}>
         <input type="text"
                className="form-control"
+               id="searchbox"
                onChange={this.handleInput}
-               value={this.state.inputVal}/>
+               value={this.state.inputVal}
+               placeholder="Search"/>
         <div className="list-group">
           {businesses}
         </div>

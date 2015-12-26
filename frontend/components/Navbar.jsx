@@ -2,7 +2,9 @@ var React = require('react'),
     BusinessStore = require('../stores/business'),
     AuthStore = require('../stores/auth'),
     Searchbar = require('./Searchbar'),
-    History = require('react-router').History;
+    History = require('react-router').History,
+    DropdownButton = require('react-bootstrap').DropdownButton,
+    MenuItem = require('react-bootstrap').MenuItem;
 
 var Navbar = React.createClass({
   mixins: [History],
@@ -37,12 +39,15 @@ var Navbar = React.createClass({
           <h4 onClick={this.goToHome}>Home</h4>
           <h4 onClick={this.restaurantForm}>Submit a Restaurant</h4>
           <Searchbar/>
-          <h4 onClick={this.signOut} className="sign-out">Sign Out</h4>
+          <h5 onClick={this.signOut} className="sign-out">Sign Out</h5>
         </div>
       </nav>
     );
   }
 });
 
+// <DropdownButton bsStyle="link" title={window.CURRENT_USER.username} id="user-dropdown">
+//   <MenuItem className="sign-out">Sign Out</MenuItem>
+// </DropdownButton>
 // <h4 className="sign-out">Hello {window.CURRENT_USER.username}</h4>
 module.exports = Navbar;

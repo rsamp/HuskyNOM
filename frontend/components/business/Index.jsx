@@ -86,16 +86,21 @@ var BusinessIndex = React.createClass({
     });
 
     var pageDownBtn = this.state.page > 0 ?
-                    <button className="form-control purple-button" id="business-prev" onClick={this.pageDown}>Previous</button> : "";
+                    <button className="form-control purple-button"
+                            id="business-prev"
+                            onClick={this.pageDown}>Previous</button> : "";
 
     var pageUpBtn = this.state.page < groupsOfTenBusinesses.length - 1?
-                    <button className="form-control purple-button" id="business-next" onClick={this.pageUp}>Next</button> : "";
+                    <button className="form-control purple-button"
+                            id="business-next"
+                            onClick={this.pageUp}>Next</button> : "";
 
     return(
       <div>
         <label>
           Sort by:
-          <select name="sort" className="form-control" valueLink={this.linkState('sortBy')}>
+          <select name="sort" className="form-control"
+                  valueLink={this.linkState('sortBy')}>
             <option value={"Top Rated"}>Top Rated</option>
             <option value={"Most Reviewed"}>Most Reviewed</option>
             <option value={"Least Reviewed"}>Least Reviewed</option>
