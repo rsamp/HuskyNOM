@@ -29,7 +29,7 @@ var BusinessForm = React.createClass({
         var newAddress = results[0].formatted_address;
         this.createBusiness(lat, lng, newAddress);
       } else {
-        alert("Address was not in correct format. Google Maps Error: " + status);
+        alert("Address not in correct format. Google Maps Error: " + status);
       }
     }.bind(this));
   },
@@ -112,7 +112,9 @@ var BusinessForm = React.createClass({
           <label className="other-info">
             Hours/Other information (optional)
             <br/>
-            <textarea name="description" className="form-control" id="info-input"
+            <textarea name="description"
+                      className="form-control"
+                      id="info-input"
                       valueLink={this.linkState('description')}>
 
             </textarea>

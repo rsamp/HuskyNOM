@@ -38,17 +38,6 @@ Image.create(cloudinary_id: "tuthdqduje9b35xfogfh",
 Image.create(cloudinary_id: "y93zn8haybkahcjfwzxx",
              business_id: chipotle.ids[0])
 
-
-Business.create(name: "Banh Mi Unwrapped",
-                lat: 47.6638562,
-                lng: -122.3135354,
-                address: "4725 University Way NE, Seattle, WA 98105, USA",
-                description: Faker::Lorem.paragraphs(4),
-                delivery: false,
-                accept_cc: true,
-                image_id: nil)
-banhmi = Business.where(name: "Banh Mi Unwrapped")
-
 Business.create(name: "Aladdin Falafel Corner",
                 lat: 47.6624936,
                 lng: -122.3135355,
@@ -61,7 +50,7 @@ alladin = Business.where(name: "Aladdin Falafel Corner")
 Image.create(cloudinary_id: "vptmcddoepj1exbknagc",
              business_id: alladin.ids[0])
 
-Business.create(name: "Guanaco's Tacos Pupuseria",
+Business.create(name: "Guanaco’s Tacos Pupuseria",
                 lat: 47.6571112,
                 lng: -122.3140477,
                 address: "4106 Brooklyn Ave NE #102a, Seattle, WA 98105, USA",
@@ -69,7 +58,7 @@ Business.create(name: "Guanaco's Tacos Pupuseria",
                 delivery: false,
                 accept_cc: true,
                 image_id: nil)
-guanacos = Business.where(name: "Guanaco's Tacos Pupuseria")
+guanacos = Business.where(name: "Guanaco’s Tacos Pupuseria")
 Image.create(cloudinary_id: "kozrlzy2qxjnpadqv1lj",
              business_id: guanacos.ids[0])
 Image.create(cloudinary_id: "aetridx83nmczrzfcgzu",
@@ -86,6 +75,8 @@ Business.create(name: "Portage Bay Café & Catering",
                 accept_cc: true,
                 image_id: nil)
 portage = Business.where(name: "Portage Bay Café & Catering")
+Image.create(cloudinary_id: "m8dssqitry3ltc7oidkp",
+             business_id: portage.ids[0])
 
 Business.create(name: "MOD Pizza",
                 lat: 47.658608,
@@ -150,6 +141,12 @@ Business.create(name: "Thai Tom",
                 accept_cc: false,
                 image_id: nil)
 thaitom = Business.where(name: "Thai Tom")
+Image.create(cloudinary_id: "jzgppjrkhh9dwgp9vgm8",
+            business_id: thaitom.ids[0])
+Image.create(cloudinary_id: "vuxmx6ivesox8jqtmzrg",
+            business_id: thaitom.ids[0])
+Image.create(cloudinary_id: "yoaqeobpk8zsyikccgye",
+            business_id: thaitom.ids[0])
 
 Business.create(name: "Mr Lu’s Burgers & Seafood",
                 lat: 47.6646239,
@@ -172,6 +169,12 @@ Business.create(name: "Which Wich",
                 accept_cc: true,
                 image_id: nil)
 whichwich = Business.where(name: "Which Wich")
+Image.create(cloudinary_id: "xksoopuqjxdf4wamamc7",
+             business_id: whichwich.ids[0])
+Image.create(cloudinary_id: "rteuz0i7qlhpkr6vzbmn",
+             business_id: whichwich.ids[0])
+Image.create(cloudinary_id: "h3qjhej2xy0d84ragdyy",
+             business_id: whichwich.ids[0])
 
 Business.create(name: "Pizza Ragazzi",
                 lat: 47.6666598,
@@ -199,16 +202,29 @@ Business.create(name: "Earl’s On the Avenue",
                 delivery: true,
                 accept_cc: true,
                 image_id: nil)
-earls = Business.where(name: "Earl's On the Avenue")
+earls = Business.where(name: "Earl’s On the Avenue")
+Image.create(cloudinary_id: "lvcweairou1igfvfhjyu",
+             business_id: earls.ids[0])
+Image.create(cloudinary_id: "suolsxd56f7ufg1zzhdr",
+             business_id: earls.ids[0])
+Image.create(cloudinary_id: "gduth17nouchgx8xfpdg",
+             business_id: earls.ids[0])
 
 Business.create(name: "Finn MacCools Irish Pub",
                 lat: 47.6588737,
                 lng: -122.3134989,
                 address: "4217 University Way NE, Seattle, WA 98105, USA",
+                description: Faker::Lorem.paragraphs(4),
                 delivery: false,
                 accept_cc: true,
                 image_id: nil)
 finns = Business.where(name: "Finn MacCools Irish Pub")
+Image.create(cloudinary_id: "sdhgahgbla4kdl72onfn",
+             business_id: finns.ids[0])
+Image.create(cloudinary_id: "nz0bgkprdwnrokc9zcsm",
+             business_id: finns.ids[0])
+Image.create(cloudinary_id: "dul3xpnhp0vel3i1xekf",
+             business_id: finns.ids[0])
 
 Business.create(name: "Jimmy John’s",
                 lat: 47.658097,
@@ -218,7 +234,13 @@ Business.create(name: "Jimmy John’s",
                 delivery: true,
                 accept_cc: true,
                 image_id: nil)
-jjs = Business.where(name: "Jimmy John's")
+jjs = Business.where(name: "Jimmy John’s")
+Image.create(cloudinary_id: "yludyfs5ly0ce8hxx05b",
+             business_id: jjs.ids[0])
+Image.create(cloudinary_id: "dvjtmojs45cjqfmfarly",
+             business_id: jjs.ids[0])
+Image.create(cloudinary_id: "c7wutoiouw4feowv6ckk",
+             business_id: jjs.ids[0])
 
 Business.create(name: "Thaiger Room",
                 lat: 47.6591942,
@@ -229,6 +251,12 @@ Business.create(name: "Thaiger Room",
                 accept_cc: true,
                 image_id: nil)
 thaiger = Business.where(name: "Thaiger Room")
+Image.create(cloudinary_id: "bcuhtrdv0htzj4s8f36e",
+            business_id: thaiger.ids[0])
+Image.create(cloudinary_id: "ibu1os7w32v3ojjwcrls",
+            business_id: thaiger.ids[0])
+Image.create(cloudinary_id: "hwnnmtqlqhqvbzqihsaz",
+            business_id: thaiger.ids[0])
 
 Business.create(name: "Taste of India",
                 lat: 47.6690513,
@@ -239,6 +267,8 @@ Business.create(name: "Taste of India",
                 accept_cc: true,
                 image_id: nil)
 toi = Business.where(name: "Taste of India")
+Image.create(cloudinary_id: "vtvoy7ua70jsl8jafac8",
+             business_id: toi.ids[0])
 
 Business.create(name: "Pagliacci Pizza",
                 lat: 47.6621632,
@@ -273,6 +303,14 @@ Business.create(name: "Thai 65",
                 accept_cc: true,
                 image_id: nil)
 thai65 = Business.where(name: "Thai 65")
+Image.create(cloudinary_id: "fjavj6loozn1ygitdev6",
+             business_id: thai65.ids[0])
+Image.create(cloudinary_id: "wdgxnkcjh8iuaqvktf4z",
+             business_id: thai65.ids[0])
+Image.create(cloudinary_id: "xrj5ugcessg0rnnwedih",
+             business_id: thai65.ids[0])
+Image.create(cloudinary_id: "iblcotjm3ytlg8vmqfje",
+             business_id: thai65.ids[0])
 
 # Reviews
 
