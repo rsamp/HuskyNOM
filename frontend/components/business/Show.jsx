@@ -37,7 +37,8 @@ var Business = React.createClass({
   },
 
   componentWillReceiveProps: function(newProps) {
-    this._businessChanged();
+    var business = BusinessStore.find(parseInt(newProps.params.id));
+    this.setState({business: business});
   },
 
   render: function() {
@@ -70,7 +71,9 @@ var Business = React.createClass({
         <ImageIndex business={business} images={business.images}/>
         <Map businesses={[business]} mapClass="businessMap"/>
         <p>{address}</p>
-        <ReviewIndex business={business} reviews={business.reviews} hiddenForm={true}/>
+        <ReviewIndex business={business}
+                     reviews={business.reviews}
+                     hiddenForm={true}/>
         <div className="hours-information">
           <h4>Hours and Other Information:</h4>
           <p>Delivery: {business.delivery ? "Yes" : "No"}</p>
