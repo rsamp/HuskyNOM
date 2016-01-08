@@ -31,7 +31,7 @@ Inspired by Yelp and built using Ruby on Rails and React.js in just 2 weeks, Hus
 #### Restaurant page with review drawer out
 ![review]
 
-[signup]: ./screenshots/signup.png
-[home]: ./screenshots/home.png
-[restaurant]: ./screenshots/restaurant.png
-[review]: ./screenshots/review.png
+[signup]: ./docs/screenshots/signup.png
+[home]: ./docs/screenshots/home.png
+[restaurant]: ./docs/screenshots/restaurant.png
+[review]: ./docs/screenshots/review.png
