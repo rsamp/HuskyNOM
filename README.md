@@ -5,7 +5,7 @@
 
 ## Description
 
-Inspired by Yelp and built in just 2 weeks with Ruby on Rails and React.js, HuskyNOM is focused around the University of Washington area and allows users to find top-rated restaurants and read/leave reviews.
+Inspired by Yelp, and built in just 2 weeks with Ruby on Rails and React.js, HuskyNOM is focused around the University of Washington area and allows users to find top-rated restaurants and read/leave reviews.
 
 ## Features
 - [ ] Uses custom-built authentication system with BCrypt
