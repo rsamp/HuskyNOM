@@ -19,8 +19,6 @@ Map Loading... -> No results Search.jsx: Use the store to know when results are 
 
 set minimum rating. use flash errors? could be annoying with react.
 
-remove "non-react" message from root
-
 flash error messages
 
 hours on business form
