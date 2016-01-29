@@ -31,7 +31,9 @@
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <input type="hidden" name=user[username] value="DemoUser">
   <input type="hidden" name=user[password] value="Password">
-  <input class="form-control demo-account purple-button" type="submit" value="Sign in with demo account">
+  <input class="form-control demo-account purple-button" type="submit"
+         value="Sign in with demo account"
+         onclick="ga('send', 'event', 'Internal Link', 'Sign In', 'Demo Account');">
 </form>
 
 <%= image_tag("Watermark.png", class: 'watermark') %>
