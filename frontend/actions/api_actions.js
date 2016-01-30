@@ -25,6 +25,29 @@ var ApiActions = {
     });
   },
 
+  handleListItemHover: function(event){
+    var hoverID = event.target.getAttribute("data-id");
+    if(!hoverID){return;}
+    AppDispatcher.dispatch({
+      actionType: "RECEIVE_HOVER_ID",
+      hoverID: hoverID
+    });
+  },
+
+  handleMarkerHover: function(hoverID){
+    // debugger;
+    AppDispatcher.dispatch({
+      actionType: "RECEIVE_HOVER_ID",
+      hoverID: hoverID
+    });
+  },
+
+  handleLeave: function(event) {
+    AppDispatcher.dispatch({
+      actionType: "RESET_HOVER_ID"
+    });
+  },
+
   createBusiness: function(business){
     AppDispatcher.dispatch({
       actionType: BusinessConstants.BUSINESS_RECEIVED,

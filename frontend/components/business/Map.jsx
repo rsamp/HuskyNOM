@@ -31,7 +31,8 @@ var Map = React.createClass({
       position: pos,
       map: this.map,
       title: business.name,
-      businessId: business.id
+      businessId: business.id,
+      icon: 'assets/purple_pin.png'
     });
     this.markers.push(marker);
   },

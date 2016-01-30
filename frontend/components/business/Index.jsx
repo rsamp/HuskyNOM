@@ -8,7 +8,7 @@ var BusinessIndex = React.createClass({
   mixins: [LinkedStateMixin],
 
   getInitialState: function(){
-    return({sortBy: "Top Rated", page: 0});
+    return({sortBy: "Top Rated", page: 0 });
   },
 
   _filtersChanged: function(){

@@ -9,6 +9,7 @@ Dark Gray: #444444
 Light Gray: #d9d9d9
 
 Wireframe purple: #8856a1
+Star Color: #FFC125
 
 ## Come back to
 
