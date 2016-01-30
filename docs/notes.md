@@ -26,8 +26,6 @@ hours on business form
 
 Bonus: open now - hours
 
-improve markers: change color on index item hover
-
 idea for images on business submit form:
 after uploading, show image and an option to delete
 
@@ -47,8 +45,4 @@ validate against empty stars
 
 algorithm for 'most popular'
 
-map connection to business index
-
 styling of submit page
-
-seed images

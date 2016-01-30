@@ -74,12 +74,12 @@ var Map = React.createClass({
     marker.addListener('click', function(){
       infoWindow.open(this.map, marker);
     });
-    marker.addListener("mouseover", function(){
-      ApiActions.handleMarkerHover(marker.businessId);
-    });
-    marker.addListener("mouseout", function(){
-      ApiActions.handleLeave();
-    });
+    // marker.addListener("mouseover", function(){
+    //   ApiActions.handleMarkerHover(marker.businessId);
+    // });
+    // marker.addListener("mouseout", function(){
+    //   ApiActions.handleLeave();
+    // });
     this.markers.push(marker);
   },
 
