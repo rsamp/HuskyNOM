@@ -21,6 +21,8 @@ var BusinessForm = React.createClass({
       });
   },
 
+  // Communicates with Google Maps Geocoding API to standardize
+  // address before putting in database
   geocode: function(address){
     this.geocoder.geocode({address: address}, function(results, status){
       if (status === google.maps.GeocoderStatus.OK){

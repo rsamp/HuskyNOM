@@ -35,6 +35,7 @@ var BusinessIndex = React.createClass({
     this.setState({page: 0});
   },
 
+  // Sorting/Ordering is all done on the front end
   sortBusinesses: function(){
     var businesses = this.props.businesses.slice(0);
 

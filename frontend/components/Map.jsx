@@ -17,6 +17,8 @@ var Map = React.createClass({
   _hoverChanged: function(){
     var m = 0;
     while (m < this.markers.length) {
+      // this.markers[m].businessId is Number, HoverStore.hoverID
+      // is a String, thus == instead of ===
       if (this.markers[m].businessId == HoverStore.hoverID()) {
         this.colorHoveredMarker(this.markers[m]);
       } else {

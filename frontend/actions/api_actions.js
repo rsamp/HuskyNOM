@@ -1,9 +1,12 @@
 var AppDispatcher = require('../dispatcher/dispatcher'),
     BusinessConstants = require('../constants/businessConstants'),
     ReviewConstants = require('../constants/reviewConstants'),
-    ImageConstants = require('../constants/imageConstants');
+    ImageConstants = require('../constants/imageConstants'),
+    HoverConstants = require('../constants/hoverConstants');
 
 var ApiActions = {
+
+  // For Map bounds filtering
   receiveFilteredBusinesses: function(businesses) {
     AppDispatcher.dispatch({
       actionType: BusinessConstants.BUSINESSES_RECEIVED,
@@ -29,22 +32,21 @@ var ApiActions = {
     var hoverID = event.target.getAttribute("data-id");
     if(!hoverID){return;}
     AppDispatcher.dispatch({
-      actionType: "RECEIVE_HOVER_ID",
+      actionType: HoverConstants.RECEIVE_HOVER_ID,
       hoverID: hoverID
     });
   },
 
   handleMarkerHover: function(hoverID){
-    // debugger;
     AppDispatcher.dispatch({
-      actionType: "RECEIVE_HOVER_ID",
+      actionType: HoverConstants.RECEIVE_HOVER_ID,
       hoverID: hoverID
     });
   },
 
   handleLeave: function(event) {
     AppDispatcher.dispatch({
-      actionType: "RESET_HOVER_ID"
+      actionType: HoverConstants.RESET_HOVER_ID
     });
   },
 

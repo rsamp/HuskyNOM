@@ -33,10 +33,13 @@ var ReviewIndex = React.createClass({
     this.reviewListener.remove();
   },
 
+  // Can be called in this component from the formButton or
+  // called from /review/Form component from the cancel button
   toggleForm: function() {
     this.setState({hiddenForm: !this.state.hiddenForm});
   },
 
+  // Sorting/Ordering is done on the frontend
   sortReviews: function(){
     var reviews = this.state.reviews.slice(0);
 

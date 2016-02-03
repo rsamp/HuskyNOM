@@ -25,6 +25,7 @@ var Map = React.createClass({
     this.renderMap(newProps.businesses[0]);
   },
 
+  // Just one marker for current business
   createMarker: function(business){
     var pos = new google.maps.LatLng(business.lat, business.lng);
     var marker = new google.maps.Marker({

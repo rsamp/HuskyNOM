@@ -46,6 +46,7 @@ var ImageIndex = React.createClass({
       }
     }
 
+    // Splits into pairings of images on the front end for pagination
     var imagePairs = [];
     while (imagesForBusiness.length > 0){
       imagePairs.push(imagesForBusiness.splice(0, 2));

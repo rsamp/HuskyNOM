@@ -24,6 +24,6 @@ FilterParamsStore.__onDispatch = function(payload){
       FilterParamsStore.__emitChange();
       break;
   }
-}
+};
 
 module.exports = FilterParamsStore;
