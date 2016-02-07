@@ -2,42 +2,57 @@ var React = require('react'),
     BusinessIndexItem = require('./IndexItem'),
     LinkedStateMixin = require('react-addons-linked-state-mixin'),
     BusinessStore = require('../../stores/business'),
-    FilterParamsStore = require('../../stores/filter_params');
+    FilterParamsStore = require('../../stores/filter_params'),
+    ApiActions = require('../../actions/api_actions');
 
 var BusinessIndex = React.createClass({
   mixins: [LinkedStateMixin],
 
   getInitialState: function(){
-    return({sortBy: "Top Rated", page: 0 });
+    return({
+            sortBy: "Top Rated",
+            page: 0,
+            businesses: BusinessStore.paginated()
+          });
   },
 
   _filtersChanged: function(){
     this.setState({page: 0});
   },
 
+  _pageChanged: function(){
+    this.setState({businesses: BusinessStore.paginated()});
+  },
+
   componentDidMount: function(){
     this.filterListener = FilterParamsStore.addListener(this._filtersChanged);
+    this.pageListener = BusinessStore.addListener(this._pageChanged);
   },
 
   componentWillUnmount: function(){
     this.filterListener.remove();
+    this.pageListener.remove();
+    BusinessStore.resetPage();
   },
 
   pageUp: function(){
+    ApiActions.receivePageChange(this.state.page + 1);
     this.setState({page: this.state.page + 1});
   },
 
   pageDown: function(){
+    ApiActions.receivePageChange(this.state.page - 1);
     this.setState({page: this.state.page - 1});
   },
 
   resetPage: function(){
+    ApiActions.receivePageChange(0);
     this.setState({page: 0});
   },
 
   // Sorting/Ordering is all done on the front end
   sortBusinesses: function(){
-    var businesses = this.props.businesses.slice(0);
+    var businesses = this.state.businesses;
 
     switch (this.state.sortBy) {
       case "Top Rated":
@@ -76,13 +91,7 @@ var BusinessIndex = React.createClass({
   render: function(){
     var businesses = this.sortBusinesses();
 
-    var groupsOfTenBusinesses = [];
-
-    while (businesses.length > 0){
-      groupsOfTenBusinesses.push(businesses.splice(0, 10));
-    }
-
-    businesses = groupsOfTenBusinesses[this.state.page].map(function(business){
+    businesses = this.state.businesses.map(function(business){
       return <BusinessIndexItem key={business.id} business={business} />;
     });
 
@@ -91,14 +100,14 @@ var BusinessIndex = React.createClass({
                             id="business-prev"
                             onClick={this.pageDown}>Previous</button> : "";
 
-    var pageUpBtn = this.state.page < groupsOfTenBusinesses.length - 1?
+    var pageUpBtn = this.state.page < BusinessStore.filteredCount() / 10 - 1?
                     <button className="form-control purple-button"
                             id="business-next"
                             onClick={this.pageUp}>Next</button> : "";
 
     return(
       <div>
-        <label>
+        <label className='order-by'>
           Order by:
           <select name="sort" className="form-control"
                   id="business-sort"

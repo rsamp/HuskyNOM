@@ -14,6 +14,13 @@ var ApiActions = {
     });
   },
 
+  receivePageChange: function(page){
+    AppDispatcher.dispatch({
+      actionType: BusinessConstants.PAGINATION_RECEIVED,
+      page: page
+    });
+  },
+
   receiveAllBusinesses: function(businesses) {
     AppDispatcher.dispatch({
       actionType: BusinessConstants.ALL_BUSINESSES_RECEIVED,

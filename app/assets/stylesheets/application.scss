@@ -60,10 +60,21 @@ a{
   color: #ffffff;
 }
 
+.indexMapAndTitle{
+  position: fixed;
+  margin-left: 420px;
+}
+
 .indexMapTitle {
-  float: right;
+//   float: right;
   width: 500px;
   text-align: center;
+}
+
+.filters-all {
+  position: fixed;
+  margin-left: 420px;
+  margin-top: 570px;
 }
 
 .filter {

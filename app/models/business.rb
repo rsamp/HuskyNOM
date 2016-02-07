@@ -1,3 +1,5 @@
+require 'yelp'
+
 class Business < ActiveRecord::Base
   validates :name, :lat, :lng, presence: true
 

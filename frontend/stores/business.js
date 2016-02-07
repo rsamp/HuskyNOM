@@ -5,13 +5,29 @@ var Store = require('flux/utils').Store,
 
 var _filteredBusinesses = [];
 var _allBusinesses = [];
+var _paginatedBusinesses = [];
+var _currentPage = 0;
 
 var filterBusinesses = function(businesses){
   _filteredBusinesses = businesses.slice(0);
+  paginateBusinesses(_currentPage);
 };
 
 var allBusinesses = function(businesses){
   _allBusinesses = businesses;
+};
+
+var paginateBusinesses = function(page){
+  var businesses = _filteredBusinesses.slice(0);
+  _currentPage = page;
+
+  var groupsOfTenBusinesses = [];
+
+  while (businesses.length > 0){
+    groupsOfTenBusinesses.push(businesses.splice(0, 10));
+  }
+
+  _paginatedBusinesses = groupsOfTenBusinesses[_currentPage];
 };
 
 var updateBusiness = function(business){
@@ -47,10 +63,23 @@ BusinessStore.filtered = function(){
   return _filteredBusinesses.slice(0);
 };
 
+BusinessStore.paginated = function(){
+  return _paginatedBusinesses.slice(0);
+};
+
+BusinessStore.resetPage = function(){
+  _currentPage = 0;
+};
+
+BusinessStore.filteredCount = function(){
+  return _filteredBusinesses.length;
+};
+
 BusinessStore.__onDispatch = function(payload){
   switch (payload.actionType) {
     case BusinessConstants.BUSINESSES_RECEIVED:
       filterBusinesses(payload.businesses);
+      // paginateBusinesses(_currentPage);
       BusinessStore.__emitChange();
       break;
     case BusinessConstants.BUSINESS_RECEIVED:
@@ -63,6 +92,10 @@ BusinessStore.__onDispatch = function(payload){
       break;
     case BusinessConstants.FIND_BUSINESS:
       updateBusiness(payload.business);
+      BusinessStore.__emitChange();
+      break;
+    case BusinessConstants.PAGINATION_RECEIVED:
+      paginateBusinesses(payload.page);
       BusinessStore.__emitChange();
       break;
   }

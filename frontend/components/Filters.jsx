@@ -17,7 +17,7 @@ var Filters = React.createClass({
 
   render: function(){
     return(
-      <div>
+      <div className="filters-all">
         <label>Filters:</label>
         <div className="filters">
           <label>

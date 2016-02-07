@@ -4,7 +4,8 @@ var React = require('react'),
     ReactDOM = require('react-dom'),
     FilterActions = require('../actions/filter_actions'),
     ApiActions = require('../actions/api_actions'),
-    HoverStore = require('../stores/hover');
+    HoverStore = require('../stores/hover'),
+    BusinessStore = require('../stores/business');
 
 function _getCoordsObj(latLng) {
   return {
@@ -14,6 +15,10 @@ function _getCoordsObj(latLng) {
 }
 
 var Map = React.createClass({
+  getInitialState: function(){
+    return({businesses: BusinessStore.paginated()});
+  },
+
   _hoverChanged: function(){
     var m = 0;
     while (m < this.markers.length) {
@@ -28,6 +33,14 @@ var Map = React.createClass({
     }
   },
 
+  _pageChanged: function(){
+    this.setState({paginatedBusinesses: BusinessStore.paginated()});
+    setTimeout(function(){
+      this.markers.forEach(this.removeMarker);
+      this.state.paginatedBusinesses.forEach(this.createMarker);
+    }.bind(this), 10);
+  },
+
   componentDidMount: function(){
     var map = ReactDOM.findDOMNode(this.refs.map);
     var mapOptions = {
@@ -38,9 +51,14 @@ var Map = React.createClass({
     this.map = new google.maps.Map(map, mapOptions);
     this.registerListeners();
     this.markers = [];
-    this.props.businesses.forEach(this.createMarker);
+    this.state.businesses.forEach(this.createMarker);
+    this.pageListener = BusinessStore.addListener(this._pageChanged);
     this.hoverListener = HoverStore.addListener(this._hoverChanged);
     this.hoverID = null;
+  },
+
+  componentWillUnmount: function(){
+    this.markers.forEach(this.removeMarker);
   },
 
   registerListeners: function(){

@@ -57,8 +57,7 @@ var Searchbar = React.createClass({
     if (matches.length === 0){
       matches.push("No matches");
     }
-
-    return matches;
+    return matches.slice(0, 10);
   },
 
   selectBusiness: function(business, e){

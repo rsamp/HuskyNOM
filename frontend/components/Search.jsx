@@ -7,7 +7,7 @@ var React = require('react'),
     Map = require('./Map');
 
 function _fetchBusinesses(){
-  return BusinessStore.filtered();
+  return BusinessStore.paginated();
 }
 
 function _fetchFilters(){
@@ -51,8 +51,10 @@ var Search = React.createClass({
             <BusinessIndex count={businesses.length} businesses={businesses}/>;
     return(
       <div>
-        <h3 className="indexMapTitle">Move map to filter results</h3>
-        <Map mapClass={"indexMap"} businesses={businesses}/>
+        <div className="indexMapAndTitle">
+          <h3 className="indexMapTitle">Move map to filter results</h3>
+          <Map mapClass={"indexMap"} businesses={businesses}/>
+        </div>
         <Filters businesses={businesses}
                  filterParams={this.state.filterParams}/>
         {index}
