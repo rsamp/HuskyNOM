@@ -7,6 +7,17 @@ var ReviewIndexItem = React.createClass({
     var date = new Date(review.created_at).toLocaleDateString();
     var user = review.author.username;
     var rating = review.rating;
+    var yelpLink = "";
+
+    var displayStars = <Rating full="glyphicon glyphicon-star med"
+                               empty="glyphicon glyphicon-star-empty med"
+                               initialRate={rating} readonly={true} />;
+
+    if (review.is_yelp_review) {
+      user = <div>{review.yelp_username}<img src={review.yelp_user_image}/></div>;
+      yelpLink = <a target="_blank" href={review.business.yelp_url}>See more at Yelp.com</a>;
+      displayStars = <img src={review.yelp_url}/>;
+    }
 
     // var editButton = user === window.CURRENT_USER.username ?
     //             <button onClick={this.editReview}>Edit Review</button> : "";
@@ -18,12 +29,11 @@ var ReviewIndexItem = React.createClass({
             {user}
           </div>
           <div className="col-md-10 review-info">
-            <Rating full="glyphicon glyphicon-star med"
-                    empty="glyphicon glyphicon-star-empty med"
-                    initialRate={rating} readonly={true} />
+            {displayStars}
             <span className="review-beside">{date}</span>
             <br/>
             {review.body}
+            {yelpLink}
           </div>
         </div>
       </li>

@@ -7,6 +7,7 @@
   cursor: pointer;
   padding: 10px;
   margin-bottom: 0px;
+  // width: 350px;
 }
 
 .business-index-item:hover{
@@ -50,6 +51,7 @@
 .businessMap{
   height: 200px;
   width: 400px;
+  float: right;
 }
 
 .index-rating{
@@ -124,4 +126,10 @@
   width: 150px;
   float: right;
   clear: right;
+}
+
+.business-image{
+  float: left;
+  height: 200px;
+  width: 200px;
 }

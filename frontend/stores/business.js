@@ -64,7 +64,11 @@ BusinessStore.filtered = function(){
 };
 
 BusinessStore.paginated = function(){
-  return _paginatedBusinesses.slice(0);
+  if (_filteredBusinesses.length > 0) {
+    return _paginatedBusinesses.slice(0);
+  } else {
+    return [];
+  }
 };
 
 BusinessStore.resetPage = function(){

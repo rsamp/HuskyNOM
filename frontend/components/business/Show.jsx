@@ -63,12 +63,12 @@ var Business = React.createClass({
                           </span></div> :
                           <h4 className="no-reviews">No reviews</h4>;
     var description = business.description;
-
+    // <ImageIndex business={business} images={business.images}/>
     return(
       <div>
         <h2>{business.name}</h2>
         {rating}
-        <ImageIndex business={business} images={business.images}/>
+        <img className="business-image" src={business.yelp_image_url}/>
         <Map businesses={[business]} mapClass="businessMap"/>
         <p>{address}</p>
         <ReviewIndex business={business}

@@ -31,7 +31,7 @@ offset = 0
 #
 # businessesApiCall = client.search('U District, Seattle, WA', params)
 
-until Business.count == 200
+until Business.count == 20
   params = { term: 'food',
              location: 'U District, Seattle, WA',
              offset: offset
@@ -50,11 +50,16 @@ until Business.count == 200
     Business.create!(name: business.name,
                     lat: business.location.coordinate.latitude,
                     lng: business.location.coordinate.longitude,
-                    address: business.location.display_address,
+                    address: business.location.address.join(", ") + "business.location.display_address.last,
+                    categories: business.categories,
+                    phone: business.phone,
+                    yelp_image_url: business.image_url,
                     description: Faker::Lorem.paragraphs(4).join(" "),
                     delivery: nil,
                     accept_cc: nil,
-                    image_id: nil)
+                    image_id: nil,
+                    yelp_url: business.url,
+                    is_yelp_business: true)
 
 
     business_id = Business.last.id
@@ -63,7 +68,11 @@ until Business.count == 200
       Review.create!(author_id: yelp_user_id,
                      business_id: business_id,
                      rating: review.rating,
-                     body: review.excerpt)
+                     body: review.excerpt,
+                     yelp_url: review.rating_image_large_url,
+                     yelp_username: review.user['name'],
+                     yelp_user_image: review.user['image_url'],
+                     is_yelp_review: true)
     end
   end
   offset += 20
