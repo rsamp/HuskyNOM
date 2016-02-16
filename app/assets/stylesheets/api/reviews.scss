@@ -33,7 +33,7 @@ li {
 .review-beside {
   position: relative;
   bottom: 8px;
-  left: 20px;
+  left: 15px;
 }
 
 .user-info {
@@ -43,6 +43,7 @@ li {
 }
 
 .review-content {
+  padding-top: 10px;
   padding-bottom: 10px;
   border-bottom: 1px solid #d9d9d9;
   width: 100%;
@@ -59,4 +60,23 @@ li {
   position: relative;
   bottom: 5px;
   left: 20px;
+}
+
+.yelp-user-info{
+  position: relative;
+  bottom: 10px;
+}
+
+.yelp-user-image{
+  height: 75px;
+  width: 75px;
+}
+
+.yelp-stars{
+  position: relative;
+  bottom: 9px;
+}
+
+.yelp-power {
+  margin-left: 15px;
 }

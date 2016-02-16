@@ -57,9 +57,9 @@ var Map = React.createClass({
     this.hoverID = null;
   },
 
-  componentWillUnmount: function(){
-    this.markers.forEach(this.removeMarker);
-  },
+  // componentWillUnmount: function(){
+  //   this.markers.forEach(this.removeMarker);
+  // },
 
   registerListeners: function(){
     google.maps.event.addListener(this.map, 'idle', function(){

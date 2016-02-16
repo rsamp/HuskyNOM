@@ -51,7 +51,10 @@ var Business = React.createClass({
 
   renderBusiness: function(){
     var business = this.state.business;
-    var address = business.address;
+    var address = business.address.split("\n").map(function(addressSection, i){
+      return <div key={i}>{addressSection}</div>;
+    });
+    var phone = business.phone;
     var rating = business.average_rating ?
                   <div><Rating full="glyphicon glyphicon-star large"
                           empty="glyphicon glyphicon-star-empty large"
@@ -70,7 +73,13 @@ var Business = React.createClass({
         {rating}
         <img className="business-image" src={business.yelp_image_url}/>
         <Map businesses={[business]} mapClass="businessMap"/>
-        <p>{address}</p>
+        <div className="address-phone">
+          <h5>Phone:</h5>
+          {'(' + phone.substr(0, 3) + ') ' + phone.substr(3, 3) + '-' + phone.substr(6,4)}
+          <h5>Address:</h5>
+          {address}
+          <a href={business.yelp_url}>Find on yelp</a>
+        </div>
         <ReviewIndex business={business}
                      reviews={business.reviews}
                      hiddenForm={true}/>

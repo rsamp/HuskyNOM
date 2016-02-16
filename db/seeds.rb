@@ -23,15 +23,7 @@ User.create(username: "YelpUser", password: "YelpPassword")
 yelp_user_id = User.last.id
 
 offset = 0
-# params = { term: 'food',
-#            location: 'U District, Seattle, WA',
-#            offset: offset
-#           #  limit: 1
-#          }
-#
-# businessesApiCall = client.search('U District, Seattle, WA', params)
-
-until Business.count == 20
+until Business.count == 60
   params = { term: 'food',
              location: 'U District, Seattle, WA',
              offset: offset
@@ -41,16 +33,18 @@ until Business.count == 20
 
 
   businessesApiCall.businesses.each do |business|
-    id = business.id.to_s
+    id = business.id
     id = 'ugly-mug-cafe-and-coffee-roasters-seattle-2' if id == 'ugly-mug-café-and-coffee-roasters-seattle-2'
     id = 'portage-bay-cafe-and-catering-seattle-3' if id == 'portage-bay-café-and-catering-seattle-3'
+    id = 'casa-patron-seattle-3' if id == 'casa-patrón-seattle-3'
+    id = 'bizzarro-italian-cafe-seattle-2' if id == 'bizzarro-italian-café-seattle-2'
 
     business = client.business(id).business
 
     Business.create!(name: business.name,
                     lat: business.location.coordinate.latitude,
                     lng: business.location.coordinate.longitude,
-                    address: business.location.address.join(", ") + "business.location.display_address.last,
+                    address: business.location.display_address.join("\n"),
                     categories: business.categories,
                     phone: business.phone,
                     yelp_image_url: business.image_url,
@@ -82,15 +76,18 @@ end
 
 #
 #
-# # Users
-# 20.times do
-#   userData = {
-#     username: Faker::Name.first_name,
-#     password: Faker::Internet.password(6)
-#   }
-#
-#   User.create(userData)
-# end
+# Users
+160.times do
+  userData = {
+    username: Faker::Name.first_name,
+    password: Faker::Internet.password(6)
+  }
+  begin
+    User.create(userData)
+  rescue
+    PG::UniqueViolation
+  end
+end
 #
 # # Businesses and respective images
 # Business.create(name: "Chipotle Mexican Grill",
@@ -383,14 +380,19 @@ end
 #
 # # Reviews
 #
-# 160.times do
-#   reviewData = {
-#     author_id: User.all.sample.id,
-#     business_id: Business.all.sample.id,
-#     rating: Faker::Number.between(1, 5),
-#     body: Faker::Lorem.paragraphs(6).join(" "),
-#     created_at: Faker::Time.between(2.years.ago, Time.now, :all)
-#   }
-#
-#   Review.create(reviewData)
-# end
+200.times do
+  author = User.all.sample
+  until author != 'YelpUser'
+    author = User.all.sample
+  end
+
+  reviewData = {
+    author_id: author.id,
+    business_id: Business.all.sample.id,
+    rating: Faker::Number.between(1, 5),
+    body: Faker::Lorem.paragraphs(6).join(" "),
+    created_at: Faker::Time.between(2.years.ago, Time.now, :all)
+  }
+
+  Review.create(reviewData)
+end

@@ -49,14 +49,14 @@ var Search = React.createClass({
     var businesses = this.state.businesses;
     var index = (businesses.length === 0) ? this.loadingStatus :
             <BusinessIndex count={businesses.length} businesses={businesses}/>;
+    // <Filters businesses={businesses}
+    //   filterParams={this.state.filterParams}/>
     return(
       <div>
         <div className="indexMapAndTitle">
           <h3 className="indexMapTitle">Move map to filter results</h3>
           <Map mapClass={"indexMap"} businesses={businesses}/>
         </div>
-        <Filters businesses={businesses}
-                 filterParams={this.state.filterParams}/>
         {index}
       </div>
     );

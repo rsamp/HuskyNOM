@@ -93,6 +93,12 @@ var ReviewIndex = React.createClass({
                           className="form-control purple-button"
                           id="review-button">Write a review</button> : "";
 
+    var reviewsHeader = business.name.length < 32 ?
+              <h3 className="reviews-header">Reviews for {business.name}</h3> :
+              <h4 className="reviews-header">Reviews for {business.name}</h4>;
+
+
+
     if (this.state.reviews.length === 0){
       reviews = "There are no reviews for this restaurant. Be the first!";
     }
@@ -103,7 +109,7 @@ var ReviewIndex = React.createClass({
                     hiddenForm={this.state.hiddenForm}
                     toggleForm={this.toggleForm}/>
         {formButton}
-        <h3 className="reviews-header">Reviews for {business.name}</h3>
+        {reviewsHeader}
           <select name="sort" className="form-control" id="review-sort" valueLink={this.linkState('sortBy')}>
             <option value={"Most Recent"}>Date: Most Recent First</option>
             <option value={"Oldest"}>Date: Oldest First</option>

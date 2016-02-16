@@ -105,20 +105,21 @@ var BusinessIndex = React.createClass({
                             id="business-next"
                             onClick={this.pageUp}>Next</button> : "";
 
+    // <label className='order-by'>
+    //   Order by:
+    //   <select name="sort" className="form-control"
+    //     id="business-sort"
+    //     valueLink={this.linkState('sortBy')}>
+    //     <option value={"Top Rated"}>Rating: Top Rated</option>
+    //     <option value={"Most Reviewed"}>Reviews: Most Reviews</option>
+    //     <option value={"Least Reviewed"}>Reviews: Least Reviews</option>
+    //     <option value={"A to Z"}>Alphabet: A to Z</option>
+    //     <option value={"Z to A"}>Alphabet: Z to A</option>
+    //   </select>
+    // </label>
     return(
       <div>
-        <label className='order-by'>
-          Order by:
-          <select name="sort" className="form-control"
-                  id="business-sort"
-                  valueLink={this.linkState('sortBy')}>
-            <option value={"Top Rated"}>Rating: Top Rated</option>
-            <option value={"Most Reviewed"}>Reviews: Most Reviews</option>
-            <option value={"Least Reviewed"}>Reviews: Least Reviews</option>
-            <option value={"A to Z"}>Alphabet: A to Z</option>
-            <option value={"Z to A"}>Alphabet: Z to A</option>
-          </select>
-        </label>
+        <h4>Search Results  <img className="yelp_btn" src="assets/yelp_powered_btn_light"/></h4>
         <ul className="business-index">
           {businesses}
           {pageDownBtn}

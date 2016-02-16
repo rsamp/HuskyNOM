@@ -40,6 +40,9 @@ var BusinessIndexItem = React.createClass({
 
   render: function(){
     var business = this.props.business;
+    var businessName = business.name.length < 32 ?
+                        <h4>{business.name}</h4> :
+                        <h4 className="long-business">{business.name}</h4>;
     var rating = business.average_rating ?
                   <div>
                     <Rating full="glyphicon glyphicon-star med index-rating"
@@ -59,7 +62,7 @@ var BusinessIndexItem = React.createClass({
           data-id={business.id}
           onMouseOver={this.handleMouseOn}
           onMouseLeave={this.handleMouseOut}>
-        <h4>{business.name}</h4>
+        {businessName}
         {rating}
       </li>
     );

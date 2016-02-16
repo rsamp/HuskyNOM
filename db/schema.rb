@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160207032407) do
+ActiveRecord::Schema.define(version: 20160210182952) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20160207032407) do
     t.boolean  "is_closed",        default: true
     t.boolean  "is_yelp_business", default: false
     t.string   "yelp_image_url"
+    t.string   "student_deal"
   end
 
   create_table "images", force: :cascade do |t|
