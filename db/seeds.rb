@@ -77,7 +77,7 @@ end
 #
 #
 # Users
-160.times do
+40.times do
   userData = {
     username: Faker::Name.first_name,
     password: Faker::Internet.password(6)
@@ -382,7 +382,7 @@ end
 #
 200.times do
   author = User.all.sample
-  until author != 'YelpUser'
+  until author != 'YelpUser' && author != 'DemoUser'
     author = User.all.sample
   end
 
