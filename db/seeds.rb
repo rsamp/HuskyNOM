@@ -23,7 +23,7 @@ User.create(username: "YelpUser", password: "YelpPassword")
 yelp_user_id = User.last.id
 
 offset = 0
-until Business.count == 60
+until Business.count == 40
   params = { term: 'food',
              location: 'U District, Seattle, WA',
              offset: offset
@@ -77,7 +77,7 @@ end
 #
 #
 # Users
-40.times do
+20.times do
   userData = {
     username: Faker::Name.first_name,
     password: Faker::Internet.password(6)
@@ -380,7 +380,7 @@ end
 #
 # # Reviews
 #
-200.times do
+140.times do
   author = User.all.sample
   until author != 'YelpUser' && author != 'DemoUser'
     author = User.all.sample
