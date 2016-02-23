@@ -5,6 +5,12 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= csrf_meta_tags %>
   <%= favicon_link_tag 'HuskyNOM.ico' %>
+
+  <script type="text/javascript">
+    !function(a,b,c,d,e,f,g){a.RaygunObject=e,a[e]=a[e]||function(){
+    (a[e].o=a[e].o||[]).push(arguments)},f=b.createElement(c),g=b.getElementsByTagName(c)[0],
+    f.async=1,f.src=d,g.parentNode.insertBefore(f,g)}(window,document,"script","//cdn.raygun.io/raygun4js/raygun.min.js","rg4js");
+  </script>
 </head>
 <body>
 
@@ -64,5 +70,11 @@
 <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV['GMAP_KEY']}"%>
 <%= javascript_include_tag 'application' %>
 
+
+<script type="text/javascript">
+  rg4js('apiKey', 'HEqCmahig4xohT1UtCHYKA==');
+  rg4js('enablePulse', true);
+  rg4js('enableCrashReporting', false);
+</script>
 </body>
 </html>
