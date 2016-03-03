@@ -23,7 +23,7 @@ User.create(username: "YelpUser", password: "YelpPassword")
 yelp_user_id = User.last.id
 
 offset = 0
-until Business.count == 40
+until Business.count >= 30
   params = { term: 'food',
              location: 'U District, Seattle, WA',
              offset: offset
@@ -38,6 +38,7 @@ until Business.count == 40
     id = 'portage-bay-cafe-and-catering-seattle-3' if id == 'portage-bay-café-and-catering-seattle-3'
     id = 'casa-patron-seattle-3' if id == 'casa-patrón-seattle-3'
     id = 'bizzarro-italian-cafe-seattle-2' if id == 'bizzarro-italian-café-seattle-2'
+    next if id == 'u-don-fresh-japanese-noodle-station-seattle-3'
 
     business = client.business(id).business
 
@@ -69,7 +70,7 @@ until Business.count == 40
                      is_yelp_review: true)
     end
   end
-  offset += 20
+  offset += 10
 end
 
 
@@ -380,7 +381,7 @@ end
 #
 # # Reviews
 #
-140.times do
+80.times do
   author = User.all.sample
   until author != 'YelpUser' && author != 'DemoUser'
     author = User.all.sample
